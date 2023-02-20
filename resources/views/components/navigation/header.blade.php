@@ -32,17 +32,15 @@
             </div>
             
             <div class="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
-              <a href="jobspage.html" class="whitespace-nowrap text-base font-medium text-gray-600 hover:text-gray-900">Find jobs</a>
+              <a href="{{route('jobs.index')}}" class="whitespace-nowrap text-base font-medium text-gray-600 hover:text-gray-900">Find jobs</a>
 
               {{-- check if user is authenticated --}}
               @if (!Auth::check())
               <a href=" {{route('login')}} " class="ml-4 whitespace-nowrap text-base font-medium text-gray-600 hover:text-gray-900">Log in</a>
                 <a href="{{ route('register')}}" class="ml-4 whitespace-nowrap text-base font-medium text-gray-600 hover:text-gray-900">Sign Up</a>               
               @endif
-             
               <a href="#" class="ml-4 whitespace-nowrap text-base font-medium text-gray-600 hover:text-gray-900">MyHustle</a>
-              <a href="postajobco.html" class="ml-4 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-gradient-to-r from-pink-800 to-pink-900 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-pink-700 hover:to-pink-900">Post a Job</a>
-
+              <a href="{{route('jobs.create')}}" class="ml-4 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-gradient-to-r from-pink-800 to-pink-900 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-pink-700 hover:to-pink-900">Post a Job</a>
               {{-- <div class="ml-3 relative"> --}}
                 {{-- <x-jet-dropdown align="right" width="48">
                     <x-slot name="trigger">
