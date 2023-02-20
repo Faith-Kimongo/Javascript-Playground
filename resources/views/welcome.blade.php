@@ -1,4 +1,3 @@
-
 <x-layout>
     <div class="relative mt-8">
         <div class="absolute inset-x-0 bottom-0 h-1/2 "></div>

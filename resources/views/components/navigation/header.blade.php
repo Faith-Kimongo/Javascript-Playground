@@ -16,7 +16,7 @@
         <div class="relative bg-white border-b">
           <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-6 sm:px-6 md:justify-start md:space-x-10 lg:px-8">
             <div class="flex justify-start lg:w-0 lg:flex-1 ">
-              <a href="index1.html">
+              <a href="{{route('dashboard')}}">
                 <span class="sr-only">AJIRY</span>
                 <img class="h-8 w-auto sm:h-10" src="images/image-removebg-preview 1.png" alt="">
               </a>
@@ -33,10 +33,68 @@
             
             <div class="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
               <a href="jobspage.html" class="whitespace-nowrap text-base font-medium text-gray-600 hover:text-gray-900">Find jobs</a>
-              <a href="Login.html" class="ml-4 whitespace-nowrap text-base font-medium text-gray-600 hover:text-gray-900">Log in</a>
-              <a href="Register.html" class="ml-4 whitespace-nowrap text-base font-medium text-gray-600 hover:text-gray-900">Sign Up</a>
+
+              {{-- check if user is authenticated --}}
+              @if (!Auth::check())
+              <a href=" {{route('login')}} " class="ml-4 whitespace-nowrap text-base font-medium text-gray-600 hover:text-gray-900">Log in</a>
+                <a href="{{ route('register')}}" class="ml-4 whitespace-nowrap text-base font-medium text-gray-600 hover:text-gray-900">Sign Up</a>               
+              @endif
+             
               <a href="#" class="ml-4 whitespace-nowrap text-base font-medium text-gray-600 hover:text-gray-900">MyHustle</a>
               <a href="postajobco.html" class="ml-4 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-gradient-to-r from-pink-800 to-pink-900 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-pink-700 hover:to-pink-900">Post a Job</a>
+
+              {{-- <div class="ml-3 relative"> --}}
+                {{-- <x-jet-dropdown align="right" width="48">
+                    <x-slot name="trigger">
+                        @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
+                            <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
+                                <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                            </button>
+                        @else
+                            <span class="inline-flex rounded-md">
+                                <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition">
+                                    {{ Auth::user()->name }}
+                                    <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                            </span>
+                        @endif
+                    </x-slot>
+
+                    <x-slot name="content">
+                        <!-- Account Management -->
+                        <div class="block px-4 py-2 text-xs text-gray-400">
+                            {{ __('Manage Account') }}
+                        </div>
+
+                        <x-jet-dropdown-link href="{{ route('profile.show') }}">
+                            {{ __('Profile') }}
+                        </x-jet-dropdown-link>
+
+                        @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
+                            <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
+                                {{ __('API Tokens') }}
+                            </x-jet-dropdown-link>
+                        @endif
+
+                        <div class="border-t border-gray-100"></div>
+
+                        <!-- Authentication -->
+                        <form method="POST" action="{{ route('logout') }}" x-data>
+                            @csrf
+
+                            <x-jet-dropdown-link href="{{ route('logout') }}"
+                                     @click.prevent="$root.submit();">
+                                {{ __('Log Out') }}
+                            </x-jet-dropdown-link>
+                        </form>
+                    </x-slot>
+                </x-jet-dropdown> --}}
+            {{-- </div> --}}
+            <a href="#" class="ml-4">
+              <img class="h-8 w-auto sm:h-10 rounded-full" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}">
+              </a>
             </div>
           </div>
   
@@ -107,13 +165,18 @@
                   <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700">Partners</a>
                   <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700">Company</a>
                 </div>
+
+                {{-- Check if user is authenticated --}}
+
+              
                 <div class="mt-6">
                   <a href="#" class="flex w-full items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-purple-600 to-indigo-600 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-purple-700 hover:to-indigo-700">Sign up</a>
                   <p class="mt-6 text-center text-base font-medium text-gray-500">
-                    Existing customer?
+                    Existing User?
                     <a href="#" class="text-gray-900">Sign in</a>
                   </p>
                 </div>
+              
               </div>
             </div>
           </div>

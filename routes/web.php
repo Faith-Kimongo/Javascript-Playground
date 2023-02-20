@@ -1,6 +1,5 @@
 <?php
 
-include('company.php');
 
 use Illuminate\Support\Facades\Route;
 
@@ -29,3 +28,12 @@ Route::get('/', function () {
 // Company routes
 //  user routes 
 //jobs routes 
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
