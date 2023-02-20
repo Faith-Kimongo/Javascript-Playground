@@ -1,6 +1,9 @@
 <?php
 
+include('company.php');
+
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +19,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+
+
+
+//separate our routes 
+// Company routes
+//  user routes 
+//jobs routes 
