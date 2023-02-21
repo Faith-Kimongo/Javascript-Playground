@@ -18,7 +18,8 @@
             <div class="flex justify-start lg:w-0 lg:flex-1 ">
               <a href="{{route('dashboard')}}">
                 <span class="sr-only">AJIRY</span>
-                <img class="h-8 w-auto sm:h-10" src="images/image-removebg-preview 1.png" alt="">
+                {{-- images/image-removebg-preview 1.png --}}
+                <img class="h-8 w-auto sm:h-10" src=" {{asset('images/image-removebg-preview 1.png')}}" alt="">
               </a>
             </div>
             <div class="-my-2 -mr-2 md:hidden">
@@ -92,7 +93,7 @@
             {{-- </div> --}}
 
             @if (Auth::check())
-            <a href="#" class="ml-4">
+            <a href=" {{route('profile.show')}} " class="ml-4">
               <img class="h-8 w-auto sm:h-10 rounded-full" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}">
               </a>
             @endif

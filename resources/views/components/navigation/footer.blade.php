@@ -9,7 +9,7 @@
     <div class="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <div class="xl:grid xl:grid-cols-3 xl:gap-8">
             <div class="space-y-8 xl:col-span-1">
-              <img class="h-10" src="images/image-removebg-preview 1.png" alt="Company name">
+              <img class="h-10" src="{{ asset('images/image-removebg-preview 1.png')}}" alt="Company name">
               
               <div class="flex space-x-6">
                 <a href="#" class="text-gray-400 hover:text-gray-500">

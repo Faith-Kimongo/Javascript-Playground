@@ -31,6 +31,7 @@
                 </header>
             @endif
 
+    
             <!-- Page Content -->
             <main>
                 {{ $slot }}
