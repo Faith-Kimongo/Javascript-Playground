@@ -24,6 +24,10 @@ Route::get('/', function () {
 
 
 
+
+
+
+
 //separate our routes 
 // Company routes
 //  user routes 

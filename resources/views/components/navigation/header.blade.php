@@ -90,9 +90,12 @@
                     </x-slot>
                 </x-jet-dropdown> --}}
             {{-- </div> --}}
+
+            @if (Auth::check())
             <a href="#" class="ml-4">
               <img class="h-8 w-auto sm:h-10 rounded-full" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}">
               </a>
+            @endif
             </div>
           </div>
   
