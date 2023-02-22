@@ -1,8 +1,7 @@
 <?php
 
-
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -19,19 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
-
-
-
-
-
-
-
-//separate our routes 
-// Company routes
-//  user routes 
-//jobs routes 
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -41,3 +27,5 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::get('/user-profile',[ProfileController::class,'index'])->name('user-profile');
