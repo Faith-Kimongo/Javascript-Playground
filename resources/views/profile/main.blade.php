@@ -77,10 +77,14 @@
             <h3 class="text-sm font-medium leading-6 text-black font-bold">Education Background</h3>
           </div>
           <div class="ml-4 mt-4 flex-shrink-0">
-            <a href="educationbackground.html"><button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-pink-800 border border-transparent rounded-lg active:bg-pink-700 hover:bg-pink-900 focus:outline-none focus:shadow-outline-blue">EDIT</button></a>
+            <a href="{{route('profile.education.create')}}"><button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-pink-800 border border-transparent rounded-lg active:bg-pink-700 hover:bg-pink-900 focus:outline-none focus:shadow-outline-blue">EDIT</button></a>
           </div>
       </div>
-      <p class="text-gray-500 pb-8 text-sm">Kindly add all your education background </p>
+      @foreach (Auth::user()->educations as $education)
+      <p class="text-gray-500 pb-2 text-sm"> {{$education->name}} - {{$education->field}} </p> <br>
+
+      <blockquote>{{$education->start_date->format('Y')}}</blockquote>
+      @endforeach
 
     </li>
 

@@ -28,4 +28,16 @@ Route::middleware([
     })->name('dashboard');
 });
 
+
+/* 
+User Profile
+-> Bio
+-> Education Background
+-> Work Experience
+-> Skillset
+-> Resume'
+*/
 Route::get('/user-profile',[ProfileController::class,'index'])->name('user-profile');
+Route::get('/user-profile/education-background/edit',[ProfileController::class,'educationCreate'])->name('profile.education.create');
+Route::post('//user-profile/education-background/edi',[ProfileController::class,'educationStore'])->name('education.store');
+
