@@ -27,10 +27,12 @@ class ProfileController extends Controller
         return view('profile.create-education');
     }
 
+
+    
+
     // Store education
     public function educationStore(Request $request){
     //    Save the education
-
     $education=new Education();
     $education->user_id=Auth::id();
     $education->name=$request->name;
@@ -38,7 +40,7 @@ class ProfileController extends Controller
     $education->start_date=$request->start_date;
     $education->end_date=$request->end_date;
     $education->description=$request->description;
-    $education->status=$request->status;
+    $education->status=$request->status ?? 0;
     $education->save();
 
     return back()->with('success','Education Added successfully!');

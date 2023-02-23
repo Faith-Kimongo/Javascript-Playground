@@ -28,13 +28,19 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
 
+                    <x-nav-link href="{{ route('job.index') }}" :active="request()->routeIs('job.index')">
+                        {{ __('Find Jobs') }}
+                    </x-nav-link>
+
+                    <x-nav-link href="{{ route('job.create') }}" :active="request()->routeIs('job.create')">
+                        {{ __('Post A Job') }}
+                </x-nav-link>
+
                     <x-nav-link href="{{ route('myhustle.index') }}" :active="request()->routeIs('myhustle.index')">
                         {{ __('MyHustle') }}
                      </x-nav-link>
 
-                    <x-nav-link href="{{ route('job.create') }}" :active="request()->routeIs('job.create')">
-                            {{ __('Post A Job') }}
-                    </x-nav-link>
+                   
                     @else
 
                     {{-- Sign and Sign up --}}

@@ -17,15 +17,14 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('location');
-            $table->string('title');
+            $table->string('user_id');
             $table->string('category_id');
             $table->string('description');
-            $table->string('title');
             $table->string('responsibilities');
             $table->string('requirements');
             $table->string('remuneration');
             $table->date('deadline');
-            $table->enum('cover_letter',[0,1])->default(0);
+            $table->string('cover_letter')->default(0);
 
             $table->timestamps();
         });
