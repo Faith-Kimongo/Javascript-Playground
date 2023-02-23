@@ -44,9 +44,7 @@ class SkillController extends Controller
         $skill->name=$request->name;
         $skill->user_id=Auth::id();
         $skill->save();
-
         return back()->with('success','Skill Added Successfully');
-
 
     }
 

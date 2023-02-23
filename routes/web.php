@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ExperienceController;
+use App\Http\Controllers\JobController;
+use App\Http\Controllers\MyhustleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SkillController;
 use Illuminate\Support\Facades\Route;
@@ -46,3 +48,5 @@ Route::post('//user-profile/education-background/edi',[ProfileController::class,
 // Experience
 Route::resource('experience',ExperienceController::class);
 Route::resource('skills', SkillController::class);
+Route::resource('job',JobController::class);
+Route::resource('myhustle',MyhustleController::class);

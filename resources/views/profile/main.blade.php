@@ -7,7 +7,8 @@
             <div class="py-6 px-4 sm:px-6 lg:grid lg:grid-cols-12 lg:gap-x-8 lg:p-8">
               <div class="sm:flex lg:col-span-7">
                 <div class="aspect-w-1 aspect-h-1 w-full flex-shrink-0 overflow-hidden rounded-lg sm:aspect-none sm:h-40 sm:w-40">
-                  <img src="{{ Auth::user()->profile_photo_url }}" alt="" class="h-full w-full object-cover object-cover sm:h-full sm:w-full rounded-full">
+                  <a href="{{route('profile.show')}}">                  <img src="{{ Auth::user()->profile_photo_url }}" alt="" class="h-full w-full object-cover object-cover sm:h-full sm:w-full rounded-full">
+                  </a>
                 </div>
 
                 <div class="mt-6 sm:mt-0 sm:ml-6 px-6">
@@ -16,7 +17,7 @@
                     <a href="{{route('profile.show')}}"><button type="button" class="ml-40 w-auto px-4 py-2 text-sm font-medium lemodal900 focus:outline-none focus:shadow-outline-blue">Edit Profile</button></a>
                   </h3>
                   <div class="flex flex-wrap items-center justify-start sm:flex-nowrap min-w-0 flex-1 justify-between text:align-right">
-                    <p class="mt-2 text-sm font-medium text-gray-900">UX/UI Designer
+                    <p class="mt-2 text-sm font-medium text-gray-900"> {{ ucfirst(Auth::user()->skills->first()->name)}}
                     </p> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="blue" class="absolute ml-28 mt-3 w-6 h-6">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
                     </svg>
@@ -38,7 +39,6 @@
                           Reviewed
                         </dd>
                       </div>
-
                       <div class="px-2">
                         <dt><p class="hover:cursor-pointer hover:text-pink-800 text-sm font-bold space-x-6">14</p></dt>
                         <dd class="mt-3 space-y-3 text-gray-500 text-sm">
@@ -62,13 +62,14 @@
             <h3 class="text-sm font-medium leading-6 text-black font-bold">Career Bio</h3>
           </div>
           <div class="ml-4 mt-4 flex-shrink-0">
-            <button  href="#" id="modal-bio" class="trigger"><button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-pink-800 border border-transparent rounded-lg active:bg-pink-700 hover:bg-pink-900 focus:outline-none focus:shadow-outline-blue">
+            <a  href="{{route('profile.show')}}" id="modal-bio" class="trigger">
+              <button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-pink-800 border border-transparent rounded-lg active:bg-pink-700 hover:bg-pink-900 focus:outline-none focus:shadow-outline-blue">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
                 <path fill="#fff" d="M21.5 5.5l-3-3c-.5-.5-1.2-.5-1.7 0l-1.8 1.8 3.7 3.7 1.8-1.8c.5-.5.5-1.2 0-1.7zM2.5 18.5V22h3.5l11.6-11.6-3.5-3.5L2.5 18.5z"/>
                 <path d="M0 0h24v24H0z" fill="none"/>
               </svg>
               
-            </button></button>
+            </button></a>
           </div>
       </div>
       @if (Auth::user()->bio)

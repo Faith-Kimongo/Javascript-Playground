@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreJobRequest;
 use App\Http\Requests\UpdateJobRequest;
+use App\Models\Category;
 use App\Models\Job;
 
 class JobController extends Controller
@@ -15,7 +16,8 @@ class JobController extends Controller
      */
     public function index()
     {
-        //
+        //index
+        return view('jobs.index');
     }
 
     /**
@@ -25,7 +27,9 @@ class JobController extends Controller
      */
     public function create()
     {
-        //
+        $categories=Category::all();
+        //create
+        return view('jobs.create', compact('categories'));
     }
 
     /**
