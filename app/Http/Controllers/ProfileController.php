@@ -41,6 +41,6 @@ class ProfileController extends Controller
     $education->status=$request->status;
     $education->save();
 
-    return back();
+    return back()->with('success','Education Added successfully!');
     }
 }

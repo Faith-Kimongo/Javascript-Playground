@@ -53,7 +53,6 @@
   </div>
   </div>
 
-
   <div class="mt-4 grid grid-row-1 gap-4 sm:grid-cols-2">
     <ul>
       <li class="shadow-xl rounded-2xl p-4">
@@ -63,50 +62,162 @@
             <h3 class="text-sm font-medium leading-6 text-black font-bold">Career Bio</h3>
           </div>
           <div class="ml-4 mt-4 flex-shrink-0">
-            <a href="#" id="modal-bio" class="trigger"><button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-pink-800 border border-transparent rounded-lg active:bg-pink-700 hover:bg-pink-900 focus:outline-none focus:shadow-outline-blue">EDIT</button></a>
+            <button  href="#" id="modal-bio" class="trigger"><button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-pink-800 border border-transparent rounded-lg active:bg-pink-700 hover:bg-pink-900 focus:outline-none focus:shadow-outline-blue">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                <path fill="#fff" d="M21.5 5.5l-3-3c-.5-.5-1.2-.5-1.7 0l-1.8 1.8 3.7 3.7 1.8-1.8c.5-.5.5-1.2 0-1.7zM2.5 18.5V22h3.5l11.6-11.6-3.5-3.5L2.5 18.5z"/>
+                <path d="M0 0h24v24H0z" fill="none"/>
+              </svg>
+              
+            </button></button>
           </div>
       </div>
-      <p class="text-gray-500 pb-8 text-sm">Kindly update a professional career bio that best describes you </p>
+      @if (Auth::user()->bio)
+      <p class="text-gray-500 pb-8 text-sm"> {{Auth::user()->bio}} </p>
+      @else
+      <p class="text-gray-500 pb-8 text-sm"> No career bio now, please click the above code to add </p>
+
+      @endif
 
     </li>
 
+    {{-- @livewire('update') --}}
+
     <li class="shadow-xl mt-6 rounded-2xl p-4">
-      <div >
+      {{-- <div >
         <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap">
           <div class="ml-4 mt-2">
             <h3 class="text-sm font-medium leading-6 text-black font-bold">Education Background</h3>
           </div>
           <div class="ml-4 mt-4 flex-shrink-0">
-            <a href="{{route('profile.education.create')}}"><button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-pink-800 border border-transparent rounded-lg active:bg-pink-700 hover:bg-pink-900 focus:outline-none focus:shadow-outline-blue">EDIT</button></a>
+            <a href="{{route('profile.education.create')}}"><button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-pink-800 border border-transparent rounded-lg active:bg-pink-700 hover:bg-pink-900 focus:outline-none focus:shadow-outline-blue"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+              <path fill="#fff" d="M10 10V2c0-.6.4-1 1-1h2c.6 0 1 .4 1 1v8h8c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1h-8v8c0 .6-.4 1-1 1h-2c-.6 0-1-.4-1-1v-8H2c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1h8z"/>
+            </svg>
+            </button></a>
           </div>
       </div>
-      @foreach (Auth::user()->educations as $education)
-      <p class="text-gray-500 pb-2 text-sm"> {{$education->name}} - {{$education->field}} </p> <br>
+      @forelse (Auth::user()->educations as $education)
+      <p class="text-gray-500 pb-2 text-sm"> {{$education->name}} - {{$education->field}} 
+        <br>
+        {{$education->start_date->format('Y')}} - {{$education->end_date->format('Y')}}
+        </p> 
+      @empty
+      <p class="text-gray-500 pb-2 text-sm">Please add education details </p> 
+      @endforelse  --}}
+    
+      <div class="px-6 lg:px-8">
+        <div class="sm:flex sm:items-center">
+          <div class="sm:flex-auto">
+            <h1 class="text-xl font-semibold text-gray-900">Education</h1>
+            <p class="mt-2 text-sm text-gray-700">Your education  list.</p>
+          </div>
+          <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
+            <a href="{{route('profile.education.create')}}" type="button" class="block rounded-md bg-pink-700 py-1.5 px-3 text-center text-sm font-semibold leading-6 text-white shadow-sm hover:bg-pink-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                <path fill="#fff" d="M10 10V2c0-.6.4-1 1-1h2c.6 0 1 .4 1 1v8h8c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1h-8v8c0 .6-.4 1-1 1h-2c-.6 0-1-.4-1-1v-8H2c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1h8z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="mt-8 flow-root">
+          <div class="-my-2 -mx-6 lg:-mx-8">
+            <div class="inline-block min-w-full py-2 align-middle">
+              <table class="min-w-full border-separate border-spacing-0">
+                <thead>
+                  <tr>
+                    <th scope="col" class="sticky top-0 z-10 border-b border-gray-300 bg-white bg-opacity-75 py-3.5 pl-6 pr-3 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter lg:pl-8">Institution Name</th>
+                    <th scope="col" class="sticky top-0 z-10 hidden border-b border-gray-300 bg-white bg-opacity-75 px-3 py-3.5 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter sm:table-cell">Field</th>
+                    <th scope="col" class="sticky top-0 z-10 border-b border-gray-300 bg-white bg-opacity-75 py-3.5 pr-6 pl-3 backdrop-blur backdrop-filter lg:pr-8">From - To
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @forelse (Auth::user()->educations as $education)
+                  <tr>
+                    <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-6 pr-3 text-sm font-medium text-gray-900 lg:pl-8">{{$education->name}} </td>
+                    <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500 hidden sm:table-cell">{{$education->field}}</td>
+                    {{-- <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500 hidden lg:table-cell">lindsay.walton@example.com</td> --}}
+                    {{-- <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500">Member</td> --}}
+                    <td class="relative whitespace-nowrap border-b border-gray-200 py-4 pr-6 pl-3 text-left text-sm font-medium lg:pr-8">
+                      {{$education->start_date->format('Y')}}-{{$education->end_date->format('Y')}}
+                    </td>
+                  </tr>
+                  @empty
+                  <tr>
+                    <td>                    
+                      No Experience added yet
+                    </td>
 
-      <blockquote>{{$education->start_date->format('Y')}}</blockquote>
-      @endforeach
+                  </tr>
+                  @endforelse
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="shadow-xl mt-6 rounded-2xl p-4">
+     
+      <div class="px-6 lg:px-8">
+        <div class="sm:flex sm:items-center">
+          <div class="sm:flex-auto">
+            <h1 class="text-xl font-semibold text-gray-900">Work Experience</h1>
+            <p class="mt-2 text-sm text-gray-700">Your job experience list.</p>
+          </div>
+          <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
+            <a href="{{route('experience.create')}}" type="button" class="block rounded-md bg-pink-700 py-1.5 px-3 text-center text-sm font-semibold leading-6 text-white shadow-sm hover:bg-pink-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                <path fill="#fff" d="M10 10V2c0-.6.4-1 1-1h2c.6 0 1 .4 1 1v8h8c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1h-8v8c0 .6-.4 1-1 1h-2c-.6 0-1-.4-1-1v-8H2c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1h8z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="mt-8 flow-root">
+          <div class="-my-2 -mx-6 lg:-mx-8">
+            <div class="inline-block min-w-full py-2 align-middle">
+              <table class="min-w-full border-separate border-spacing-0">
+                <thead>
+                  <tr>
+                    <th scope="col" class="sticky top-0 z-10 border-b border-gray-300 bg-white bg-opacity-75 py-3.5 pl-6 pr-3 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter lg:pl-8">Employer Name</th>
+                    <th scope="col" class="sticky top-0 z-10 hidden border-b border-gray-300 bg-white bg-opacity-75 px-3 py-3.5 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter sm:table-cell">Job Title</th>
+                    <th scope="col" class="sticky top-0 z-10 border-b border-gray-300 bg-white bg-opacity-75 py-3.5 pr-6 pl-3 backdrop-blur backdrop-filter lg:pr-8">From - To
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @forelse (Auth::user()->experiences as $experience)
+                  <tr>
+                    <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-6 pr-3 text-sm font-medium text-gray-900 lg:pl-8">{{$experience->employer_name}} </td>
+                    <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500 hidden sm:table-cell">{{$experience->job_title}}</td>
+                    {{-- <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500 hidden lg:table-cell">lindsay.walton@example.com</td> --}}
+                    {{-- <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500">Member</td> --}}
+                    <td class="relative whitespace-nowrap border-b border-gray-200 py-4 pr-6 pl-3 text-left text-sm font-medium lg:pr-8">
+                      {{$experience->start_date->format('Y')}}-{{$experience->end_date->format('Y')}}
+                    </td>
+                  </tr>
+                  @empty
+                  <tr>
+                    <td class="relative whitespace-nowrap border-b border-gray-200 py-4 pr-6 pl-3 text-left text-sm font-medium lg:pr-8">                    No Skill added yet
+                    </td>
+
+                  </tr>
+                  @endforelse
+                  
+      
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
 
     </li>
 
     <li class="shadow-xl mt-6 rounded-2xl p-4">
-      <div >
-        <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap">
-          <div class="ml-4 mt-2">
-            <h3 class="text-sm font-medium leading-6 text-black font-bold">Work Experience</h3>
-          </div>
-          <div class="ml-4 mt-4 flex-shrink-0">
-            <a href="addworkexp.html"><button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-pink-800 border border-transparent rounded-lg active:bg-pink-700 hover:bg-pink-900 focus:outline-none focus:shadow-outline-blue">EDIT</button></a>
-          </div>
-      </div>
-      <div class="relative grid grid-cols-1 gap-16 sm:grid-cols-2 sm:gap-x-12 lg:col-span-2 lg:mt-0">
-        <p class="text-gray-500 pb-8 text-sm">Kindly add all your work experience including the skills gained over your employment period </p>
-      </div>
-
-
-    </li>
-
-    <li class="shadow-xl mt-6 rounded-2xl p-4">
-      <div>
+      {{-- <div>
         <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-wrap">
           <div class="ml-4 mt-2">
             <h3 class="text-sm font-medium leading-6 text-black font-bold">Skillset</h3>
@@ -185,7 +296,52 @@
           </dt>
 
         </div>
-        </dl>
+        </dl> --}}
+        <div class="px-6 lg:px-8">
+          <div class="sm:flex sm:items-center">
+            <div class="sm:flex-auto">
+              <h1 class="text-xl font-semibold text-gray-900">Your Skills</h1>
+              <p class="mt-2 text-sm text-gray-700">Your skills list.</p>
+            </div>
+            <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
+              <a href="{{route('skills.create')}}" type="button" class="block rounded-md bg-pink-700 py-1.5 px-3 text-center text-sm font-semibold leading-6 text-white shadow-sm hover:bg-pink-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                  <path fill="#fff" d="M10 10V2c0-.6.4-1 1-1h2c.6 0 1 .4 1 1v8h8c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1h-8v8c0 .6-.4 1-1 1h-2c-.6 0-1-.4-1-1v-8H2c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1h8z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="mt-8 flow-root">
+            <div class="-my-2 -mx-6 lg:-mx-8">
+              <div class="inline-block min-w-full py-2 align-middle">
+                <table class="min-w-full border-separate border-spacing-0">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="sticky top-0 z-10 border-b border-gray-300 bg-white bg-opacity-75 py-3.5 pl-6 pr-3 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter lg:pl-8">Skills</th>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @forelse (Auth::user()->skills as $skill)
+                    <tr>
+                      <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-6 pr-3 text-sm font-medium text-gray-900 lg:pl-8">{{$skill->name}} </td>
+                      {{-- <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500 hidden lg:table-cell">lindsay.walton@example.com</td> --}}
+                      {{-- <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500">Member</td> --}}
+                      
+                    </tr>
+                    @empty
+                    <tr>
+                      <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-6 pr-3 text-sm font-medium text-gray-900 lg:pl-8">No Skill added yet</td>
+                    </tr>
+                    @endforelse
+                    
+        
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
 
     </li>
 
@@ -408,4 +564,33 @@
 
   </div>
 
+
+  {{-- Bio Modal --}}
+  <div id="modal-bio" class="modal">
+    <div id="modal-bio" class="mt-24 modal bg-black bg-opacity-50 absolute inset-0 hidden flex justify-center items-center z-10"  >
+      <div class="relative w-full max-w-lg h-full lg:h-auto">
+        <div id="modal-content" class="bg-gray-200 max-w-4xl rounded-2xl shadow-xl text-gray-800 text-center">
+          <div class="modal-title w-full justify-center items-center rounded-xl border-b border-pink-900 bg-gradient-to-r from-teal-800 to-pink-900 shadow-sm hover:from-teal-700 hover:to-pink-900">
+            <h3 class="text-md font-medium text-white dark:text-white p-2">Update your Bio</h3>
+            <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="small-modal">
+            </button>
+          </div>
+
+          <div class="sm:col-span-2 m-6 rounded-lg">
+            <div class="flex justify-between">
+              <label for="message" class="block text-sm font-medium text-gray-900">Bio</label>
+              <!-- <span id="message-max" class="text-sm text-gray-500">Max. 500 characters</span> -->
+            </div>
+            <div class="mt-1">
+              <textarea id="message" name="message" rows="4" class="block w-full rounded-md border border-gray-300 py-3 px-4 text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" aria-describedby="message-max"></textarea>
+            </div>
+          </div>
+          <div class="mt-5 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-3 sm:grid-flow-row-dense" id="buttons">
+            <input type="submit" class="mb-5 w-full inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-gradient-to-r from-pink-900 to-pink-900 bg-origin-border px-2 py-2 text-base font-medium text-white shadow-sm hover:from-pink-700 hover:to-teal-900">
+            <button id="modal-bio" type="button" class="close-modal mb-5 w-full inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-gradient-to-r from-pink-900 to-pink-900 bg-origin-border px-2 py-2 text-base font-medium text-white shadow-sm hover:from-pink-700 hover:to-teal-900" >Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </x-app-layout>

@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SkillController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,3 +43,6 @@ Route::get('/user-profile',[ProfileController::class,'index'])->name('user-profi
 Route::get('/user-profile/education-background/edit',[ProfileController::class,'educationCreate'])->name('profile.education.create');
 Route::post('//user-profile/education-background/edi',[ProfileController::class,'educationStore'])->name('education.store');
 
+// Experience
+Route::resource('experience',ExperienceController::class);
+Route::resource('skills', SkillController::class);
