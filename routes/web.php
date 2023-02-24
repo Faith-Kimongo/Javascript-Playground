@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -37,7 +38,15 @@ User Profile
 -> Skillset
 -> Resume'
 */
+
+// userprofile//////////
+// education
 Route::get('/user-profile',[ProfileController::class,'index'])->name('user-profile');
 Route::get('/user-profile/education-background/edit',[ProfileController::class,'educationCreate'])->name('profile.education.create');
-Route::post('//user-profile/education-background/edi',[ProfileController::class,'educationStore'])->name('education.store');
+Route::post('/user-profile/education-background/edit',[ProfileController::class,'educationStore'])->name('education.store');
+
+// workexperience
+Route::get('/user-profile/work-experience/edit',[ProfileController::class,'workexperienceCreate'])->name('profile.workexp.create');
+Route::post('/user-profile/work-experience/edit',[ProfileController::class,'workexperienceStore'])->name('workexp.store');
+
 

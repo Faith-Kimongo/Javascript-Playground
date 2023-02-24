@@ -83,7 +83,7 @@
       @foreach (Auth::user()->educations as $education)
       <p class="text-gray-500 pb-2 text-sm"> {{$education->name}} - {{$education->field}} </p> <br>
 
-      <blockquote>{{$education->start_date->format('Y')}}</blockquote>
+      <blockquote>{{$education->start_date->format('Y')}}-{{$education->end_date->format('Y')}}</blockquote>
       @endforeach
 
     </li>
@@ -95,12 +95,14 @@
             <h3 class="text-sm font-medium leading-6 text-black font-bold">Work Experience</h3>
           </div>
           <div class="ml-4 mt-4 flex-shrink-0">
-            <a href="addworkexp.html"><button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-pink-800 border border-transparent rounded-lg active:bg-pink-700 hover:bg-pink-900 focus:outline-none focus:shadow-outline-blue">EDIT</button></a>
+            <a href="{{route('profile.workexp.create')}}"><button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-pink-800 border border-transparent rounded-lg active:bg-pink-700 hover:bg-pink-900 focus:outline-none focus:shadow-outline-blue">EDIT</button></a>
           </div>
       </div>
-      <div class="relative grid grid-cols-1 gap-16 sm:grid-cols-2 sm:gap-x-12 lg:col-span-2 lg:mt-0">
-        <p class="text-gray-500 pb-8 text-sm">Kindly add all your work experience including the skills gained over your employment period </p>
-      </div>
+      @foreach (Auth::user()->workexperiences as $workexperience)
+      <p class="text-gray-500 pb-2 text-sm"> {{$workexperience->name}} - {{$workexperience->title}} </p> <br>
+
+      <blockquote>{{$workexperience->start_date->format('Y')}}-{{$workexperience->end_date->format('Y')}}</blockquote>
+      @endforeach
 
 
     </li>

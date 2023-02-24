@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Education;
+use App\Models\WorkExperience;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -41,6 +42,27 @@ class ProfileController extends Controller
     $education->status=$request->status;
     $education->save();
 
-    return back();
+    return redirect('user-profile');
     }
+
+    // workexperience
+    public function workexperienceCreate(){
+        return view('profile.create-workexp');
+    }
+
+    public function workexpStore(Request $request){
+        //    Save the education
+    
+        $education=new Work_experiences();
+        $education->user_id=Auth::id();
+        $education->name=$request->name;
+        $education->title=$request->title;
+        $education->start_date=$request->start_date;
+        $education->end_date=$request->end_date;
+        $education->responsibility=$request->responsibility;
+        $education->status=$request->status;
+        $education->save();
+    
+        return redirect('user-profile');
+        }
 }
