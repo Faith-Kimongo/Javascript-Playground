@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\ExperienceController;
+use App\Http\Controllers\JobController;
+use App\Http\Controllers\MyhustleController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SkillController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -50,3 +54,8 @@ Route::get('/user-profile/work-experience/edit',[ProfileController::class,'worke
 Route::post('/user-profile/work-experience/edit',[ProfileController::class,'workexperienceStore'])->name('workexp.store');
 
 
+// Experience
+Route::resource('experience',ExperienceController::class);
+Route::resource('skills', SkillController::class);
+Route::resource('job',JobController::class);
+Route::resource('myhustle',MyhustleController::class);

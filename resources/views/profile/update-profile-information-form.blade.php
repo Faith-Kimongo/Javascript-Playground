@@ -66,6 +66,15 @@
             <x-input-error for="last_name" class="mt-2" />
         </div>
 
+
+        <!-- Bio -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="bio" value="{{ __('Career Bio') }}" />
+            <textarea class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" wire:model.defer="state.bio" autocomplete="bio"></textarea>
+            {{-- <x-input id="bio" type="text" class="mt-1 block w-full" wire:model.defer="state.bio" autocomplete="last_name" /> --}}
+            <x-input-error for="bio" class="mt-2" />
+        </div>
+
         <!-- Email -->
         <div class="col-span-6 sm:col-span-4">
             <x-label for="email" value="{{ __('Email') }}" />

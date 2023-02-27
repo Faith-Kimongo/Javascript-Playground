@@ -25,6 +25,14 @@ class User extends Authenticatable
     public function educations(){
         return $this->hasMany(Education::class);
     }
+
+    public function experiences(){
+        return $this->hasMany(Experience::class);
+    }
+
+    public function skills(){
+        return $this->hasMany(Skill::class);
+    }
     /**
      * The attributes that are mass assignable.
      *
