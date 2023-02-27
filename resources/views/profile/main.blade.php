@@ -98,10 +98,10 @@
             <a href="{{route('profile.workexp.create')}}"><button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-pink-800 border border-transparent rounded-lg active:bg-pink-700 hover:bg-pink-900 focus:outline-none focus:shadow-outline-blue">EDIT</button></a>
           </div>
       </div>
-      @foreach (Auth::user()->workexperiences as $workexperience)
-      <p class="text-gray-500 pb-2 text-sm"> {{$workexperience->name}} - {{$workexperience->title}} </p> <br>
+      @foreach (Auth::user()->workexp as $workexp)
+      <p class="text-gray-500 pb-2 text-sm"> {{$workexp->name}} - {{$workexp->title}} </p> <br>
 
-      <blockquote>{{$workexperience->start_date->format('Y')}}-{{$workexperience->end_date->format('Y')}}</blockquote>
+      <blockquote>{{$workexp->start_date->format('Y')}}-{{$workexp->end_date->format('Y')}}</blockquote>
       @endforeach
 
 

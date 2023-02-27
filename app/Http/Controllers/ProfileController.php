@@ -53,15 +53,15 @@ class ProfileController extends Controller
     public function workexpStore(Request $request){
         //    Save the education
     
-        $education=new Work_experiences();
-        $education->user_id=Auth::id();
-        $education->name=$request->name;
-        $education->title=$request->title;
-        $education->start_date=$request->start_date;
-        $education->end_date=$request->end_date;
-        $education->responsibility=$request->responsibility;
-        $education->status=$request->status;
-        $education->save();
+        $workexp=new Work_experiences();
+        $workexp->user_id=Auth::id();
+        $workexp->name=$request->name;
+        $workexp->title=$request->title;
+        $workexp->start_date=$request->start_date;
+        $workexp->end_date=$request->end_date;
+        $workexp->responsibility=$request->responsibility;
+        $workexp->status=$request->status;
+        $workexp->save();
     
         return redirect('user-profile');
         }

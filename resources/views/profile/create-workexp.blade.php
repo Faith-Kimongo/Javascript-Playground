@@ -11,6 +11,7 @@
           <div class="py-4 px-6 sm:px-10 lg:col-span-4 xl:pt-1">
             <h3 class="pb-4 text-2xl font-medium text-indigo-900 text-center font-bold">Add Work Experience</h3>
             <form action="{{route('workexperience.store')}}" method="POST" class="mt-5 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+            @csrf
               <div>
                 <label for="name" class="block text-sm font-medium text-gray-900">Employer Name</label>
                 <div class="mt-1">
