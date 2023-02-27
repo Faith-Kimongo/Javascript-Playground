@@ -4,9 +4,8 @@
     <div>
         <div class="relative mx-auto">
             <div class="p-4 border-b border-gray-200">
-                <h3 class="text-lg font-medium leading-6 text-gray-900">Search for your preferred job</h3>
+                <h3 class="text-lg font-medium leading-6 text-gray-900">Job Recommendations for you</h3>
               </div>
-
             <div class="mt-4">
                 <a href="" class="font-semibold hover:text-blue-800 text-blue-600">Jobs</a> |
                 <a href="" class="font-semibold hover:text-blue-700">Saved Jobs </a> |

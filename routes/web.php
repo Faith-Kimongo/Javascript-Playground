@@ -4,6 +4,7 @@ use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\MyhustleController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SavedJobController;
 use App\Http\Controllers\SkillController;
 use Illuminate\Support\Facades\Route;
 
@@ -48,5 +49,11 @@ Route::post('//user-profile/education-background/edi',[ProfileController::class,
 // Experience
 Route::resource('experience',ExperienceController::class);
 Route::resource('skills', SkillController::class);
+Route::get('job/applications',[JobController::class,'applications'])->name('job.applications');
+
 Route::resource('job',JobController::class);
+Route::get('job/apply/{job}',[JobController::class,'apply'])->name('job.apply');
+Route::post('job/apply/{job}',[JobController::class,'applyStore'])->name('job.apply.store');
+
 Route::resource('myhustle',MyhustleController::class);
+Route::resource('saved-jobs',SavedJobController::class);

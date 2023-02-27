@@ -5,21 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Job extends Model
+class SavedJob extends Model
 {
     use HasFactory;
 
+    // user
     public function user(){
         return $this->belongsTo(User::class);
     }
 
-
-    // category
-    public function category(){
-        return $this->belongsTo(Category::class);
+    public function job(){
+        return $this->belongsTo(Job::class);
     }
-
-    protected $casts = [
-        'deadline' => 'datetime'
-    ];
 }

@@ -7,7 +7,7 @@
             <div class="mt-4">
                 <a href="{{route('job.index')}}" class="font-semibold hover:text-blue-800 text-blue-600">Jobs</a> |
                 <a href="{{route('saved-jobs.index')}}" class="font-semibold hover:text-blue-700">Saved Jobs </a> |
-                <a href="{{route('job.applications')}}" class="font-semibold hover:text-blue-700"> Applications </a>
+                <a href="" class="font-semibold hover:text-blue-700"> Applications </a>
             </div>
 
             <div class="mt-6 grid grid-cols-5 gap-4 font-medium ">
@@ -135,44 +135,11 @@
                     </div>
 
                     <div class="relative flex flex-1 justify-center mt-4">
-                        <a href="{{route('job.apply',$pinned_job->id)}}"
+                        <a href="#"
                             class="mt-3 inline-flex items-center flex-shrink-0 rounded-md border border-transparent bg-gradient-to-r from-pink-800 to-pink-900 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-pink-700 hover:to-pink-900">Apply
                             Job</a>
-
-                            @if (session('success'))
-                            <div class="rounded-md bg-green-50 p-4">
-                              <div class="flex">
-                                <div class="flex-shrink-0">
-                                  <svg class="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                                  </svg>
-                                </div>
-                                <div class="ml-3">
-                                  <h3 class="text-sm font-medium text-green-800"> {{ session('success')}} </h3>
-                                </div>
-                              </div>
-                            </div>
-                            
-                            @endif 
-
-
-                            {{-- check if the job is saved --}}
-
-                            @if (in_array($pinned_job->id,$savedjobs))
-                               <button class="mt-3 ml-3 inline-flex items-center flex-shrink-0 rounded-md border border-pink-800 px-4 py-2 text-base font-medium text-black shadow-sm hover:from-pink-700 hover:to-pink-900" >Saved</button>
-                            @else
-                            <div x-data="{ inputVal: '{{$pinned_job->id}}' }">
-                                {{-- <input type="text" x-model="inputVal"> --}}
-                                <button class="mt-3 ml-3 inline-flex items-center flex-shrink-0 rounded-md border border-pink-800 px-4 py-2 text-base font-medium text-black shadow-sm hover:from-pink-700 hover:to-pink-900" x-on:click.prevent="submitForm">Save</button>
-                            
-                                <form x-ref="hiddenForm" method="POST" action="{{route('saved-jobs.store')}}" style="display:none" @submit.prevent>
-                                    @csrf
-                                  <input type="hidden" name="job_id" x-bind:value="inputVal" >
-                                </form>
-                              </div>
-                            @endif
-                          
-                        
+                        <a href="#"
+                            class="mt-3 ml-3 inline-flex items-center flex-shrink-0 rounded-md border border-pink-800 px-4 py-2 text-base font-medium text-black shadow-sm hover:from-pink-700 hover:to-pink-900">Save</a>
                     </div>
 
                 </div>
@@ -221,13 +188,4 @@
         </div>
     </div>
     </div>
-
-    <script>
-        function submitForm() {
-          var form = this.$refs.hiddenForm;
-          form.submit();
-        }
-      
-        window.Alpine.data('submitForm', submitForm);
-      </script>
 </x-app-layout>

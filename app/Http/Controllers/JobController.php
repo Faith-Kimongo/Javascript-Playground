@@ -4,29 +4,28 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreJobRequest;
 use App\Http\Requests\UpdateJobRequest;
+use App\Models\Application;
 use App\Models\Category;
 use App\Models\Job;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 
 class JobController extends Controller
 {
-
     public function __construct(){
         return $this->middleware('auth');
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function index()
     {
         //index
         return view('jobs.index',[
             'jobs'=>Job::all(),
-            'pinned_job'=>Job::first()
+            'pinned_job'=>Job::first(),
+            'savedjobs'=>Auth::user()->savedjobs->pluck('id')->toArray()
+            
         ]);
     }
 
@@ -117,5 +116,26 @@ class JobController extends Controller
     public function destroy(Job $job)
     {
         //
+    }
+
+    public function apply(Job $job){
+        return view('jobs.apply',compact('job'));
+    }
+
+    public function applyStore(Job $job,Request $request){
+        $application=new Application();
+        $application->user_id=Auth::id();
+        $application->cover_letter=$request->cover_letter;
+        $application->job_id=$job->id;
+        $application->save();
+
+        return back()->with('success','Applied');
+    }
+
+
+    public function applications(){
+        return view('jobs.application',[
+            'applications'=>Auth::user()->applications
+        ]);
     }
 }
