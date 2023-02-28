@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Company\CompanyController;
+use App\Http\Controllers\Company\JobController as CompanyJobController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\MyhustleController;
@@ -63,4 +64,5 @@ Route::resource('myhustle',MyhustleController::class);
 // company routes
 Route::resource('companies',CompanyController::class);
 Route::get('company/register',CompanyRegister::class);
+Route::resource('company_jobs',CompanyJobController::class);
 Route::resource('saved-jobs',SavedJobController::class);

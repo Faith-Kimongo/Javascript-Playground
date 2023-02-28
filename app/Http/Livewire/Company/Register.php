@@ -13,7 +13,7 @@ use Livewire\Component;
 class Register extends Component
 {
     public $show_rep=true,$show_details=false;
-    public $first_name,$last_name,$rep_email,$position,$rep_phone,$company_email,$company_name,$company_size,$company_country,$company_website,$source,$password,$password_confirmation;
+    public $first_name,$last_name,$rep_email,$position,$rep_phone,$company_email,$company_name,$company_size,$company_country,$company_website,$source,$password,$password_confirmation,$company_bio;
     public function render()
     {
        
@@ -63,6 +63,8 @@ class Register extends Component
             'company_email' => $this->company_email,
             'company_size' => $this->company_size,
             'company_country'=>$this->company_country,
+            'company_website'=>$this->company_website,
+            'company_bio'=>$this->company_bio,
             'source'=> $this->source,
             'user_id'=>$user->id,
 
@@ -121,5 +123,5 @@ class Register extends Component
 
     }
 
-    
+
 }
