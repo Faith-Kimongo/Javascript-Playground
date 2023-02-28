@@ -148,10 +148,6 @@
                       No Experience added yet
                     </td>
 
-<<<<<<< HEAD
-      <blockquote>{{$education->start_date->format('Y')}}-{{$education->end_date->format('Y')}}</blockquote>
-      @endforeach
-=======
                   </tr>
                   @endforelse
                 </tbody>
@@ -218,35 +214,13 @@
       </div>
       
       
->>>>>>> 96a0808c6c11a744d8212dd8ba0e5e65891ab9fe
-
-    </li>
-
-    <li class="shadow-xl mt-6 rounded-2xl p-4">
-<<<<<<< HEAD
-      <div >
-        <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap">
-          <div class="ml-4 mt-2">
-            <h3 class="text-sm font-medium leading-6 text-black font-bold">Work Experience</h3>
-          </div>
-          <div class="ml-4 mt-4 flex-shrink-0">
-            <a href="{{route('profile.workexp.create')}}"><button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-pink-800 border border-transparent rounded-lg active:bg-pink-700 hover:bg-pink-900 focus:outline-none focus:shadow-outline-blue">EDIT</button></a>
-          </div>
-      </div>
-      @foreach (Auth::user()->workexp as $workexp)
-      <p class="text-gray-500 pb-2 text-sm"> {{$workexp->name}} - {{$workexp->title}} </p> <br>
-
-      <blockquote>{{$workexp->start_date->format('Y')}}-{{$workexp->end_date->format('Y')}}</blockquote>
-      @endforeach
 
 
     </li>
 
-    <li class="shadow-xl mt-6 rounded-2xl p-4">
-      <div>
-=======
-      {{-- <div>
->>>>>>> 96a0808c6c11a744d8212dd8ba0e5e65891ab9fe
+
+ <div>
+
         <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-wrap">
           <div class="ml-4 mt-2">
             <h3 class="text-sm font-medium leading-6 text-black font-bold">Skillset</h3>

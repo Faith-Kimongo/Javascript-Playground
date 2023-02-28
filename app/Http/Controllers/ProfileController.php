@@ -44,11 +44,8 @@ class ProfileController extends Controller
     $education->status=$request->status ?? 0;
     $education->save();
 
-<<<<<<< HEAD
-    return redirect('user-profile');
-=======
     return back()->with('success','Education Added successfully!');
->>>>>>> 96a0808c6c11a744d8212dd8ba0e5e65891ab9fe
+
     }
 
     // workexperience
