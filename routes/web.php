@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\Company\CompanyController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\MyhustleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SkillController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Company\Register as CompanyRegister;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,3 +52,8 @@ Route::resource('experience',ExperienceController::class);
 Route::resource('skills', SkillController::class);
 Route::resource('job',JobController::class);
 Route::resource('myhustle',MyhustleController::class);
+
+
+// company routes
+Route::resource('companies',CompanyController::class);
+Route::get('company/register',CompanyRegister::class);
