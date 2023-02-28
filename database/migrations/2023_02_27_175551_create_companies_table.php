@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('company_name');
             $table->string('company_email');
             $table->string('company_country');
+            $table->string('company_bio',2000)->nullable();
             $table->string('company_size')->nullable();
             $table->string('company_website')->nullable();
             $table->string('source')->nullable();

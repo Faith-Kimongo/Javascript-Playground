@@ -15,6 +15,13 @@ class Company extends Model
         'company_country',
         'company_website',
         'source',
+        'company_bio',
         'user_id',
     ];
+
+
+
+    public function representative(){
+        return $this->hasOne(Companyrep::class);
+    }
 }
