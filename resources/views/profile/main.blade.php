@@ -144,8 +144,8 @@
                   </tr>
                   @empty
                   <tr>
-                    <td>                    
-                      No Experience added yet
+                    <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-6 pr-3 text-sm font-medium text-gray-900 lg:pl-8">                    
+                      No Education added yet
                     </td>
 
                   </tr>
@@ -199,7 +199,7 @@
                   </tr>
                   @empty
                   <tr>
-                    <td class="relative whitespace-nowrap border-b border-gray-200 py-4 pr-6 pl-3 text-left text-sm font-medium lg:pr-8">                    No Skill added yet
+                    <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-6 pr-3 text-sm font-medium text-gray-900 lg:pl-8">No experience added yet
                     </td>
 
                   </tr>
