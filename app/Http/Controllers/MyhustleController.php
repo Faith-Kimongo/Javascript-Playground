@@ -8,54 +8,33 @@ use App\Models\Myhustle;
 
 class MyhustleController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function index()
     {
-        //
+        //index
+        return view('myhustle.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+  
     public function create()
     {
-        //
+        //create
+        return view('myhustle.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreMyhustleRequest  $request
-     * @return \Illuminate\Http\Response
-     */
+   
     public function store(StoreMyhustleRequest $request)
     {
-        //
+        //check
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Myhustle  $myhustle
-     * @return \Illuminate\Http\Response
-     */
+  
     public function show(Myhustle $myhustle)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Myhustle  $myhustle
-     * @return \Illuminate\Http\Response
-     */
+   
     public function edit(Myhustle $myhustle)
     {
         //

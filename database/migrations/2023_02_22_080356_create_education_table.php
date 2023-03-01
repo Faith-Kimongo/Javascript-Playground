@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('description')->nullable();
             $table->date('start_date');
             $table->date('end_date');
-            $table->enum('status',[1,0]);
+            $table->string('status')->default(0);
             $table->timestamps();
         });
     }

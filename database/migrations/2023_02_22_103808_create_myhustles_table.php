@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('myhustles', function (Blueprint $table) {
             $table->id();
+            $table->string('user_id');
+            $table->string('location');
+            $table->string('price');
+            $table->string('title');
+            $table->string('image');
             $table->timestamps();
         });
     }
