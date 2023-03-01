@@ -15,6 +15,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <!-- Styles -->
         @livewireStyles
+        <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body class="h-full">
         <x-banner />

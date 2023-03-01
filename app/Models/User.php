@@ -98,4 +98,14 @@ class User extends Authenticatable
     ];
 
 
+
+// Company Details
+    public function company(){
+        return $this->hasOne(Company::class);
+    }
+
+    // company jobs
+    public function jobs(){
+        return $this->hasMany(Job::class);
+    }
 }

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreEducationRequest;
-use App\Http\Requests\UpdateEducationRequest;
-use App\Models\Education;
+use App\Http\Requests\StoreWorkExperienceRequest;
+use App\Http\Requests\UpdateWorkExperienceRequest;
+use App\Models\WorkExperience;
 
-class EducationController extends Controller
+class WorkExperienceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class EducationController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreEducationRequest  $request
+     * @param  \App\Http\Requests\StoreWorkExperienceRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreEducationRequest $request)
+    public function store(StoreWorkExperienceRequest $request)
     {
         //
     }
@@ -42,21 +42,21 @@ class EducationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Education  $education
+     * @param  \App\Models\WorkExperience  $workExperience
      * @return \Illuminate\Http\Response
      */
-    public function show(Education $education)
+    public function show(WorkExperience $workExperience)
     {
-        //display education here
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Education  $education
+     * @param  \App\Models\WorkExperience  $workExperience
      * @return \Illuminate\Http\Response
      */
-    public function edit(Education $education)
+    public function edit(WorkExperience $workExperience)
     {
         //
     }
@@ -64,11 +64,11 @@ class EducationController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateEducationRequest  $request
-     * @param  \App\Models\Education  $education
+     * @param  \App\Http\Requests\UpdateWorkExperienceRequest  $request
+     * @param  \App\Models\WorkExperience  $workExperience
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateEducationRequest $request, Education $education)
+    public function update(UpdateWorkExperienceRequest $request, WorkExperience $workExperience)
     {
         //
     }
@@ -76,10 +76,10 @@ class EducationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Education  $education
+     * @param  \App\Models\WorkExperience  $workExperience
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Education $education)
+    public function destroy(WorkExperience $workExperience)
     {
         //
     }

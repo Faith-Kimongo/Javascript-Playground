@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Company;
 
-use App\Http\Requests\StoreEducationRequest;
-use App\Http\Requests\UpdateEducationRequest;
-use App\Models\Education;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
-class EducationController extends Controller
+class JobController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,6 +15,7 @@ class EducationController extends Controller
     public function index()
     {
         //
+        return view('company.jobs.jobs');
     }
 
     /**
@@ -31,10 +31,10 @@ class EducationController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreEducationRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreEducationRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -42,21 +42,21 @@ class EducationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Education  $education
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Education $education)
+    public function show($id)
     {
-        //display education here
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Education  $education
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Education $education)
+    public function edit($id)
     {
         //
     }
@@ -64,11 +64,11 @@ class EducationController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateEducationRequest  $request
-     * @param  \App\Models\Education  $education
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateEducationRequest $request, Education $education)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -76,10 +76,10 @@ class EducationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Education  $education
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Education $education)
+    public function destroy($id)
     {
         //
     }

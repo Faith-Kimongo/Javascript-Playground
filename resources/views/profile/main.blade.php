@@ -215,10 +215,12 @@
       
       
 
+
     </li>
 
-    <li class="shadow-xl mt-6 rounded-2xl p-4">
-      {{-- <div>
+
+ <div>
+
         <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-wrap">
           <div class="ml-4 mt-2">
             <h3 class="text-sm font-medium leading-6 text-black font-bold">Skillset</h3>
