@@ -217,185 +217,113 @@
 
 
     </li>
-    <!-- two experiences one removed from here-->
- <div>
 
-        <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-wrap">
-          <div class="ml-4 mt-2">
-            <h3 class="text-sm font-medium leading-6 text-black font-bold">Skillset</h3>
+    <li class="shadow-xl mt-6 rounded-2xl p-4 mb-3">
+      
+      <div class="px-6 lg:px-8">
+        <div class="sm:flex sm:items-center">
+          <div class="sm:flex-auto">
+            <h1 class="text-xl font-semibold text-gray-900">Skillset</h1>
+            <p class="mt-2 text-sm text-gray-700">Your skills list.</p>
           </div>
-          <div class="ml-4 mt-4 flex-shrink-0">
-            <a href="#" id="modal-skills" class="trigger"><button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-pink-800 border border-transparent rounded-lg active:bg-pink-700 hover:bg-pink-900 focus:outline-none focus:shadow-outline-blue">EDIT</button></a>
+          <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
+            <a href="{{route('skills.create')}}" type="button" class="block rounded-md bg-pink-700 py-1.5 px-3 text-center text-sm font-semibold leading-6 text-white shadow-sm hover:bg-pink-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                <path fill="#fff" d="M10 10V2c0-.6.4-1 1-1h2c.6 0 1 .4 1 1v8h8c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1h-8v8c0 .6-.4 1-1 1h-2c-.6 0-1-.4-1-1v-8H2c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1h8z"/>
+              </svg>
+            </a>
           </div>
-      </div>
-
-      <dl class="pb-6 space-x-24 sm:space-x-2 sm:flex-wrap mt-4 grid grid-cols-1 gap-12 sm:grid-cols-1 sm:gap-x-6 lg:grid-cols-4 lg:gap-x-8">
-        <div class="relative">
-          <dt>
-            <!-- Heroicon name: outline/check -->
-            <svg class="absolute mt-1 h-5 w-5 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-            </svg>
-            <p class="ml-10 text-sm text-gray-600 whitespace-nowrap">Graphic Design</p>
-          </dt>
-
-          <dt>
-            <!-- Heroicon name: outline/check -->
-            <svg class="absolute mt-1 h-5 w-5 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-            </svg>
-            <p class="ml-10 text-sm text-gray-600 whitespace-nowrap">UI/UX</p>
-          </dt>
-
-          <dt>
-            <!-- Heroicon name: outline/check -->
-            <svg class="absolute mt-1 h-5 w-5 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-            </svg>
-            <p class="ml-10 text-sm text-gray-600 whitespace-nowrap">Videography</p>
-          </dt>
-
-          <dt>
-            <!-- Heroicon name: outline/check -->
-            <svg class="absolute mt-1 h-5 w-5 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-            </svg>
-            <p class="ml-10 text-sm text-gray-600 whitespace-nowrap">Animation</p>
-          </dt>
         </div>
-
-        <div class="relative">
-          <dt>
-            <!-- Heroicon name: outline/check -->
-            <svg class="absolute mt-1 h-5 w-5 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-            </svg>
-            <p class="ml-10 text-sm text-gray-600 whitespace-nowrap">2D Animator</p>
-          </dt>
-
-          <dt>
-            <!-- Heroicon name: outline/check -->
-            <svg class="absolute mt-1 h-5 w-5 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-            </svg>
-            <p class="ml-10 text-sm text-gray-600 whitespace-nowrap">3D Animator</p>
-          </dt>
-
-          <dt>
-            <!-- Heroicon name: outline/check -->
-            <svg class="absolute mt-1 h-5 w-5 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-            </svg>
-            <p class="ml-10 text-sm text-gray-600 whitespace-nowrap">Web Developer</p>
-          </dt>
-
-          <dt>
-            <!-- Heroicon name: outline/check -->
-            <svg class="absolute mt-1 h-5 w-5 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-            </svg>
-            <p class="ml-10 text-sm text-gray-600 whitespace-nowrap">Database Administrator</p>
-          </dt>
-
-        </div>
-        </dl>
-        <div class="px-6 lg:px-8">
-          <div class="sm:flex sm:items-center">
-            <div class="sm:flex-auto">
-              <h1 class="text-xl font-semibold text-gray-900">Your Skills</h1>
-              <p class="mt-2 text-sm text-gray-700">Your skills list.</p>
-            </div>
-            <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
-              <a href="{{route('skills.create')}}" type="button" class="block rounded-md bg-pink-700 py-1.5 px-3 text-center text-sm font-semibold leading-6 text-white shadow-sm hover:bg-pink-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-                  <path fill="#fff" d="M10 10V2c0-.6.4-1 1-1h2c.6 0 1 .4 1 1v8h8c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1h-8v8c0 .6-.4 1-1 1h-2c-.6 0-1-.4-1-1v-8H2c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1h8z"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div class="mt-8 flow-root">
-            <div class="-my-2 -mx-6 lg:-mx-8">
-              <div class="inline-block min-w-full py-2 align-middle">
-                <table class="min-w-full border-separate border-spacing-0">
-                  <thead>
-                    <tr>
-                      <th scope="col" class="sticky top-0 z-10 border-b border-gray-300 bg-white bg-opacity-75 py-3.5 pl-6 pr-3 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter lg:pl-8">Skills</th>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    @forelse (Auth::user()->skills as $skill)
-                    <tr>
-                      <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-6 pr-3 text-sm font-medium text-gray-900 lg:pl-8">{{$skill->name}} </td>
-                      {{-- <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500 hidden lg:table-cell">lindsay.walton@example.com</td> --}}
-                      {{-- <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500">Member</td> --}}
-                      
-                    </tr>
-                    @empty
-                    <tr>
-                      <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-6 pr-3 text-sm font-medium text-gray-900 lg:pl-8">No Skill added yet</td>
-                    </tr>
-                    @endforelse
+        <div class="mt-8 flow-root">
+          <div class="-my-2 -mx-6 lg:-mx-8">
+            <div class="inline-block min-w-full py-2 align-middle">
+              <table class="min-w-full border-separate border-spacing-0">
+                <thead>
+                  <tr>
+                    <th scope="col" class="sticky top-0 z-10 border-b border-gray-300 bg-white bg-opacity-75 py-3.5 pl-6 pr-3 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter lg:pl-8">Skills</th>
+                    <th scope="col" class="sticky top-0 z-10 hidden border-b border-gray-300 bg-white bg-opacity-75 px-3 py-3.5 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter sm:table-cell"></th>
                     
-        
-                  </tbody>
-                </table>
-              </div>
+                  </tr>
+                </thead>
+                <tbody>
+                  @forelse (Auth::user()->skills as $skill)
+                  <tr>
+                    <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-6 pr-3 text-sm font-medium text-gray-900 lg:pl-8">{{$skill->name}} </td>
+                    
+                    {{-- <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500 hidden lg:table-cell">lindsay.walton@example.com</td> --}}
+                    {{-- <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500">Member</td> --}}
+                    
+                    </td>
+                  </tr>
+                  @empty
+                  <tr>
+                    <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-6 pr-3 text-sm font-medium text-gray-900 lg:pl-8">                    
+                      No Skill added yet
+                    </td>
+
+                  </tr>
+                  @endforelse
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
-
-    </li>
-
-    <li class="shadow-xl mt-6 rounded-2xl p-4">
-      <div>
-        <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-wrap">
-          <div class="ml-4 mt-2">
-            <h3 class="text-sm font-medium leading-6 text-black font-bold">Resume</h3>
-          </div>
-          <div class="ml-4 mt-4 flex-shrink-0">
-            <a href="#" id="modal-resume" class=" trigger text-sm text-blue-700">Upload a resume</a>
-          </div>
       </div>
-
-      <dl class="pb-6 space-x-24 sm:space-x-2 sm:flex-wrap mt-4 grid grid-cols-1 gap-12 sm:grid-cols-1 sm:gap-x-6 lg:grid-cols-4 lg:gap-x-8">
-        <div class="relative">
-          <dt>
-            <!-- Heroicon name: outline/check -->
-            <svg class="absolute mt-1 h-5 w-5 text-blue-700 hover:text-red-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-            <p class="ml-10 text-sm text-blue-700 whitespace-nowrap">UX Designer CV</p>
-          </dt>
-
-          <dt>
-            <svg class="absolute mt-1 h-5 w-5 text-blue-700 hover:text-red-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-            <p class="ml-10 text-sm text-blue-700 whitespace-nowrap">Videographer</p>
-          </dt>
-        </div>
-
-        <div class="relative">
-          <dt>
-            <!-- Heroicon name: outline/check -->
-            <svg class="absolute mt-1 h-5 w-5 text-blue-700 hover:text-red-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-            <p class="ml-10 text-sm text-blue-700 whitespace-nowrap">Animator CV</p>
-          </dt>
-
-          <dt>
-            <svg class="absolute mt-1 h-5 w-5 text-blue-700 hover:text-red-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-            <p class="ml-10 text-sm text-blue-700 whitespace-nowrap">Web Developer CV</p>
-          </dt>
-        </div>
-        </dl>
-
     </li>
 
+    <li class="shadow-xl mt-6 rounded-2xl p-4 mb-3">
+      
+      <div class="px-6 lg:px-8">
+        <div class="sm:flex sm:items-center">
+          <div class="sm:flex-auto">
+            <h1 class="text-xl font-semibold text-gray-900">Resume</h1>
+            <p class="mt-2 text-sm text-gray-700">Your resume list.</p>
+          </div>
+          <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
+            <a href="#" type="button" class="block rounded-md bg-pink-700 py-1.5 px-3 text-center text-sm font-semibold leading-6 text-white shadow-sm hover:bg-pink-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                <path fill="#fff" d="M10 10V2c0-.6.4-1 1-1h2c.6 0 1 .4 1 1v8h8c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1h-8v8c0 .6-.4 1-1 1h-2c-.6 0-1-.4-1-1v-8H2c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1h8z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="mt-8 flow-root">
+          <div class="-my-2 -mx-6 lg:-mx-8">
+            <div class="inline-block min-w-full py-2 align-middle">
+              <table class="min-w-full border-separate border-spacing-0">
+                <thead>
+                  <tr>
+                    <th scope="col" class="sticky top-0 z-10 border-b border-gray-300 bg-white bg-opacity-75 py-3.5 pl-6 pr-3 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter lg:pl-8">Resume</th>
+                    <th scope="col" class="sticky top-0 z-10 hidden border-b border-gray-300 bg-white bg-opacity-75 px-3 py-3.5 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter sm:table-cell">Job Title</th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  @forelse (Auth::user()->educations as $education)
+                  <tr>
+                    <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-6 pr-3 text-sm font-medium text-gray-900 lg:pl-8">{{$education->name}} </td>
+                    <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500 hidden sm:table-cell">{{$education->field}}</td>
+                    {{-- <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500 hidden lg:table-cell">lindsay.walton@example.com</td> --}}
+                    {{-- <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500">Member</td> --}}
+                    <td class="relative whitespace-nowrap border-b border-gray-200 py-4 pr-6 pl-3 text-left text-sm font-medium lg:pr-8">
+                      {{$education->start_date->format('Y')}}-{{$education->end_date->format('Y')}}
+                    </td>
+                  </tr>
+                  @empty
+                  <tr>
+                    <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-6 pr-3 text-sm font-medium text-gray-900 lg:pl-8">                    
+                      No Resume added yet
+                    </td>
+
+                  </tr>
+                  @endforelse
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
   </ul>
 
   <div class="shadow-2xl m-4 rounded-2xl p-6">
