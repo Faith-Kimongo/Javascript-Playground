@@ -217,8 +217,7 @@
 
 
     </li>
-
-
+    <!-- two experiences one removed from here-->
  <div>
 
         <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-wrap">
@@ -299,7 +298,7 @@
           </dt>
 
         </div>
-        </dl> --}}
+        </dl>
         <div class="px-6 lg:px-8">
           <div class="sm:flex sm:items-center">
             <div class="sm:flex-auto">
