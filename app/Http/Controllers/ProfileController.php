@@ -28,7 +28,6 @@ class ProfileController extends Controller
     }
 
 
-    
 
     // Store education
     public function educationStore(Request $request){

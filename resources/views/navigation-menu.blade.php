@@ -40,7 +40,6 @@
                         {{ __('MyHustle') }}
                      </x-nav-link>
 
-                   
                     @else
 
                     {{-- Sign and Sign up --}}
