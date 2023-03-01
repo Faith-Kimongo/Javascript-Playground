@@ -75,6 +75,12 @@
             <x-input-error for="bio" class="mt-2" />
         </div>
 
+        {{-- mobile_number --}}
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="mobile_number" value="{{ __('Mobile Number') }}" />
+            <x-input id="mobile_number" type="text" class="mt-1 block w-full" wire:model.defer="state.mobile_number" autocomplete="mobile_number" />
+            <x-input-error for="mobile_number" class="mt-2" />
+        </div>
         <!-- Email -->
         <div class="col-span-6 sm:col-span-4">
             <x-label for="email" value="{{ __('Email') }}" />
