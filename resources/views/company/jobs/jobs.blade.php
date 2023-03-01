@@ -11,29 +11,29 @@
             <div class="ml-12 space-x-2 hidden items-center justify-end md:flex md:flex-1 lg:w-0">
               <div class="ml-10 space-x-10 flex justify-center lg:w-0 lg:flex-1">
                 <div class="shadow-inner shadow-xl text-gray-900 w-40 h-40 rounded-2xl">
-                  <p class="font-semibold text-center mt-10">2</p>
+                  <p class="font-semibold text-center mt-10">{{Auth::user()->jobs->count()}}</p>
                   <p class="font-semibold text-center mt-4">Live Jobs</p>
                 </div>
               </div>
       
               <div class="ml-10 space-x-10 flex justify-center lg:w-0 lg:flex-1">
                 <div class="shadow-inner shadow-xl text-gray-900 w-40 h-40 rounded-2xl">
-                  <p class="font-semibold text-center mt-10">2</p>
+                  <p class="font-semibold text-center mt-10">{{Auth::user()->jobs->count()}}</p>
                   <p class="font-semibold text-center mt-4">Drafted Jobs</p>
                 </div>
               </div>
       
               <div class="ml-10 space-x-10 flex justify-center lg:w-0 lg:flex-1">
                 <div class="shadow-inner shadow-xl text-gray-900 w-40 h-40 rounded-2xl">
-                  <p class="font-semibold text-center mt-10">2</p>
+                  <p class="font-semibold text-center mt-10">{{Auth::user()->jobs->count()}}</p>
                   <p class="font-semibold text-center mt-4">Archived Jobs</p>
                 </div>
               </div>
       
               <div class="ml-10 space-x-10 flex justify-center lg:w-0 lg:flex-1">
                 <div class="shadow-inner shadow-xl text-gray-900 w-40 h-40 rounded-2xl">
-                  <!-- <p class="font-semibold text-center mt-10">2</p> -->
-                  <p class="font-semibold text-center mt-12">All Jobs</p>
+                  <p class="font-semibold text-center mt-10">{{Auth::user()->jobs->count()}}</p> 
+                  <p class="font-semibold text-center mt-4">All Jobs</p>
                 </div>
               </div>
       
@@ -77,7 +77,10 @@
       
         <div class="mt-6 grid grid-row-1 gap-4 sm:grid-cols-1 ml-14 mr-14 pl-6 pr-6">
           <ul role="list mb-2">
-            <li class="shadow-xl bg-gray-200 rounded-2xl p-3">
+
+@foreach(Auth::user()->jobs as $job)
+
+            <li class="shadow-xl bg-gray-200 rounded-2xl p-3 mt-8">
               <div class="relative">
                 <span class="block inline-flex items-center justify-center rounded-md p-3" aria-hidden="true"></span>
                 <div class="relative flex space-x-3">
@@ -93,10 +96,10 @@
                   </div>
                   <div class="flex min-w-0 flex-1 justify-between space-x-4 ">
                     <div>
-                      <p><a href="#" class="font-medium text-gray-900">Front End Developer</a></p>
-                      <p class="text-gray-600">Facebook</p>
-                      <p class="text-gray-600">Nairobi, KE</p>
-                      <p class="text-gray-600">3 days to closing</p>
+                      <p><a href="#" class="font-medium text-gray-900">{{$job->title}}</a></p>
+                      <p class="text-gray-600">{{$job->category->name}}</p>
+                      <p class="text-gray-600">{{$job->location}}</p>
+                      <p class="text-gray-600">{{$job->deadline->diffForHumans()}}</p>
                     </div>
       
                   </div>
@@ -105,7 +108,7 @@
                     <div>
                       <div
                         class="shadow-inner shadow-xl text-gray-800 w-20 h-20 rounded-2xl bg-gradient-to-r from-teal-400 to-teal-600">
-                        <p class="font-semibold text-center ">323</p>
+                        <p class="font-semibold text-center ">{{$job->applicants->count()}}</p>
                         <p class="font-semibold text-center">Applicants</p>
                       </div>
                     </div>
@@ -113,7 +116,7 @@
                     <div>
                       <div
                         class="shadow-inner shadow-xl text-gray-800 w-20 h-20 rounded-2xl bg-gradient-to-r from-teal-400 to-teal-600">
-                        <p class="font-semibold text-center">120</p>
+                        <p class="font-semibold text-center">{{$job->applicants->count()}}</p>
                         <p class="font-semibold text-center">Shortlisted</p>
                       </div>
                     </div>
@@ -121,7 +124,7 @@
                     <div>
                       <div
                         class="shadow-inner shadow-xl text-gray-800 w-20 h-20 rounded-2xl bg-gradient-to-r from-teal-400 to-teal-600">
-                        <p class="font-semibold text-center">200</p>
+                        <p class="font-semibold text-center">{{$job->applicants->count()}}</p>
                         <p class="font-semibold text-center">Complete</p>
                         <p class="font-semibold text-center">Aplications</p>
                       </div>
@@ -131,8 +134,8 @@
                 </div>
               </div>
             </li>
-      
-            <li class="shadow-xl bg-gray-200 rounded-2xl p-3 mt-8">
+      @endforeach
+            {{-- <li class="shadow-xl bg-gray-200 rounded-2xl p-3 mt-8">
               <div class="relative">
                 <span class="block inline-flex items-center justify-center rounded-md p-3" aria-hidden="true"></span>
                 <div class="relative flex space-x-3">
@@ -295,7 +298,7 @@
       
                 </div>
               </div>
-            </li>
+            </li> --}}
           </ul>
         </div>
       

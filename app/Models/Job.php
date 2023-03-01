@@ -19,6 +19,12 @@ class Job extends Model
         return $this->belongsTo(Category::class);
     }
 
+
+    // Applicants
+    public function applicants(){
+        return $this->hasMany(Application::class);
+    }
+
     protected $casts = [
         'deadline' => 'datetime'
     ];
