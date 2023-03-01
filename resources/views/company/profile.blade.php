@@ -23,7 +23,7 @@
                   <div class="mt-6 sm:mt-0 sm:ml-6 px-6">
                     <h3 class="text-base font-medium text-gray-900 space-x-24">
                       <a href="#">{{ucfirst(Auth::user()->first_name)}} Profile</a>
-                      <a href="postajobco.html"><button type="button" class="ml-54 w-auto px-4 py-2 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-pink-800 border border-transparent rounded-lg active:bg-pink-700 hover:bg-pink-900 focus:outline-none focus:shadow-outline-blue">Post a Job</button></a>
+                      <a href="/job/create"><button type="button" class="ml-54 w-auto px-4 py-2 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-pink-800 border border-transparent rounded-lg active:bg-pink-700 hover:bg-pink-900 focus:outline-none focus:shadow-outline-blue">Post a Job</button></a>
                     </h3>
                     <div class="flex flex-wrap items-center justify-between sm:flex-nowrap min-w-0 flex-1 justify-between text:align-right">
                       <p class="mt-2 text-sm font-medium text-gray-900">{{Auth::user()->company->company_website}}

@@ -72,7 +72,7 @@ Route::post('job/apply/{job}',[JobController::class,'applyStore'])->name('job.ap
 
 Route::resource('myhustle',MyhustleController::class);
 
-
+// company///////////
 // company routes
 Route::resource('companies',CompanyController::class);
 Route::get('company/register',CompanyRegister::class);
