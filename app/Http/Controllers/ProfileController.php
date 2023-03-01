@@ -67,4 +67,13 @@ class ProfileController extends Controller
     
         return redirect('user-profile');
         }
+
+        // skills update
+        public function skills(Request $request){
+            
+            // save skills for user
+            Auth::user()->skills()->attach($request->skills);
+
+            return back()->with('success','Skills added successfully!');
+        }
 }

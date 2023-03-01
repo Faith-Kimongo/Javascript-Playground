@@ -10,6 +10,7 @@ use App\Http\Controllers\SavedJobController;
 use App\Http\Controllers\SkillController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Company\Register as CompanyRegister;
+use App\Models\Job;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,10 +34,11 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return view('dashboard',[
+            'jobs'=>Job::all()
+        ]);
     })->name('dashboard');
 });
-
 
 /* 
 User Profile
@@ -61,6 +63,7 @@ Route::post('/user-profile/work-experience/edit',[ProfileController::class,'work
 // Experience
 Route::resource('experience',ExperienceController::class);
 Route::resource('skills', SkillController::class);
+Route::post('skills/save',[ProfileController::class,'skills'])->name('profile.skills.save');
 Route::get('job/applications',[JobController::class,'applications'])->name('job.applications');
 
 Route::resource('job',JobController::class);

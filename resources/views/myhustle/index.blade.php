@@ -259,9 +259,17 @@
             
           </div>
           <div class="ml-6 max-w-6xl shadow-2xl shadow-outline-blue rounded-2xl pb-6">
-            <p class="mt-6 px-4 font-semibold text-lg shadow-outline-blue rounded-lg px-4 font-semibold border-b border-gray-300 bg-gray-200">Mobile Phones and Tablets in Kenya</p>
+            
             <div class="bg-white">
+                
               <section aria-labelledby="features-heading" class="mx-auto max-w-7xl sm:px-2 lg:px-8">
+                <div class="border-b mt-4 p-4 border-gray-200 pb-5 sm:flex sm:items-center sm:justify-between">
+                    <h3 class="text-base font-semibold leading-6 text-gray-900">My hustle(s)</h3>
+                    <div class="mt-3 sm:mt-0 sm:ml-4">
+                      <a href="{{route('myhustle.create')}}" type="button" class="inline-flex items-center rounded-md border border-transparent bg-pink-900 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Post your hustle</a>
+                    </div>
+                  </div>
+                  
                 <div class="mx-auto max-w-2xl px-4 lg:max-w-none lg:px-0">
                   <div class="max-w-3xl">
                     
@@ -289,82 +297,31 @@
                       </div>
                     </div>
             
+                    @forelse ($myhustles as $hustle)
                     <div id="features-panel-1" class="space-y-16 pt-10 lg:pt-16" aria-labelledby="features-tab-1" role="tabpanel" tabindex="0">
-                      <div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:gap-x-8">
-                        <div class="mt-6 lg:col-span-5 lg:mt-0">
-                          <h3 class="text-lg font-medium text-gray-900">Samsung Phones</h3>
-                          <p class="mt-2 text-sm text-gray-500 text-indigo-900">Kshs 30,000</p>
-                          <p class="mt-2 text-sm text-gray-500">Get the latest samsung phones today don't be left out</p>
-                          <p class="flex flex-row mt-5 gap-2 text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class=" w-5 h-5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                          </svg>Machakos, Kenya</p>
-                        </div>
-                        <div class="lg:col-span-7">
-                          <div class="aspect-w-2 aspect-h-1 overflow-hidden rounded-lg bg-gray-100 sm:aspect-w-5 sm:aspect-h-2">
-                            <img src="images/myhustle/samsung.webp" alt="Maple organizer base with slots, supporting white polycarbonate trays of various sizes." class="w-full h-48 object-cover object-center">
+                        <div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:gap-x-8">
+                          <div class="mt-6 lg:col-span-5 lg:mt-0">
+                            <h3 class="text-lg font-medium text-gray-900"> {{$hustle->title}} </h3>
+                            <p class="mt-2 text-sm text-gray-500 text-indigo-900"> {{$hustle->price}} </p>
+                            <p class="mt-2 text-sm text-gray-500">{{$hustle->desc}}</p>
+                            <p class="flex flex-row mt-5 gap-2 text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class=" w-5 h-5">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                            </svg> {{$hustle->location}} </p>
+                          </div>
+                          <div class="lg:col-span-7">
+                            <div class="aspect-w-2 aspect-h-1 overflow-hidden rounded-lg bg-gray-100 sm:aspect-w-5 sm:aspect-h-2">
+                              <img src="https://picsum.photos/600/400" alt="Maple organizer base with slots, supporting white polycarbonate trays of various sizes." class="w-full h-48 object-cover object-center">
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
+                    @empty
+                        <p>No hustle posted yet</p>
+                    @endforelse
+                  
             
-                    <div id="features-panel-2" class="space-y-16 pt-10 lg:pt-16" aria-labelledby="features-tab-2" role="tabpanel" tabindex="0">
-                      <div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:gap-x-8">
-                        <div class="mt-6 lg:col-span-5 lg:mt-0">
-                          <h3 class="text-lg font-medium text-gray-900">Tablets and Phones</h3>
-                          <p class="mt-2 text-sm text-gray-500 text-indigo-900">Kshs 25,000 - Kshs 450,000</p>
-                          <p class="mt-2 text-sm text-gray-500">Get both Tablets and Mobile Phones in one shop</p>
-                          <p class="flex flex-row mt-5 gap-2 text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class=" w-5 h-5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                          </svg>Eldoret, Kenya</p>
-                        </div>
-                        <div class="lg:col-span-7">
-                          <div class="aspect-w-2 aspect-h-1 overflow-hidden rounded-lg bg-gray-100 sm:aspect-w-5 sm:aspect-h-2">
-                            <img src="images/myhustle/phone.webp" alt="Maple organizer base with slots, supporting white polycarbonate trays of various sizes." class="w-full h-48 object-cover object-center">
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-            
-                    <div id="features-panel-3" class="space-y-16 pt-10 lg:pt-16" aria-labelledby="features-tab-3" role="tabpanel" tabindex="0">
-                      <div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:gap-x-8">
-                        <div class="mt-6 lg:col-span-5 lg:mt-0">
-                          <h3 class="text-lg font-medium text-gray-900">Smartwatches</h3>
-                          <p class="mt-2 text-sm text-gray-500 text-indigo-900">Kshs 30,000</p>
-                          <p class="mt-2 text-sm text-gray-500">Get the latest original smartwatch today don't be left out</p>
-                          <p class="flex flex-row mt-5 gap-2 text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class=" w-5 h-5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                          </svg>Nairobi CBD, Kenya</p>
-                          
-                        </div>
-                        <div class="lg:col-span-7">
-                          <div class="aspect-w-2 aspect-h-1 overflow-hidden rounded-lg bg-gray-100 sm:aspect-w-5 sm:aspect-h-2">
-                            <img src="images/myhustle/smartwatch.jpeg" alt="Maple organizer base with slots, supporting white polycarbonate trays of various sizes." class="w-full h-48 object-cover object-center">
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-            
-                    <div id="features-panel-4" class="space-y-16 pt-10 lg:pt-16" aria-labelledby="features-tab-4" role="tabpanel" tabindex="0">
-                      <div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:gap-x-8">
-                        <div class="mt-6 lg:col-span-5 lg:mt-0">
-                          <h3 class="text-lg font-medium text-gray-900">Accessories for Mobile Phones</h3>
-                          <p class="mt-2 text-sm text-gray-500 text-indigo-900">Kshs 7,000</p>
-                          <p class="mt-2 text-sm text-gray-500">Get the latest original accessories today don't be left out</p>
-                          <p class="flex flex-row mt-5 gap-2 text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class=" w-5 h-5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                          </svg>Mombasa CBD, Kenya</p>
-                        </div>
-                        <div class="lg:col-span-7">
-                          <div class="aspect-w-2 aspect-h-1 overflow-hidden rounded-lg bg-gray-100 sm:aspect-w-5 sm:aspect-h-2">
-                            <img src="images/myhustle/phone accessories.jpeg" alt="Maple organizer base with slots, supporting white polycarbonate trays of various sizes." class="w-full h-48 object-cover object-center">
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                  
                   </div>
                 </div>
               </section>

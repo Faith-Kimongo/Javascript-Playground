@@ -28,7 +28,9 @@ class SkillController extends Controller
     {
         //create a skill form
 
-        return view('profile.create-skill');
+        return view('profile.create-skill',[
+            'skills'=>Skill::all()
+        ]);
     }
 
     /**
@@ -42,6 +44,7 @@ class SkillController extends Controller
         //store
         $skill=new Skill();
         $skill->name=$request->name;
+        $skill->category_id=1;
         $skill->user_id=Auth::id();
         $skill->save();
         return back()->with('success','Skill Added Successfully');

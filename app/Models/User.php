@@ -42,7 +42,7 @@ class User extends Authenticatable
 
     // skills
     public function skills(){
-        return $this->hasMany(Skill::class);
+        return $this->belongsToMany(Skill::class);
     }
     /**
      * The attributes that are mass assignable.

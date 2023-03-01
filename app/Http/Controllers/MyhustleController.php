@@ -5,14 +5,21 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreMyhustleRequest;
 use App\Http\Requests\UpdateMyhustleRequest;
 use App\Models\Myhustle;
+use Illuminate\Support\Facades\Auth;
 
 class MyhustleController extends Controller
 {
+
+    public function __construct(){
+        return $this->middleware('auth');
+    }
    
     public function index()
     {
         //index
-        return view('myhustle.index');
+        return view('myhustle.index',[
+            'myhustles'=>Myhustle::all()
+        ]);
     }
 
   
@@ -25,7 +32,17 @@ class MyhustleController extends Controller
    
     public function store(StoreMyhustleRequest $request)
     {
-        //check
+        //store
+
+        $hustle=new Myhustle();
+        $hustle->user_id=Auth::id();
+        $hustle->title=$request->title;
+        $hustle->location=$request->location;
+        $hustle->desc=$request->desc;
+        $hustle->price=$request->price;
+        $hustle->save();
+
+        return back()->with('success','Hustle posted successfully');
     }
 
   

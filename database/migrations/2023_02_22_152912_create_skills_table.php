@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('skills', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id');
+            $table->string('user_id')->nullable();
             $table->string('name');
             $table->string('category_id');
             $table->timestamps();
