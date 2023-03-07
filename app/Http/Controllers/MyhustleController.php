@@ -32,12 +32,21 @@ class MyhustleController extends Controller
    
     public function store(StoreMyhustleRequest $request)
     {
+
+
+        // Image
+        $image = $request->file('image');
+
+        $imageName = time().'.'.$image->extension();  
+    
+        $image->move(public_path('myhustleImages'), $imageName);
         //store
 
         $hustle=new Myhustle();
         $hustle->user_id=Auth::id();
         $hustle->title=$request->title;
         $hustle->location=$request->location;
+        $hustle->image = $imageName;
         $hustle->desc=$request->desc;
         $hustle->price=$request->price;
         $hustle->save();

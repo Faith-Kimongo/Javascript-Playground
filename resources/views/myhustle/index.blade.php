@@ -1035,8 +1035,6 @@
                               </div>
                           </div>
                             
-                            
-                            
                           </ul>
                             
                         </li>
@@ -1251,11 +1249,9 @@
                           </div>
                           <div class="lg:col-span-7">
                             <div class="aspect-w-2 aspect-h-1 overflow-hidden rounded-lg bg-gray-100 sm:aspect-w-5 sm:aspect-h-2">
-                              <img src="https://picsum.photos/600/400" alt="Maple organizer base with slots, supporting white polycarbonate trays of various sizes." class="w-full h-48 object-cover object-center">
+                              <img src="{{ asset('myhustleImages/' . $hustle->image) }}" alt="Maple organizer base with slots, supporting white polycarbonate trays of various sizes." class="w-full h-48 object-cover object-center">
                             </div>
                           </div>
-
-                          
                         </div>
                       </div>
                       <hr>

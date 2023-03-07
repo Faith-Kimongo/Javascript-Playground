@@ -88,7 +88,7 @@
                                         </div>
     
                                         <div class="ml-4 mt-4 flex-shrink-0">
-                                            <p>$84000/y</p>
+                                            <p> {{$job->remuneration}} </p>
                                             <p class="mt-3 text-gray-600"> {{$job->location}} </p>
                                         </div>
                                     </div>
