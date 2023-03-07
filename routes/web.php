@@ -35,7 +35,15 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard',[
-            'jobs'=>Job::all()
+
+
+            // Get the user skills categories
+            $user_categories=Auth::user()->skills->pluck('category_id')->unique(),
+
+            // Get the jobs that match their skills categories
+
+            //send jobs that are tailored to their skills
+            'jobs'=>Job::whereIn('category_id',$user_categories)->get(),
         ]);
     })->name('dashboard');
 });

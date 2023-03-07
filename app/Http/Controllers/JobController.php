@@ -86,7 +86,13 @@ class JobController extends Controller
      */
     public function show(Job $job)
     {
-        //
+        //show a job
+        return view('jobs.show',[
+            'jobs'=>Job::all(),
+            'pinned_job'=>$job,
+            'savedjobs'=>Auth::user()->savedjobs->pluck('id')->toArray()
+        ]);
+
     }
 
    
