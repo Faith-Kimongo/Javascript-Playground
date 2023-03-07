@@ -7,6 +7,8 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Laravel\Fortify\Contracts\UpdatesUserProfileInformation;
+use Propaganistas\LaravelPhone\PhoneNumber;
+
 
 class UpdateUserProfileInformation implements UpdatesUserProfileInformation
 {
@@ -20,7 +22,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
         Validator::make($input, [
             'first_name' => ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
-            'mobile_number' => ['required', 'string', 'max:15'],
+            'mobile_number' => ['required','phone:KE'],
             'bio' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
             'photo' => ['nullable', 'mimes:jpg,jpeg,png', 'max:1024'],
@@ -37,6 +39,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $user->forceFill([
                 'first_name' => $input['first_name'],
                 'last_name' => $input['last_name'],
+                'mobile_number' => new PhoneNumber($input['mobile_number'], 'KE'),
                 'bio' => $input['bio'],
                 'email' => $input['email'],
             ])->save();
