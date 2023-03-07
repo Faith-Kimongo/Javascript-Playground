@@ -43,7 +43,7 @@
                           <div >
                             <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-200 rounded-lg">
                               <div class="ml-4 mt-2">
-                                <h3 class="text-sm font-medium leading-6 text-black font-bold">Location</h3>
+                                <h3 class="text-sm font-bold leading-6 text-black font-bold">Location</h3>
                               </div>
                           </div>
                           <div class="flex flex-row flex-wrap justify-between sm:flex-nowrap">
