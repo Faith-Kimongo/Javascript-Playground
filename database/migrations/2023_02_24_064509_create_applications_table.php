@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('applications', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id');
-            $table->string('job_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('job_id');
             $table->string('cover_letter')->nullable();
 
             $table->unique(['user_id', 'job_id']);
