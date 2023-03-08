@@ -13,4 +13,12 @@ class Application extends Model
     public function job(){
         return $this->belongsTo(Job::class);
     }
+
+
+    public static function hasApplied($user_id, $job_id)
+{
+    return self::where('user_id', $user_id)
+        ->where('job_id', $job_id)
+        ->exists();
+}
 }
