@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\Company\CompanyController;
 use App\Http\Controllers\Company\JobController as CompanyJobController;
 use App\Http\Controllers\ExperienceController;
@@ -78,7 +79,11 @@ Route::resource('job',JobController::class);
 Route::get('job/apply/{job}',[JobController::class,'apply'])->name('job.apply');
 Route::post('job/apply/{job}',[JobController::class,'applyStore'])->name('job.apply.store');
 
+
+// Myhustle
 Route::resource('myhustle',MyhustleController::class);
+Route::post('/comments/{myhustle}', [CommentController::class,'store'])->name('comments.store');
+
 
 // company///////////
 // company routes

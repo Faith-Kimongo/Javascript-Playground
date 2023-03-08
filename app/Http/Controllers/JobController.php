@@ -129,13 +129,28 @@ class JobController extends Controller
     }
 
     public function applyStore(Job $job,Request $request){
+
+        $user_id = auth()->id();
+
+
+
+         // Check if the authenticated user is the owner of the job
+    if ($job->user_id === auth()->user()->id) {
+        return redirect()->back()->with('error', 'You cannot apply to your own job.');
+    }
+
+    // Dont apply if already applied
+    if (Application::hasApplied($user_id, $job->id)) {
+        return redirect()->back()->with('error', 'You have already applied to this job');
+    }
+
         $application=new Application();
         $application->user_id=Auth::id();
         $application->cover_letter=$request->cover_letter;
         $application->job_id=$job->id;
         $application->save();
 
-        return back()->with('success','Applied');
+        return back()->with('success','Application submitted successfully');
     }
 
 

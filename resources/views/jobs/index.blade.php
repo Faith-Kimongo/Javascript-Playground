@@ -139,9 +139,18 @@
                     </div>
 
                     <div class="relative flex flex-1 justify-center mt-4">
+
+                        @if($job->isAppliedBy(Auth::user()))
+                        <a disabled href=""
+                            class="mt-3 inline-flex items-center flex-shrink-0 rounded-md border border-transparent bg-gradient-to-r from-pink-800 to-pink-900 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-pink-700 hover:to-pink-900">Already Applied
+                            Job</a>
+                        @else
                         <a href="{{route('job.apply',$pinned_job->id)}}"
                             class="mt-3 inline-flex items-center flex-shrink-0 rounded-md border border-transparent bg-gradient-to-r from-pink-800 to-pink-900 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-pink-700 hover:to-pink-900">Apply
                             Job</a>
+                        @endif
+
+                      
 
                             @if (session('success'))
                             <div class="rounded-md bg-green-50 p-4">
