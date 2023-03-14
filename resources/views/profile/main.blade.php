@@ -276,47 +276,73 @@
       <div class="px-6 lg:px-8">
         <div class="sm:flex sm:items-center">
           <div class="sm:flex-auto">
-            <h1 class="text-xl font-semibold text-gray-900">Resume</h1>
-            <p class="mt-2 text-sm text-gray-700">Your resume list.</p>
+            <h1 class="text-xl font-semibold text-gray-900">Curriculum Vitae (CV)</h1>
           </div>
-          <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
-            <a href="#" type="button" class="block rounded-md bg-pink-700 py-1.5 px-3 text-center text-sm font-semibold leading-6 text-white shadow-sm hover:bg-pink-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-                <path fill="#fff" d="M10 10V2c0-.6.4-1 1-1h2c.6 0 1 .4 1 1v8h8c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1h-8v8c0 .6-.4 1-1 1h-2c-.6 0-1-.4-1-1v-8H2c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1h8z"/>
-              </svg>
-            </a>
-          </div>
+         
         </div>
-        <div class="mt-8 flow-root">
+        <div class="mt-4 flow-root">
           <div class="-my-2 -mx-6 lg:-mx-8">
             <div class="inline-block min-w-full py-2 align-middle">
               <table class="min-w-full border-separate border-spacing-0">
-                <thead>
-                  <tr>
-                    <th scope="col" class="sticky top-0 z-10 border-b border-gray-300 bg-white bg-opacity-75 py-3.5 pl-6 pr-3 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter lg:pl-8">Resume</th>
-                    <th scope="col" class="sticky top-0 z-10 hidden border-b border-gray-300 bg-white bg-opacity-75 px-3 py-3.5 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter sm:table-cell">Job Title</th>
-                    
-                  </tr>
-                </thead>
+               
                 <tbody>
-                  @forelse (Auth::user()->educations as $education)
-                  <tr>
-                    <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-6 pr-3 text-sm font-medium text-gray-900 lg:pl-8">{{$education->name}} </td>
-                    <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500 hidden sm:table-cell">{{$education->field}}</td>
-                    {{-- <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500 hidden lg:table-cell">lindsay.walton@example.com</td> --}}
-                    {{-- <td class="whitespace-nowrap border-b border-gray-200 px-3 py-4 text-sm text-gray-500">Member</td> --}}
-                    <td class="relative whitespace-nowrap border-b border-gray-200 py-4 pr-6 pl-3 text-left text-sm font-medium lg:pr-8">
-                      {{$education->start_date->format('Y')}}-{{$education->end_date->format('Y')}}
-                    </td>
-                  </tr>
-                  @empty
-                  <tr>
-                    <td class="whitespace-nowrap border-b border-gray-200 py-4 pl-6 pr-3 text-sm font-medium text-gray-900 lg:pl-8">                    
-                      No Resume added yet
-                    </td>
+                  <div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
+                   
+                    {{-- <dd class=" text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                      <ul role="list" class="divide-y divide-gray-200 rounded-md border border-gray-200">
+                        <li class="flex items-center justify-between py-3 pl-3 pr-4 text-sm">
+                          <div class="flex w-0 flex-1 items-center">
+                            <svg class="h-5 w-5 flex-shrink-0 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                              <path fill-rule="evenodd" d="M15.621 4.379a3 3 0 00-4.242 0l-7 7a3 3 0 004.241 4.243h.001l.497-.5a.75.75 0 011.064 1.057l-.498.501-.002.002a4.5 4.5 0 01-6.364-6.364l7-7a4.5 4.5 0 016.368 6.36l-3.455 3.553A2.625 2.625 0 119.52 9.52l3.45-3.451a.75.75 0 111.061 1.06l-3.45 3.451a1.125 1.125 0 001.587 1.595l3.454-3.553a3 3 0 000-4.242z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="ml-2 w-0 flex-1 truncate">resume_back_end_developer.pdf</span>
+                          </div>
+                          <div class="ml-4 flex-shrink-0">
+                            <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">Download</a>
+                          </div>
+                        </li>
+                       
+                      </ul>
+                    </dd> --}}
+                    <dl>
+                     
+                      <dd class="mt-1 text-sm text-gray-900">
+                          @if (auth()->user()->cv)
+                              <div class="flex items-center">
+                                  <svg class="h-5 w-5 mr-1 text-green-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path d="M5 13l4 4L19 7"></path>
+                                  </svg>
+                                  <a href="{{ asset(auth()->user()->cv) }}" class="text-indigo-600 hover:text-indigo-500">{{ auth()->user()->cv }}</a>
+                              </div>
+                          @else
+                              <span class="text-red-500">No CV uploaded</span>
+                          @endif
+                      </dd>
+                  </dl>
+                  
 
-                  </tr>
-                  @endforelse
+                    
+                  </div>
+                  <div>
+                   
+                    <form method="POST" action="{{ route('user-profile.uploadcv') }}" enctype="multipart/form-data">
+                      @csrf
+                      <div class="mt-2 flex justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6">
+                          <div class="space-y-1 text-center">
+                              <div class="flex text-sm text-gray-600">
+                                  <label for="file-upload" class="relative cursor-pointer rounded-md bg-white font-medium text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:text-indigo-500">
+                                      <span>Upload a file</span>
+                                      <input id="file-upload" name="file-upload" type="file" class="sr-only">
+                                  </label>
+                                  <p class="pl-1">or drag and drop</p>
+                              </div>
+                              <p class="text-xs text-gray-500">PDF to 10MB</p>
+                          </div>
+                      </div>
+                      <button type="submit">Submit</button>
+                  </form>
+                  </div>
+                </div>
                 </tbody>
               </table>
             </div>

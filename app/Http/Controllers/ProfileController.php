@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Education;
 use App\Models\WorkExperience;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
@@ -76,4 +77,29 @@ class ProfileController extends Controller
 
             return back()->with('success','Skills added successfully!');
         }
+
+public function uploadCV(Request $request){
+    
+   // Validate the file upload
+   $request->validate([
+    'file-upload' => 'required|mimes:pdf|max:10240' // maximum file size is 10 MB
+]);
+
+// Get the authenticated user
+$user = Auth::user();
+
+// Generate a unique file name based on user ID and timestamp
+$filename = 'cv_' . $user->name . '_' . time() . '.' . $request->file('file-upload')->getClientOriginalExtension();
+
+// Handle the file upload
+if ($request->hasFile('file-upload')) {
+    Storage::disk('local')->putFileAs('uploads', $request->file('file-upload'), $filename);
+    $user->cv = $filename;
+    $user->save();
+}
+
+// Redirect to a success page
+return redirect()->back()->with('success', 'CV uploaded successfully.');
+
+}
 }

@@ -61,6 +61,7 @@ User Profile
 // userprofile//////////
 // education
 Route::get('/user-profile',[ProfileController::class,'index'])->name('user-profile');
+Route::post('/user-profile/uploadcv',[ProfileController::class,'uploadcv'])->name('user-profile.uploadcv');
 Route::get('/user-profile/education-background/edit',[ProfileController::class,'educationCreate'])->name('profile.education.create');
 Route::post('/user-profile/education-background/edit',[ProfileController::class,'educationStore'])->name('education.store');
 
