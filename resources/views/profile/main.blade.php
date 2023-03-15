@@ -315,7 +315,7 @@
                                   <a href="{{ asset(auth()->user()->cv) }}" class="text-indigo-600 hover:text-indigo-500">{{ auth()->user()->cv }}</a>
                               </div>
                           @else
-                              <span class="text-red-500">No CV uploaded</span>
+                              <span class="whitespace-nowrap border-b border-gray-200 py-2 pl-6 pr-3 text-sm font-medium text-red-500 lg:pl-2">No CV uploaded</span>
                           @endif
                       </dd>
                   </dl>
@@ -339,7 +339,7 @@
                               <p class="text-xs text-gray-500">PDF to 10MB</p>
                           </div>
                       </div>
-                      <button type="submit">Submit</button>
+                      <button type="submit" class="mt-3 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-gradient-to-r from-pink-800 to-pink-900 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-pink-700 hover:to-pink-900">Submit</button>
                   </form>
                   </div>
                 </div>
