@@ -48,18 +48,12 @@
                         Jobs </button></div>
             </div>
 
-
-
             <p class="mt-4 font-semibold">Found <a class="text-green-400">{{$jobs->count()}}</a> jobs</p>
             <div class="grid grid-row-1 gap-4 sm:grid-cols-2">
                 <div class="shadow-2xl m-2 rounded-2xl p-6">
                     <ul>
                                               
-                   
-                       
-                    
                         @forelse ($jobs as $job)
-                       
                         <a href="{{route('job.show',$job->id)}}">
                             <li class="shadow-md rounded-2xl p-3 bg-gray-200 mt-4 {{ $job->id == $pinned_job->id ? 'border border-2 border-red-500' : '' }} ">
                                 <div>
