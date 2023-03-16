@@ -1,4 +1,5 @@
 <x-app-layout>
+
   <div class="mt-4 relative px-4 pt-8 pb-20 sm:px-6 lg:px-14 lg:pt-6 lg:pb-28 rounded-2xl">
       <div class="relative mx-auto max-w-7xl">
           <div class="text-center">

@@ -278,7 +278,7 @@
           <div class="sm:flex-auto">
             <h1 class="text-xl font-semibold text-gray-900">Curriculum Vitae (CV)</h1>
           </div>
-         
+        
         </div>
         <div class="mt-4 flow-root">
           <div class="-my-2 -mx-6 lg:-mx-8">
@@ -288,22 +288,7 @@
                 <tbody>
                   <div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
                    
-                    {{-- <dd class=" text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                      <ul role="list" class="divide-y divide-gray-200 rounded-md border border-gray-200">
-                        <li class="flex items-center justify-between py-3 pl-3 pr-4 text-sm">
-                          <div class="flex w-0 flex-1 items-center">
-                            <svg class="h-5 w-5 flex-shrink-0 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                              <path fill-rule="evenodd" d="M15.621 4.379a3 3 0 00-4.242 0l-7 7a3 3 0 004.241 4.243h.001l.497-.5a.75.75 0 011.064 1.057l-.498.501-.002.002a4.5 4.5 0 01-6.364-6.364l7-7a4.5 4.5 0 016.368 6.36l-3.455 3.553A2.625 2.625 0 119.52 9.52l3.45-3.451a.75.75 0 111.061 1.06l-3.45 3.451a1.125 1.125 0 001.587 1.595l3.454-3.553a3 3 0 000-4.242z" clip-rule="evenodd" />
-                            </svg>
-                            <span class="ml-2 w-0 flex-1 truncate">resume_back_end_developer.pdf</span>
-                          </div>
-                          <div class="ml-4 flex-shrink-0">
-                            <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">Download</a>
-                          </div>
-                        </li>
-                       
-                      </ul>
-                    </dd> --}}
+                    
                     <dl>
                      
                       <dd class="mt-1 text-sm text-gray-900">
@@ -353,58 +338,12 @@
   </ul>
 
   <div class="shadow-2xl m-4 rounded-2xl p-6">
-    <div class="mt-10">
-      <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-wrap">
-        <div class="ml-4 mt-2">
-          <h3 class="text-lg font-medium leading-6 text-black font-bold">Certificates and Awards</h3>
-        </div>
-        <div class="ml-4 mt-2 flex-shrink-0">
-          <a href="#" id="modal-certificate" class="trigger"><p class=" text-sm text-blue-700" >Upload Certificates and Awards</p></a>
-        </div>
-    </div>
-    <p class="text-gray-600 mt-2 text-sm">Kindly update a professional career Bio that best describes you</p>
-    </div>
-
-    <div class="mt-10">
-      <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap">
-        <div class="ml-4 mt-2">
-          <h3 class="text-lg font-medium leading-6 text-black font-bold">Portfolio</h3>
-        </div>
-        <div class="ml-4 mt-2 flex-shrink-0">
-          <a href="#"id="modal-portfolio" class="trigger"><p class="  text-sm text-blue-700">Upload portfolio</p></a>
-        </div>
-    </div>
-    <div class="mt-4 grid grid-cols-3 gap-4 flex items-center">
-      <div class="mb-4">
-        <img src="images/image 18.png" class="max-w-full h-auto rounded-lg" alt="">
-      </div>
-
-      <div class="mb-4">
-        <img src="images/image 14.png" class="max-w-full h-auto rounded-lg" alt="">
-      </div>
-
-      <div class="mb-4">
-        <img src="images/image 13.png" class="max-w-full h-auto rounded-lg" alt="">
-      </div>
-
-      <div class="mb-4">
-        <img src="images/image 15.png" class="max-w-full h-auto rounded-lg" alt="">
-      </div>
-
-      <div class="mb-4">
-        <img src="images/image 16.png" class="max-w-full h-auto rounded-lg" alt="">
-      </div>
-
-      <div class="mb-4">
-        <img src="images/image 17.png" class="max-w-full h-auto rounded-lg" alt="">
-      </div>
-    </div>
-    </div>
+  
 
     <div class="mt-10">
       <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-wrap">
         <div class="ml-4 mt-2">
-          <h3 class="text-lg font-medium leading-6 text-black font-bold">Job Application</h3>
+          <h3 class="text-lg font-medium leading-6 text-black font-bold">Job Applications</h3>
         </div>
         <div class="ml-4 mt-2 flex-shrink-0">
           <a href=""><p class="text-sm text-blue-700">View my job application</p></a>
@@ -413,101 +352,42 @@
     <div class="mt-4 grid grid-cols-1 gap-4 flex items-center">
       <div class="mb-4">
         <ul role="list" class="-mb-8 mt-6">
-          <li>
-              <div class="relative pb-8">
-                  <span class="block inline-flex items-center justify-center rounded-md p-3" aria-hidden="true"></span>
-                  <div class="relative flex space-x-3">
-                    <div>
-                      <span class="h-8 w-8 rounded-full flex items-center justify-center ">
-                        <!-- Heroicon name: mini/user -->
-                        <svg class="w-10 h-10 text-blue-600 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26">
-                          <path
-                              d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
-                          />
-                          </svg>
-                      </span>
-                    </div>
-                    <div class="flex min-w-0 flex-1 justify-between space-x-4 ">
-                      <div>
-                          <p><a href="#" class="font-medium text-gray-900">Front End Developer</a></p>
-                          <p class="text-gray-600">Facebook</p>
-                      </div>
-
-                    </div>
-
-                    <div class="flex min-w-0 flex-1 justify-end space-x-4 pt-1.5">
-                      <div>
-                          <p><a href="#" class="mt-8 text-gray-600">2 days ago</a></p>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-          </li>
-
+          @forelse (auth()->user()->applications as $application)
           <li>
             <div class="relative pb-8">
-                <span class="block inline-flex items-center justify-center rounded-md" aria-hidden="true"></span>
+                <span class="block inline-flex items-center justify-center rounded-md p-3" aria-hidden="true"></span>
                 <div class="relative flex space-x-3">
                   <div>
                     <span class="h-8 w-8 rounded-full flex items-center justify-center ">
                       <!-- Heroicon name: mini/user -->
-                      <svg class="w-10 h-10 text-blue-600 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26">
-                        <path
-                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
-                        />
-                        </svg>
+                      <img class="h-12 w-12 rounded-full object-cover" src="{{ $application->job->user->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                     </span>
                   </div>
                   <div class="flex min-w-0 flex-1 justify-between space-x-4 ">
                     <div>
-                        <p><a href="#" class="font-medium text-gray-900">Front End Developer</a></p>
-                        <p class="text-gray-600">Facebook</p>
+                        <p><a href="#" class="font-medium text-gray-900">{{$application->job->title}}</a></p>
+                        <p class="text-gray-600"> {{$application->job->user->name}} </p>
                     </div>
 
                   </div>
 
                   <div class="flex min-w-0 flex-1 justify-end space-x-4 pt-1.5">
                     <div>
-                        <p><a href="#" class="mt-8 text-gray-600">2 days ago</a></p>
+                        <p><a href="#" class="mt-8 text-gray-600"> {{$application->created_at->diffForHumans()}} </a></p>
                     </div>
                   </div>
 
                 </div>
               </div>
         </li>
+          @empty
+              
+          @endforelse
+        
 
-        <li>
-          <div class="relative pb-8">
-              <span class="block inline-flex items-center justify-center rounded-md" aria-hidden="true"></span>
-              <div class="relative flex space-x-3">
-                <div>
-                  <span class="h-8 w-8 rounded-full flex items-center justify-center ">
-                    <!-- Heroicon name: mini/user -->
-                    <svg class="w-10 h-10 text-blue-600 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26">
-                      <path
-                          d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
-                      />
-                      </svg>
-                  </span>
-                </div>
-                <div class="flex min-w-0 flex-1 justify-between space-x-4 ">
-                  <div>
-                      <p><a href="#" class="font-medium text-gray-900">Front End Developer</a></p>
-                      <p class="text-gray-600">Facebook</p>
-                  </div>
+        
 
-                </div>
-
-                <div class="flex min-w-0 flex-1 justify-end space-x-4 pt-1.5">
-                  <div>
-                      <p><a href="#" class="mt-8 text-gray-600">2 days ago</a></p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-      </li>
+       
       </ul>
 
       </div>

@@ -36,7 +36,7 @@ class ApplicationController extends Controller
      */
     public function store(StoreApplicationRequest $request)
     {
-        //
+        
     }
 
     /**
@@ -47,7 +47,8 @@ class ApplicationController extends Controller
      */
     public function show(Application $application)
     {
-        //
+        //show application
+        return view('jobs.applications.show',compact('application'));
     }
 
     /**

@@ -1328,8 +1328,7 @@
                                 @endforelse
                                 
               
-                      
-                              </ul>
+                                    </ul>
                             </div>
                           </div>
                           <div class="bg-gray-50 px-4 py-6 sm:px-6">

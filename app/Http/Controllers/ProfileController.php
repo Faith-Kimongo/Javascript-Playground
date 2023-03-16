@@ -89,7 +89,9 @@ public function uploadCV(Request $request){
 $user = Auth::user();
 
 // Generate a unique file name based on user ID and timestamp
-$filename = 'cv_' . $user->name . '_' . time() . '.' . $request->file('file-upload')->getClientOriginalExtension();
+$user_name = str_replace(' ', '', $user->name);
+$filename = $user_name . '_CV_' . date('Ymd') . '.' . $request->file('file-upload')->getClientOriginalExtension();
+
 
 // Handle the file upload
 if ($request->hasFile('file-upload')) {

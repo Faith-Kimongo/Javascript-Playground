@@ -84,7 +84,7 @@
                                         </div>
     
                                         <div class="ml-4 mt-4 flex-shrink-0">
-                                            <p>$84000/y</p>
+                                            <p> {{$job->remuneration}} </p>
                                             <p class="mt-3 text-gray-600"> {{$job->location}} </p>
                                         </div>
                                     </div>
@@ -126,7 +126,7 @@
 
                         </div>
                         <div class="ml-4 mt-4 flex-shrink-0">
-                            <p>$84000/y</p>
+                            <p> {{$job->remuneration}} </p>
                             <p class="mt-3 text-gray-600">Closing: {{$pinned_job->deadline->format('jS \o\f F Y')}}</p>
                             <p class="mt-3 text-gray-600">3 days remaining</p>
                             <p class="mt-3 text-gray-600">Posted: {{$pinned_job->created_at->diffForHumans()}}</p>
