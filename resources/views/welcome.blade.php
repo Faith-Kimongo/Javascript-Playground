@@ -12,9 +12,9 @@
                     <div class="absolute inset-0 bg-gradient-to-r bg-opacity-70 hover:bg-opacity-80"></div>
                 </div>
     
-                <div class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
-                    <h6 class="text-center text-md font-bold tracking-tight sm:text-5xl lg:text-md">
-                        <span class="block text-black ">Find the right job for you</span>
+                <div class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8 grid lg:grid-cols-1 sm:grid-cols-2">
+                    <h6 class="text-center text-md font-bold tracking-tight sm:text-5xl lg:text-md text-black sm:text-white">
+                        <span class="block">Find the right job for you</span>
                     </h6>
     
                     <div class="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
@@ -131,28 +131,28 @@
 
 
     <div class="bg-white">
-        <div class="container mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:px-8 md:flex md:shrink-0 ">
-            <div
-                class="mx-auto grid grid-cols-1 sm:grid-cols-2 sm:space-x-6 gap-y-12 gap-x-8 px-4 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
-                <div class="sm:flex">
+        <div class="container mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:px-8 md:flex md:shrink-0 sm:shrink-0">
+            <div class="mx-auto grid grid-cols-2 sm:grid-cols-2 sm:space-x-6 gap-y-12 gap-x-8 px-4 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+
+                <div class="sm:flex shadow-sm">
                     <div class="sm:flex-shrink-0 ">
                         <div class="flow-root ">
                             <img class="rounded-2xl h-32 w-56"
-                                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-                                alt="">
+                                    src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                                    alt="">
                         </div>
                     </div>
                     <div class="mt-3 sm:mt-0 sm:ml-3">
                         <h3 class="text-lg font-bold text-black">Let the Jobs find you</h3>
                         <p class="mt-2 text-sm text-black"> Create your free profile and get interview invites and jobs
-                            that work for you </p>
-                        <a href="userprofile.html"><button
-                                class="mt-4 inline-flex items-center rounded-md border border-transparent bg-gradient-to-r from-pink-800 to-pink-900 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-md hover:from-pink-700 hover:to-pink-900">Get
-                                Hired</button></a>
+                                that work for you </p>
+                        <a href="specificjob.html"><button class="mt-4 inline-flex items-center rounded-md border border-transparent bg-gradient-to-r from-pink-800 to-pink-900 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-md hover:from-pink-700 hover:to-pink-900">Get
+                                    Hired</button>
+                        </a>
                     </div>
                 </div>
 
-                <div class="bg-gray-50 sm:flex shadow-xl">
+                <div class="sm:flex shadow-sm">
                     <div class="space-x-6 sm:flex-shrink-0">
                         <div class="flow-root ">
                             <img class="rounded-2xl h-20 w-30"
@@ -168,7 +168,7 @@
                     </div>
                 </div>
 
-                <div class="sm:flex">
+                <div class="sm:flex shadow-sm">
                     <div class="sm:flex-shrink-0 ">
                         <div class="flow-root ">
                             <img class="rounded-2xl h-32 w-56"
@@ -185,7 +185,7 @@
                     </div>
                 </div>
 
-                <div class="bg-gray-50 sm:flex shadow-xl">
+                <div class="sm:flex shadow-sm">
                     <div class="sm:flex-shrink-0 ">
                         <div class="flow-root ">
                             <img class="rounded-2xl h-20 w-30"
@@ -201,7 +201,7 @@
                     </div>
                 </div>
 
-                <div class="sm:flex">
+                <div class="sm:flex shadow-sm">
                     <div class="sm:flex-shrink-0 ">
                         <div class="flow-root ">
                             <img class="rounded-2xl h-32 w-56"
@@ -217,7 +217,7 @@
                     </div>
                 </div>
 
-                <div class="bg-gray-50 sm:flex shadow-xl">
+                <div class="sm:flex shadow-sm">
                     <div class="sm:flex-shrink-0 ">
                         <div class="flow-root ">
                             <img class="rounded-2xl h-20 w-30"
