@@ -21,7 +21,7 @@
         <x-banner />
             @livewire('navigation-menu')
             <!-- Page Heading -->
-            {{-- @if (isset($header))
+            @if (isset($header))
                 <header class="bg-white shadow">
 
                     <div class="max-w-7xl mx-auto border-b border-gray-200 pb-5">
@@ -29,7 +29,7 @@
                       </div>
                 </header>
 
-            @endif --}}
+            @endif
 
             <!-- Page Content -->
             <main class="max-w-7xl mx-auto border-b px-4 sm:px-4 ">
