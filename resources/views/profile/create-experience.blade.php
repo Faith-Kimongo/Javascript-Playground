@@ -119,7 +119,7 @@
                         <div class="flex flex-row">
                             <div class="sm:col-span-2 sm:flex sm:justify-start">
                                 <a href="userprofile.html"><button
-                                        class="mt-2  inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-gradient-to-r from-teal-800 to-teal-900 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-teal-700 hover:to-teal-900">Cancel</button></a>
+                                        class="mt-2 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-gradient-to-r from-teal-800 to-teal-900 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-teal-700 hover:to-teal-900">Cancel</button></a>
                             </div>
 
                             <div class="sm:col-span-2 sm:flex sm:justify-end">
