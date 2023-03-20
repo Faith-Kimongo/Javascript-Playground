@@ -48,6 +48,9 @@ Route::middleware([
 
             //send jobs that are tailored to their skills
             'jobs'=>Job::whereIn('category_id',$user_categories)->get(),
+            'pinned_job'=>Job::whereIn('category_id',$user_categories)->first(),
+            'savedjobs'=>Auth::user()->savedjobs->pluck('id')->toArray()
+
         ]);
     })->name('dashboard');
 });

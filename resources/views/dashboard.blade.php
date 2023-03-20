@@ -84,39 +84,42 @@
                     <ul>
                         @forelse ($jobs as $job)
                             <li class="shadow-md rounded-2xl p-3 bg-gray-200 mt-4">
-                                <div>
-                                    <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap">
-                                        <div class="">
-                                            <span class="h-20 w-20 rounded-full flex items-center justify-center ">
-                                                <!-- Heroicon name: mini/user -->
-                                                <img class="h-12 w-12 rounded-full object-cover"
-                                                    src="{{ $job->user->profile_photo_url }}"
-                                                    alt="{{ Auth::user()->name }}" />
-                                            </span>
-                                        </div>
-                                        <div class="flex min-w-0 flex-1 justify-between space-x-4 ">
-                                            <div>
-                                                <p><a href="#" class="font-medium text-gray-900">
-                                                        {{ $job->title }} </a></p>
-                                                <p class="mt-3 text-gray-600"> {{ $job->user->name }} </p>
-                                                <p class="mt-3 text-gray-600">
-                                                    @php
-                                                        $now = Carbon\Carbon::now();
-                                                        $daysRemaining = $now->diffInDays($job->deadline, false);
-                                                    @endphp
-                                                <p>{{ $daysRemaining }} days remaining to the deadline</p>
-                                                </p>
+                                <a href=" {{ route('job.show',$job->id)}} ">
+                                    <div>
+                                        <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap">
+                                            <div class="">
+                                                <span class="h-20 w-20 rounded-full flex items-center justify-center ">
+                                                    <!-- Heroicon name: mini/user -->
+                                                    <img class="h-12 w-12 rounded-full object-cover"
+                                                        src="{{ $job->user->profile_photo_url }}"
+                                                        alt="{{ Auth::user()->name }}" />
+                                                </span>
                                             </div>
-
+                                            <div class="flex min-w-0 flex-1 justify-between space-x-4 ">
+                                                <div>
+                                                    <p><a href="#" class="font-medium text-gray-900">
+                                                            {{ $job->title }} </a></p>
+                                                    <p class="mt-3 text-gray-600"> {{ $job->user->name }} </p>
+                                                    <p class="mt-3 text-gray-600">
+                                                        @php
+                                                            $now = Carbon\Carbon::now();
+                                                            $daysRemaining = $now->diffInDays($job->deadline, false);
+                                                        @endphp
+                                                    <p>{{ $daysRemaining }} days remaining to the deadline</p>
+                                                    </p>
+                                                </div>
+    
+                                            </div>
+    
+                                            <div class="ml-4 mt-4 flex-shrink-0">
+                                                <p> KES {{ $job->remuneration }} </p>
+                                                <p class="mt-3 text-gray-600"> {{ $job->location }} </p>
+                                            </div>
                                         </div>
-
-                                        <div class="ml-4 mt-4 flex-shrink-0">
-                                            <p> KES {{ $job->remuneration }} </p>
-                                            <p class="mt-3 text-gray-600"> {{ $job->location }} </p>
-                                        </div>
-                                    </div>
-
-                            </li>
+    
+                                
+                                </a>
+                              </li>
                         @empty
                             <div class="bg-white  sm:rounded-lg sm:col-8">
                                 <div class="px-4 py-5 sm:p-6">
@@ -167,7 +170,7 @@
 
                                 </div>
                                 <div class="ml-4 mt-4 flex-shrink-0">
-                                    <p>$84000/y</p>
+                                    <p> KES {{$pinned_job->remuneration}} </p>
                                     <p class="mt-3 text-gray-600">Closing:
                                         {{ $pinned_job->deadline->format('jS \o\f F Y') }}</p>
                                     <p class="mt-3 text-gray-600">3 days remaining</p>
