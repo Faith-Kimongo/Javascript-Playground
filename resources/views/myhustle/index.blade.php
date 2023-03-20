@@ -1,21 +1,22 @@
 <x-app-layout>
-    <div class="flex h-auto flex-col lg:grid-col-3 overscroll-contain mb-6">
+    <div class="flex h-auto flex-col grid-col-2 overscroll-contain mb-6">
         <div class="flex min-h-0 ml-6 ">
           <!-- Narrow sidebar-->
-        <div id="categories">
+        <div id="categories grid grid-cols-1 sm:grid-cols-2">
           <div class="rounded-xl mt-6 mb-6">
             <p class="rounded-lg px-4 font-semibold border-b border-gray-300 bg-gray-200">Categories</p>
             <div class ="category">
               <nav aria-label="Sidebar" class="md:block md:flex-shrink-0 h-full w-96 shadow-2xl rounded-2xl mt-3">
+
                 <div>
-                  <div class="category md:flex md:items-center md:justify-between p-3">
-                    <div class="min-w-0 flex flex-row">
+                  <div class="category md:flex md:items-center md:justify-between justify-between p-3 flex">
+                    <div class="min-w-0 flex flex-col-1 md:flex-col-2">
                       <a href="#" class="flex-1 bg-white text-white flex-shrink-0 inline-flex items-center justify-center h-14 w-14">
                         <img class="h-10 w-auto sm:h-10 rounded-full" src="images/myhustle/electronics.jpg" alt="">    
                       </a>
                       <p class="text-sm mt-4 ml-2 text-gray-700">Electronics</p>
                     </div>
-                    <div class="mt-4 flex md:mt-0 md:ml-4 p-4">
+                    <div class="mt-4 flex md:mt-0 md:ml-4 p-4 ">
                       <a href=""><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="gray" class="dropdown-toggle w-4 h-4" id="dropdownDefaultButton" data-dropdown-toggle="dropdown">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                       </svg></a>
@@ -138,12 +139,12 @@
                 </div>
                 
                 <div>
-                  <div class="category md:flex md:items-center md:justify-between p-3">
-                    <div class="min-w-0 flex flex-row">
+                  <div class="category md:flex md:items-center md:justify-between p-3 flex justify-between">
+                    <div class="min-w-0 flex flex-col-1 md:flex-col-2">
                       <a href="#" class="flex-1 bg-white text-white flex-shrink-0 inline-flex items-center justify-center h-14 w-14">
                         <img class="h-10 w-auto sm:h-10 rounded-full" src="images/myhustle/mobile.webp" alt="">    
                       </a>
-                      <p class="text-sm mt-4 ml-2 text-gray-700">Phones & Tablets</p>
+                      <p class="text-sm mt-4 ml-2 text-gray-700 ">Phones & Tablets</p>
                     </div>
                     <div class="mt-4 flex md:mt-0 md:ml-4 p-4">
                       <a href=""><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="gray" class="dropdown-toggle w-4 h-4" id="dropdownDefaultButton" data-dropdown-toggle="dropdown">
@@ -268,8 +269,8 @@
                 </div>
 
                 <div>
-                  <div class="category md:flex md:items-center md:justify-between p-3">
-                    <div class="min-w-0 flex flex-row">
+                  <div class="category md:flex md:items-center md:justify-between justify-between p-3 flex">
+                    <div class="min-w-0 flex flex-col-1 md:flex-col-2">
                       <a href="#" class="flex-1 bg-white text-white flex-shrink-0 inline-flex items-center justify-center h-14 w-14">
                         <img class="h-10 w-auto sm:h-10 rounded-full" src="images/myhustle/bags.webp" alt="">    
                       </a>
@@ -398,8 +399,8 @@
                 </div>
 
                 <div>
-                  <div class="category md:flex md:items-center md:justify-between p-3">
-                    <div class="min-w-0 flex flex-row">
+                  <div class="category md:flex md:items-center md:justify-between p-3 flex justify-between">
+                    <div class="min-w-0 flex flex-col-1 md:flex-cols-2">
                       <a href="#" class="flex-1 bg-white text-white flex-shrink-0 inline-flex items-center justify-center h-14 w-14">
                         <img class="h-10 w-auto sm:h-10 rounded-full" src="images/myhustle/mercedes.webp" alt="">    
                       </a>
@@ -528,7 +529,7 @@
                 </div>
 
                 <div>
-                  <div class="category md:flex md:items-center md:justify-between p-3">
+                  <div class="category md:flex md:items-center md:justify-between p-3 justify-between flex">
                     <div class="min-w-0 flex flex-row">
                       <a href="#" class="flex-1 bg-white text-white flex-shrink-0 inline-flex items-center justify-center h-14 w-14">
                         <img class="h-10 w-auto sm:h-10 rounded-full" src="images/myhustle/clothesboth.webp" alt="">    
@@ -541,7 +542,7 @@
                       </svg></a>
                     </div>
                   </div>
-                  <!-- subcategory -->
+                <!-- subcategory -->
                 <div class="bg-white dropdown-menu mt-6 ml-6 w-96 overscroll-contain z-10 hidden" id="dropdown">
                         <ul>
                           <li class="shadow-xl rounded-2xl p-4">
@@ -658,7 +659,7 @@
                 </div>
 
                 <div>
-                  <div class="category md:flex md:items-center md:justify-between p-3">
+                  <div class="category md:flex md:items-center md:justify-between p-3 justify-between flex">
                     <div class="min-w-0 flex flex-row">
                       <a href="#" class="flex-1 bg-white text-white flex-shrink-0 inline-flex items-center justify-center h-14 w-14">
                         <img class="h-10 w-auto sm:h-10 rounded-full" src="images/myhustle/gym.webp" alt="">    
@@ -671,7 +672,7 @@
                       </svg></a>
                     </div>
                   </div>
-                  <!-- subcategory -->
+                <!-- subcategory -->
                 <div class="bg-white dropdown-menu mt-6 ml-6 w-96 overscroll-contain z-10 hidden" id="dropdown">
                         <ul>
                           <li class="shadow-xl rounded-2xl p-4">
@@ -788,7 +789,7 @@
                 </div>
 
                 <div>
-                  <div class="category md:flex md:items-center md:justify-between p-3">
+                  <div class="category md:flex md:items-center md:justify-between p-3 justify-between flex">
                     <div class="min-w-0 flex flex-row">
                       <a href="#" class="flex-1 bg-white text-white flex-shrink-0 inline-flex items-center justify-center h-14 w-14">
                         <img class="h-10 w-auto sm:h-10 rounded-full" src="images/myhustle/furniture.jpg" alt="">    
@@ -801,7 +802,7 @@
                       </svg></a>
                     </div>
                   </div>
-                  <!-- subcategory -->
+                <!-- subcategory -->
                 <div class="bg-white dropdown-menu mt-6 ml-6 w-96 overscroll-contain z-10 hidden" id="dropdown">
                         <ul>
                           <li class="shadow-xl rounded-2xl p-4">
@@ -918,7 +919,7 @@
                 </div>
 
                 <div>
-                  <div class="category md:flex md:items-center md:justify-between p-3">
+                  <div class="category md:flex md:items-center md:justify-between p-3 justify-between flex">
                     <div class="min-w-0 flex flex-row">
                       <a href="#" class="flex-1 bg-white text-white flex-shrink-0 inline-flex items-center justify-center h-14 w-14">
                         <img class="h-10 w-auto sm:h-10 rounded-full" src="images/myhustle/babies.jpg" alt="">    
@@ -931,7 +932,7 @@
                       </svg></a>
                     </div>
                   </div>
-                  <!-- subcategory -->
+                <!-- subcategory -->
                 <div class="bg-white dropdown-menu mt-6 ml-6 w-96 overscroll-contain z-10 hidden" id="dropdown">
                         <ul>
                           <li class="shadow-xl rounded-2xl p-4">
@@ -1046,7 +1047,7 @@
                 </div>
 
                 <div>
-                  <div class="category md:flex md:items-center md:justify-between p-3">
+                  <div class="category md:flex md:items-center md:justify-between p-3 justify-between flex">
                     <div class="min-w-0 flex flex-row">
                       <a href="#" class="flex-1 bg-white text-white flex-shrink-0 inline-flex items-center justify-center h-14 w-14">
                         <img class="h-10 w-auto sm:h-10 rounded-full" src="images/myhustle/property.png" alt="">    
@@ -1177,11 +1178,13 @@
               </nav>
               
         </div>
+
           </div>
-          </div>
-          <div class="ml-6 max-w-6xl shadow-2xl shadow-outline-blue rounded-2xl pb-6">
+          
+        </div>
+        <div class="ml-6 max-w-6xl shadow-2xl shadow-outline-blue rounded-2xl pb-6">
             
-            <div class="bg-white">
+            <div class="bg-gray-100">
                 
               <section aria-labelledby="features-heading" class="mx-auto max-w-7xl sm:px-2 lg:px-8">
                 <div class="border-b mt-4 p-4 border-gray-200 pb-5 sm:flex sm:items-center sm:justify-between">
@@ -1370,10 +1373,8 @@
             </div>
             
           </div>
-        </div>
     </div>
       </div>
-
       <script>
         // Get all arrow and subcategory elements
         const dropdownToggles = document.querySelectorAll('.dropdown-toggle');

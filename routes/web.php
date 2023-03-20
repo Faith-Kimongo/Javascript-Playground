@@ -30,7 +30,7 @@ Route::get('/', function () {
     return view('welcome',[
         'jobs'=>Job::all()
     ]);
-});
+})->name('home');
 
 Route::middleware([
     'auth:sanctum',
@@ -70,7 +70,8 @@ Route::get('/user-profile',[ProfileController::class,'index'])->name('user-profi
 Route::post('/user-profile/uploadcv',[ProfileController::class,'uploadcv'])->name('user-profile.uploadcv');
 Route::get('/user-profile/education-background/edit',[ProfileController::class,'educationCreate'])->name('profile.education.create');
 Route::post('/user-profile/education-background/edit',[ProfileController::class,'educationStore'])->name('education.store');
-
+Route::get('/my-jobs',[ProfileController::class,'myjobs'])->name('myjobs');
+Route::get('/my-hustles',[ProfileController::class,'mhustles'])->name('myhustles');
 // workexperience
 Route::get('/user-profile/work-experience/edit',[ProfileController::class,'workexperienceCreate'])->name('profile.workexp.create');
 Route::post('/user-profile/work-experience/edit',[ProfileController::class,'workexperienceStore'])->name('workexp.store');

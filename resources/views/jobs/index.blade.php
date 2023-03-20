@@ -123,7 +123,6 @@
                         <li>No job yet</li>
                     @endforelse
 
-
                 </ul>
             </div>
 

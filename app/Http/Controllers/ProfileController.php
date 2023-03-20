@@ -104,4 +104,15 @@ if ($request->hasFile('file-upload')) {
 return redirect()->back()->with('success', 'CV uploaded successfully.');
 
 }
+
+// my-jobs 
+public function myjobs(){
+    return view('profile.my-jobs');
+}
+
+
+// my-hustles
+public function myhustles(){
+    return view('profile.my-hustles');
+}
 }

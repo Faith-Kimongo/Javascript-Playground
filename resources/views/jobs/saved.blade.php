@@ -10,7 +10,7 @@
                 <a href="{{route('job.applications')}}" class="font-semibold hover:text-blue-700"> Applications </a>
             </div>
 
-            <div class="mt-6 grid grid-cols-5 gap-4 font-medium ">
+            <div class="mt-6 grid md:grid-cols-5 gap-4 font-medium flex flex-col -space-y-10 md:-space-y-1">
                 <div><button type="button"
                         class="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Search
                         by Job Title <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor"
@@ -20,7 +20,7 @@
                         </svg></button></div>
 
                 <div><button type="button"
-                        class="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Jobs
+                        class="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 invisible md:visible">Jobs
                         by Location<svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
@@ -28,7 +28,7 @@
                         </svg></button></div>
 
                 <div><button type="button"
-                        class="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Date
+                        class="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 invisible md:visible">Date
                         Published <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
@@ -36,7 +36,7 @@
                         </svg></button></div>
 
                 <div><button type="button"
-                        class="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Job
+                        class="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 invisible md:visible">Job
                         Level <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
@@ -50,7 +50,8 @@
 
 
 
-            <div class="overflow-hidden bg-white shadow sm:rounded-md">
+            <div class="grid grid-row-1 gap-4 sm:grid-cols-2">
+              <div class="shadow-2xl m-2 rounded-2xl p-6">
                 <ul role="list" class="divide-y divide-gray-200">
                     @forelse ($jobs as $job)
                     <a href="#" class="block hover:bg-gray-50">
@@ -91,9 +92,7 @@
                     @empty
                         <li>No Jobs saved</li>
                     @endforelse
-                  <li>
                   
-                  </li>
             
                 </ul>
               </div>
