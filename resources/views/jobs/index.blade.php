@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="mt-4 relative px-4 pt-8 pb-20 sm:px-6 lg:px-14 lg:pt-6 lg:pb-28 rounded-2xl">
+    <div class="mt-4 relative px-4 pt-8 pb-20 sm:px-6 lg:px-2 lg:pt-6 lg:pb-28 rounded-2xl">
         <div class="relative mx-auto max-w-7xl">
             <div>
                 <div>
@@ -22,13 +22,6 @@
                                         class="text-sm font-medium text-gray-500 hover:text-gray-700">Dashboard</a>
                                 </div>
                             </li>
-
-                            <li>
-                                <div class="flex items-center">
-
-
-                                </div>
-                            </li>
                         </ol>
                     </nav>
                 </div>
@@ -38,7 +31,6 @@
                             class="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">
                             Find the right job for you</h2>
                     </div>
-
                 </div>
             </div>
 
