@@ -22,7 +22,7 @@
             @livewire('navigation-menu')
             <!-- Page Heading -->
             @if (isset($header))
-                <header class="bg-white shadow">
+                <header class="bg-white shadow conatiner flex flex-row-1">
 
                     <div class="max-w-7xl mx-auto border-b border-gray-200 pb-5">
                         <h3 class="text-lg font-medium leading-6 text-gray-900">{{ $header }}</h3>
@@ -32,7 +32,7 @@
             @endif
 
             <!-- Page Content -->
-            <main class="max-w-7xl mx-auto border-b px-4 sm:px-4 ">
+            <main class="max-w-7xl mx-auto border-b px-4 sm:px-4">
                 {{ $slot }}
             </main>
 
