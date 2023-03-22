@@ -1,13 +1,12 @@
 <x-app-layout>
 
-
     {{-- <x-authentication-card>
 
- <x-slot name="header">
+        <x-slot name="header">
 
-            {{ __('Sign in To Ajiry') }}
+                {{ __('Sign in To Ajiry') }}
 
-    </x-slot>
+        </x-slot>
         <x-validation-errors class="mb-4" />
 
         @if (session('status'))
@@ -50,17 +49,21 @@
         </form>
     </x-authentication-card> --}}
 
-    <div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
+      <div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-3">
         <div class="sm:mx-auto sm:w-full sm:max-w-md">
           {{-- <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company"> --}}
-          <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Sign in to your account</h2>
+          <h2 class="text-center text-3xl font-bold tracking-tight text-gray-900">Sign in to your account</h2>
           <p class="mt-2 text-center text-sm text-gray-600">
-            Or
             <a href="#" class="font-medium text-gray-600 hover:text-black">Or if you do not have an account register</a>
           </p>
         </div>
 
-        <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+        <div class="grid grid-cols-1 md:grid-cols-2 mt-3">
+          <div class="w-full sm:max-w-md px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg md:mx-48">
+            <video autoplay loop muted class="rounded-lg object-cover"><source src="images/Untitled design.mp4" type="video/mp4"/></video>
+          </div>
+
+          <div class="sm:mx-auto sm:w-full sm:max-w-md">
           <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
             @if (session('status'))
             <div class="mb-4 font-medium text-sm text-green-600">
@@ -68,7 +71,7 @@
             </div>
         @endif
 
-        <x-validation-errors class="mb-4" />
+          <x-validation-errors class="mb-4" />
 
             <form class="space-y-6" action="{{ route('login') }}" method="POST">
                 @csrf
@@ -164,4 +167,7 @@
           </div>
         </div>
       </div>
+        </div>
+
+
 </x-app-layout>
