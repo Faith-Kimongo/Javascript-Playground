@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="mt-4 py-10 px-4 pt-8 pb-20 sm:px-6 lg:px-2 lg:pt-6 lg:pb-28 rounded-2xl">
-    <x-common.page-header $currenturl="{{route('dashboard')}}"/>
+        <x-common.page-header backurl="{{ route('home') }}" currenturl="{{ request()->url() }}" title="{{ 'Dashboard' }}" backtitle="{{ 'Home' }}" />
         
             <div class="flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm">
                 <div class="flex items-center flex-1">

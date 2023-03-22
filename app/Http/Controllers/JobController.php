@@ -121,7 +121,10 @@ class JobController extends Controller
      */
     public function destroy(Job $job)
     {
-        //
+        //delete
+
+        $job->delete();
+        return back()->with('success','Job deleted!');
     }
 
     public function apply(Job $job){

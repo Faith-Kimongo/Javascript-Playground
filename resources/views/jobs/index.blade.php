@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="mt-4 relative px-4 pt-8 pb-20 sm:px-6 lg:px-2 lg:pt-6 lg:pb-28 rounded-2xl">
         <div class="relative mx-auto max-w-7xl">
-            <div>
+            {{-- <div>
                 <div>
                     <nav class="sm:hidden" aria-label="Back">
                         <a href=" {{route('dashboard')}} " class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700">
@@ -32,13 +32,10 @@
                             Find the right job for you</h2>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
-            <div class="mt-4">
-                <a href="{{ route('job.index') }}" class="font-semibold hover:text-blue-800 text-pink-700">Jobs</a> |
-                <a href="{{ route('saved-jobs.index') }}" class="font-semibold hover:text-pink-700">Saved Jobs </a> |
-                <a href="{{ route('job.applications') }}" class="font-semibold hover:text-pink-700"> Applications </a>
-            </div>
+            <x-common.page-header backurl="{{ route('dashboard') }}" currenturl="{{ request()->url() }}" title="{{ 'Find jobs for you' }}" backtitle="{{ 'Dashboard' }}" />
+
 
             <div class="flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm">
                 <div class="flex items-center flex-1">

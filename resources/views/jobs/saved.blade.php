@@ -1,53 +1,8 @@
 <x-app-layout>
-    <div class="mt-4 relative px-4 pt-8 pb-20 sm:px-6 lg:px-14 lg:pt-6 lg:pb-28 rounded-2xl">
+    <div class="mt-4 relative px-4 pt-8 pb-20 sm:px-6 lg:px-2 lg:pt-6 lg:pb-28 rounded-2xl">
         <div class="relative mx-auto max-w-7xl">
-            <div class="text-center">
-                <h2 class="text-3xl font-bold tracking-tight text-indigo-900 sm:text-4xl"> Your Saved Jobs</h2>
-            </div>
-            <div class="mt-4">
-                <a href="{{ route('job.index') }}" class="font-semibold hover:text-blue-800 text-blue-600">Jobs</a> |
-                <a href="{{ route('saved-jobs.index') }}" class="font-semibold hover:text-blue-700">Saved Jobs </a> |
-                <a href="{{route('job.applications')}}" class="font-semibold hover:text-blue-700"> Applications </a>
-            </div>
-
-            <div class="mt-6 grid md:grid-cols-5 gap-4 font-medium flex flex-col -space-y-10 md:-space-y-1">
-                <div><button type="button"
-                        class="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Search
-                        by Job Title <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg></button></div>
-
-                <div><button type="button"
-                        class="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 invisible md:visible">Jobs
-                        by Location<svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg></button></div>
-
-                <div><button type="button"
-                        class="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 invisible md:visible">Date
-                        Published <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg></button></div>
-
-                <div><button type="button"
-                        class="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 invisible md:visible">Job
-                        Level <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg></button></div>
-
-                <div><button type="button"
-                        class="inline-flex items-center flex-shrink-0 rounded-md border border-transparent bg-gradient-to-r from-pink-800 to-pink-900 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-pink-700 hover:to-pink-900">Find
-                        Jobs </button></div>
-            </div>
-
+           
+          <x-common.page-header backurl="{{ route('dashboard') }}" currenturl="{{ request()->url() }}" title="{{ 'Your Saved Jobs' }}" backtitle="{{ 'Jobs' }}" />
 
 
             <div class="grid grid-row-1 gap-4 sm:grid-cols-2">

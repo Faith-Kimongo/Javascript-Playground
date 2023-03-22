@@ -13,21 +13,22 @@ class PageHeader extends Component
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($backurl,$currenturl,$title,$backtitle)
     {
-        //
+        $this->backurl=$backurl;
+        $this->currenturl=$currenturl;
+        $this->title=$title;
+        $this->backtitle=$backtitle;
     }
 
-    /**
-     * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\Contracts\View\View|\Closure|string
-     */
+  
     public function render()
     {
         return view('components.common.page-header',[
-            'backurl'=>$backurl,
-            'currenturl'=>$currenturl
+            'backurl'=>$this->backurl,
+            'currenturl'=>$this->currenturl,
+            'title'=>$this->title,
+            'backtitle'=>$this->backtitle
         ]);
     }
 }
