@@ -64,6 +64,11 @@ User Profile
 -> Resume'
 */
 
+
+// Search
+
+Route::get('/search',[JobController::class,'search'])->name('search');
+
 // userprofile//////////
 // education
 Route::get('/user-profile',[ProfileController::class,'index'])->name('user-profile');

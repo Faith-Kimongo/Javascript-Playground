@@ -18,12 +18,21 @@ class JobController extends Controller
         return $this->middleware('auth');
     }
  
-    public function index()
+    public function index(Request $request)
     {
+
+
+        $searchQuery = $request->input('search');
+    
+        $jobs = Job::where('title', 'LIKE', '%' . $searchQuery . '%')
+                    ->orWhere('description', 'LIKE', '%' . $searchQuery . '%')
+                    ->get();
+        
+    
         //index
         return view('jobs.index',[
-            'jobs'=>Job::all(),
-            'pinned_job'=>Job::first(),
+            'jobs'=>$jobs,
+            'pinned_job'=>$jobs->first(),
             'savedjobs'=>Auth::user()->savedjobs->pluck('id')->toArray()
             
         ]);

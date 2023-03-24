@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('requirements');
             $table->string('remuneration');
             $table->date('deadline');
+            $table->boolean('publish')->default(false);
             $table->string('cover_letter')->default(0);
 
             $table->timestamps();
