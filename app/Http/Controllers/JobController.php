@@ -22,12 +22,13 @@ class JobController extends Controller
     {
 
 
-        $searchQuery = $request->input('search');
+        $searchQuery = $request->search;
+
     
         $jobs = Job::where('title', 'LIKE', '%' . $searchQuery . '%')
                     ->orWhere('description', 'LIKE', '%' . $searchQuery . '%')
                     ->get();
-        
+    
     
         //index
         return view('jobs.index',[
@@ -87,12 +88,7 @@ class JobController extends Controller
         return back()->with('success','Job Added successfully');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Job  $job
-     * @return \Illuminate\Http\Response
-     */
+   
     public function show(Job $job)
     {
         //show a job
@@ -110,13 +106,7 @@ class JobController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateJobRequest  $request
-     * @param  \App\Models\Job  $job
-     * @return \Illuminate\Http\Response
-     */
+//    Update a job
     public function update(UpdateJobRequest $request, Job $job)
     {
         //
