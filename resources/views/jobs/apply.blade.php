@@ -1,5 +1,7 @@
 <x-app-layout>
-    <div class="mx-auto max-w-4xl py-16 px-4 sm:py-8 sm:px-6 lg:px-8">
+        <div class="mt-4 relative mx-auto max-w-7xl px-4">
+        <x-common.page-header backurl="{{ route('job.show',$job->id) }}" currenturl="{{ request()->url() }}"
+                title="{{ 'Application for '.$job->title }}" backtitle="{{ 'Job '.$job->title }}" />
         @if (session('success'))
             <div class="rounded-md bg-green-50 p-4">
                 <div class="flex">
@@ -43,27 +45,7 @@
                         <hr class="mt-2">
                     </div>
 
-                    <div class="grid grid-cols-6 gap-6">
-                       
-                        <div class="col-span-6 sm:col-span-6">
-                            <label for="about" class="block text-sm font-medium text-pink-700">
-                                Cover Letter</label>
-                            <div class="mt-1">
-                                <textarea id="about" name="cover_letter" rows="10"
-                                    class="mt-1 block w-full rounded-md border-pink-700 shadow-sm focus:border-pink-500 focus:ring-pink-500 sm:text-sm"
-                                    placeholder="Cover Letter"></textarea>
-                            </div>
-                            <p class="mt-2 text-sm text-gray-500">Please write why you're fit for this role.
-                            </p>
-                        </div>
-                       
-
                     
-
-                      
-                       
-
-                    </div>
                 </div>
                 <div class="bg-gray-50 px-4 py-3 text-right sm:px-6">
                     <button type="submit"

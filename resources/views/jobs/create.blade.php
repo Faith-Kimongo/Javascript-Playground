@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="mt-4 relative px-4 pt-8 pb-20 sm:px-6 lg:px-2 lg:pt-6 lg:pb-28 rounded-2xl">
+    <div class="mt-4 relative mx-auto max-w-7xl px-4">
 
         @if (session('success'))
             <div class="rounded-md bg-green-50 p-4">
@@ -53,7 +53,7 @@
                                 class="mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-pink-500 focus:outline-none focus:ring-pink-500 sm:text-sm">
                         </div>
 
-                    
+
                         <div class="col-span-6 sm:col-span-3">
                             <label for="country" class="block text-sm font-medium text-gray-700">Category</label>
                             <select id="country" name="category_id" autocomplete="country-name"
@@ -106,17 +106,21 @@
                         </div>
                         <div class="col-span-6 sm:col-span-3">
                             <label for="first-name" class="block text-sm font-medium text-gray-700">Remuneration</label>
-                            <input type="text" name="job_remuneration" id="first-name" autocomplete="given-name"
+                            <input type="number" name="job_remuneration" id="first-name" autocomplete="given-name"
                                 class="mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-pink-500 focus:outline-none focus:ring-pink-500 sm:text-sm">
                         </div>
 
                         <div class="col-span-6 sm:col-span-3">
                             <label for="last-name" class="block text-sm font-medium text-gray-700">Job
                                 Deadline</label>
-                            <input type="date" min="{{ now() }}" name="job_deadline" id="job_deadline"
-                                autocomplete="family-name"
+                            <input required type="date" value="{{ date('Y-m-d') }}" min="{{ date('Y-m-d') }}"
+                                name="job_deadline" id="job_deadline" autocomplete="job_deadline"
                                 class="mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-pink-500 focus:outline-none focus:ring-pink-500 sm:text-sm">
+
                         </div>
+
+
+                        {{-- Publish --}}
                         <div class="col-span-6 sm:col-span-3">
 
                             <div class="relative flex items-start">
@@ -127,8 +131,8 @@
                                         value="1">
                                 </div>
                                 <div class="ml-3 text-sm">
-                                    <label for="comments" class="font-medium text-gray-700">Upload Cover
-                                        Letter</label>
+                                    <label for="comments" class="font-medium text-gray-700">Publish <small> (<i>Upon
+                                                Approval</i>)</small> </label>
                                 </div>
                             </div>
                         </div>

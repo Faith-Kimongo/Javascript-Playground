@@ -103,21 +103,32 @@ class JobController extends Controller
    
     public function edit(Job $job)
     {
-        //
+        $categories=Category::all();
+        return view('jobs.edit',compact(['job','categories']));
     }
 
 //    Update a job
     public function update(UpdateJobRequest $request, Job $job)
     {
-        //
+        //update 
+    $job->title = $request->input('job_title');
+    $job->location = $request->input('job_location');
+    $job->category_id = $request->input('category_id');
+    $job->description = $request->input('job_desc');
+    $job->responsibilities = $request->input('job_resp');
+    $job->requirements = $request->input('job_req');
+    $job->remuneration = $request->input('job_remuneration');
+    $job->deadline = $request->input('job_deadline');
+    $job->publish = $request->has('publish');
+    $job->cover_letter = $request->has('cover_letter');
+    $job->save();
+
+    // return with success
+    return back()->with('success','Job Updated Successfully!');
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Job  $job
-     * @return \Illuminate\Http\Response
-     */
+  
     public function destroy(Job $job)
     {
         //delete
@@ -160,5 +171,11 @@ class JobController extends Controller
         return view('jobs.application',[
             'applications'=>Auth::user()->applications
         ]);
+    }
+
+
+    public function jobapplications(Job $job){
+        $applications=$job->applications()->get();
+        return view('jobs.applicants',compact(['applications','job']));
     }
 }

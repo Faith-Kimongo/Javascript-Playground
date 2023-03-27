@@ -62,4 +62,7 @@
     <a href="{{ route('job.applications') }}" class="font-semibold hover:text-pink-700"> Applications </a>
 </div>
 
+<hr class="m-4">
+
+
 

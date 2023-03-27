@@ -86,6 +86,8 @@ Route::post('/user-profile/work-experience/edit',[ProfileController::class,'work
 Route::resource('experience',ExperienceController::class);
 Route::resource('skills', SkillController::class);
 Route::post('skills/save',[ProfileController::class,'skills'])->name('profile.skills.save');
+Route::get('job/{job}/applications',[JobController::class,'jobapplications'])->name('jobapplications');
+
 Route::get('job/applications',[JobController::class,'applications'])->name('job.applications');
 Route::get('job/applications/{application}',[ApplicationController::class,'show'])->name('job.application.show');
 

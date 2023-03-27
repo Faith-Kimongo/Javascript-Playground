@@ -1,5 +1,6 @@
 <x-app-layout>
-    <div class="mt-4 relative px-4 pt-8 pb-20 sm:px-6 lg:px-2 lg:pt-6 lg:pb-28 rounded-2xl">
+    <div class="mt-4 relative mx-auto max-w-7xl px-4">
+
         <div class="relative mx-auto max-w-7xl">
             <x-common.page-header backurl="{{ route('home') }}" currenturl="{{ request()->url() }}"
                 title="{{ 'Your Hustles' }}" backtitle="{{ 'Home' }}" />

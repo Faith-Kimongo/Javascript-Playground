@@ -24,8 +24,9 @@ return new class extends Migration
             $table->string('requirements');
             $table->string('remuneration');
             $table->date('deadline');
+            $table->enum('status',['pending','approved'])->default('pending');
             $table->boolean('publish')->default(false);
-            $table->string('cover_letter')->default(0);
+            $table->string('cover_letter')->nullable();
 
             $table->timestamps();
         });
