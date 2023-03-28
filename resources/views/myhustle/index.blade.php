@@ -1,1408 +1,316 @@
 <x-app-layout>
-    <div class="flex h-auto flex-col grid-col-2 overscroll-contain mb-6">
-        <div class="flex min-h-0 ml-6 ">
-          <!-- Narrow sidebar-->
-        <div id="categories grid grid-cols-1 sm:grid-cols-2">
-          <div class="rounded-xl mt-6 mb-6">
-            <p class="rounded-lg px-4 font-semibold border-b border-gray-300 bg-gray-200">Categories</p>
-            <div class ="category">
-              <nav aria-label="Sidebar" class="md:block md:flex-shrink-0 h-full w-96 shadow-2xl rounded-2xl mt-3">
+  <div class="py-10">
+    <div class="mx-auto max-w-3xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-12 lg:gap-8 lg:px-8">
+      <div class="hidden lg:col-span-3 lg:block xl:col-span-2">
+        <nav aria-label="Sidebar" class="sticky top-4 divide-y divide-gray-300">
+          <div class="space-y-1 pb-8">
+            <!-- Current: "bg-gray-200 text-gray-900", Default: "text-gray-700 hover:bg-gray-50" -->
+            <a href="#" class="bg-gray-200 text-gray-900 group flex items-center rounded-md px-3 py-2 text-sm font-medium" aria-current="page">
+              <svg class="text-gray-500 -ml-1 mr-3 h-6 w-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+              </svg>
+              <span class="truncate">Home</span>
+            </a>
 
-                <div>
-                  <div class="category md:flex md:items-center md:justify-between justify-between p-3 flex">
-                    <div class="min-w-0 flex flex-col-1 md:flex-col-2">
-                      <a href="#" class="flex-1 bg-white text-white flex-shrink-0 inline-flex items-center justify-center h-14 w-14">
-                        <img class="h-10 w-auto sm:h-10 rounded-full" src="images/myhustle/electronics.jpg" alt="">    
-                      </a>
-                      <p class="text-sm mt-4 ml-2 text-gray-700">Electronics</p>
-                    </div>
-                    <div class="mt-4 flex md:mt-0 md:ml-4 p-4 ">
-                      <a href=""><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="gray" class="dropdown-toggle w-4 h-4" id="dropdownDefaultButton" data-dropdown-toggle="dropdown">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                      </svg></a>
-                    </div>
-                  </div>
-                  <!-- subcategory -->
-                <div class="bg-white dropdown-menu mt-6 ml-6 w-96 overscroll-contain z-10 hidden" id="dropdown">
-                        <ul>
-                          <li class="shadow-xl rounded-2xl p-4">
-                          <div >
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-200 rounded-lg ">
-                              <div class="ml-4 mt-2 ">
-                                <h3 class="text-sm font-medium leading-6 text-black font-bold ">Sub-Categories</h3>
-                              </div>
-                          </div>
-                          <ul class="ml-6 mt-4">
-                            <li class="flex flex-row gap-3">Mobile phones <p class="text-gray-600">| 2789</p></li>
-                            <li class="flex flex-row gap-3">Smart Watches <p class="text-gray-600">| 7900</p></li>
-                            <li class="flex flex-row gap-3">Accessories for mobile phones <p class="text-gray-600">| 5000</p></li>
-                          </ul>
-                            
-                        </li>
-                  
-                        <li class="shadow-xl mt-5 rounded-2xl p-4">
-                          <div >
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-200 rounded-lg">
-                              <div class="ml-4 mt-2">
-                                <h3 class="text-sm font-bold leading-6 text-black font-bold">Location</h3>
-                              </div>
-                          </div>
-                          <div class="flex flex-row flex-wrap justify-between sm:flex-nowrap">
-                            <a href="#"><p class="text-gray-600 pb-3 text-sm ml-6 mt-2">All Kenya </p></a>
-                          <div class="flex justify-end align-right flex-shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                            </svg>
-                            
-                          </div>
-                          </div>
-                          
-                            
-                        </li>
-              
-                        <li class="shadow-xl rounded-2xl p-4 mt-5">
-                          <div >
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-200 rounded-lg">
-                              <div class="ml-4 mt-2">
-                                <h3 class="text-sm font-medium leading-6 text-black font-bold">Price, Kshs</h3>
-                              </div>
-                          </div>
-                          <div class="gap-2 mt-3 flex flex-row">
-                            <div>
-                              <div class="mt-1">
-                                
-                              </div>
-                            </div>
-                            <button type="button" class="text-gray-500 block w-32 rounded-md border border-gray-500 bg-white px-4 items-center py-3 px-4 shadow-sm focus:ring-2 focus:ring-offset-2 focus:ring-pink-900">Min</button>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mt-4 w-6 h-6">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
-                            </svg>              
-                            <button type="button" class="text-gray-500 block w-32 rounded-md border border-gray-500 bg-white px-4 items-center py-3 px-4 shadow-sm focus:ring-2 focus:ring-offset-2 focus:ring-pink-900">Max</button>
-                          </div>
-                          
-              
-                          <ul class="ml-6 mt-4">
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3">Under 500 <p class="text-gray-600">| 2789 ads</p></li>
-                              </div>
-                            </div>
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3">500 - 2K <p class="text-gray-600">| 5000 ads</p></li>
-                              </div>
-                            </div>
-              
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3">2K - 5K <p class="text-gray-600">| 7900 ads</p></li>
-                              </div>
-                            </div>
-              
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3"> >5K  <p class="text-gray-600">| 3000 ads</p></li>
-                              </div>
-                            </div>
-                            
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap">
-                              <div class="ml-4 mt-2">
-                                <a href="#"><button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-pink-900 text-sm border border-pink-700 rounded-lg">clear</button></a>
-                              </div>
-                              <div class="ml-4 mt-4 flex-shrink-0">
-                                <a href="#"><button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-teal-600 text-sm border border-teal-500 rounded-lg">Apply</button></a>
-                              </div>
-                          </div>
-                            
-                            
-                            
-                          </ul>
-                            
-                        </li>
-                  
-                      </ul>
-                      
-                </div>
-                <!-- subcategory -->
-                </div>
-                
-                <div>
-                  <div class="category md:flex md:items-center md:justify-between p-3 flex justify-between">
-                    <div class="min-w-0 flex flex-col-1 md:flex-col-2">
-                      <a href="#" class="flex-1 bg-white text-white flex-shrink-0 inline-flex items-center justify-center h-14 w-14">
-                        <img class="h-10 w-auto sm:h-10 rounded-full" src="images/myhustle/mobile.webp" alt="">    
-                      </a>
-                      <p class="text-sm mt-4 ml-2 text-gray-700 ">Phones & Tablets</p>
-                    </div>
-                    <div class="mt-4 flex md:mt-0 md:ml-4 p-4">
-                      <a href=""><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="gray" class="dropdown-toggle w-4 h-4" id="dropdownDefaultButton" data-dropdown-toggle="dropdown">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                      </svg></a>
-                    </div>
-                  </div>
-                  <!-- subcategory -->
-                <div class="bg-white dropdown-menu mt-6 ml-6 w-96 overscroll-contain z-10 hidden" id="dropdown">
-                        <ul>
-                          <li class="shadow-xl rounded-2xl p-4">
-                          <div >
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-200 rounded-lg ">
-                              <div class="ml-4 mt-2 ">
-                                <h3 class="text-sm font-medium leading-6 text-black font-bold ">Sub-Categories</h3>
-                              </div>
-                          </div>
-                          <ul class="ml-6 mt-4">
-                            <li class="flex flex-row gap-3">Mobile phones <p class="text-gray-600">| 2789</p></li>
-                            <li class="flex flex-row gap-3">Smart Watches <p class="text-gray-600">| 7900</p></li>
-                            <li class="flex flex-row gap-3">Accessories for mobile phones <p class="text-gray-600">| 5000</p></li>
-                          </ul>
-                            
-                        </li>
-                  
-                        <li class="shadow-xl mt-5 rounded-2xl p-4">
-                          <div >
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-200 rounded-lg">
-                              <div class="ml-4 mt-2">
-                                <h3 class="text-sm font-medium leading-6 text-black font-bold">Location</h3>
-                              </div>
-                          </div>
-                          <div class="flex flex-row flex-wrap justify-between sm:flex-nowrap">
-                            <a href="#"><p class="text-gray-600 pb-3 text-sm ml-6 mt-2">All Kenya </p></a>
-                          <div class="flex justify-end align-right flex-shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                            </svg>
-                            
-                          </div>
-                          </div>
-                          
-                            
-                        </li>
-              
-                        <li class="shadow-xl rounded-2xl p-4 mt-5">
-                          <div >
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-200 rounded-lg">
-                              <div class="ml-4 mt-2">
-                                <h3 class="text-sm font-medium leading-6 text-black font-bold">Price, Kshs</h3>
-                              </div>
-                          </div>
-                          <div class="gap-2 mt-3 flex flex-row">
-                            <div>
-                              <div class="mt-1">
-                                
-                              </div>
-                            </div>
-                            <button type="button" class="text-gray-500 block w-32 rounded-md border border-gray-500 bg-white px-4 items-center py-3 px-4 shadow-sm focus:ring-2 focus:ring-offset-2 focus:ring-pink-900">Min</button>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mt-4 w-6 h-6">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
-                            </svg>              
-                            <button type="button" class="text-gray-500 block w-32 rounded-md border border-gray-500 bg-white px-4 items-center py-3 px-4 shadow-sm focus:ring-2 focus:ring-offset-2 focus:ring-pink-900">Max</button>
-                          </div>
-                          
-              
-                          <ul class="ml-6 mt-4">
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3">Under 500 <p class="text-gray-600">| 2789 ads</p></li>
-                              </div>
-                            </div>
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3">500 - 2K <p class="text-gray-600">| 5000 ads</p></li>
-                              </div>
-                            </div>
-              
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3">2K - 5K <p class="text-gray-600">| 7900 ads</p></li>
-                              </div>
-                            </div>
-              
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3"> >5K  <p class="text-gray-600">| 3000 ads</p></li>
-                              </div>
-                            </div>
-                            
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap">
-                              <div class="ml-4 mt-2">
-                                <a href="#"><button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-pink-900 text-sm border border-pink-700 rounded-lg">clear</button></a>
-                              </div>
-                              <div class="ml-4 mt-4 flex-shrink-0">
-                                <a href="#"><button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-teal-600 text-sm border border-teal-500 rounded-lg">Apply</button></a>
-                              </div>
-                          </div>
-                            
-                            
-                            
-                          </ul>
-                            
-                        </li>
-                  
-                      </ul>
-                      
-                </div>
-                <!-- subcategory -->
-                </div>
+            <a href="#" class="text-gray-700 hover:bg-gray-50 group flex items-center rounded-md px-3 py-2 text-sm font-medium">
+              <svg class="text-gray-400 group-hover:text-gray-500 -ml-1 mr-3 h-6 w-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+              </svg>
+              <span class="truncate">Popular</span>
+            </a>
 
-                <div>
-                  <div class="category md:flex md:items-center md:justify-between justify-between p-3 flex">
-                    <div class="min-w-0 flex flex-col-1 md:flex-col-2">
-                      <a href="#" class="flex-1 bg-white text-white flex-shrink-0 inline-flex items-center justify-center h-14 w-14">
-                        <img class="h-10 w-auto sm:h-10 rounded-full" src="images/myhustle/bags.webp" alt="">    
-                      </a>
-                      <p class="text-sm mt-4 ml-2 text-gray-700">Bags</p>
-                    </div>
-                    <div class="mt-4 flex md:mt-0 md:ml-4 p-4">
-                      <a href=""><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="gray" class="dropdown-toggle w-4 h-4" id="dropdownDefaultButton" data-dropdown-toggle="dropdown">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                      </svg></a>
-                    </div>
-                  </div>
-                  <!-- subcategory -->
-                <div class="bg-white dropdown-menu mt-6 ml-6 w-96 overscroll-contain z-10 hidden" id="dropdown">
-                        <ul>
-                          <li class="shadow-xl rounded-2xl p-4">
-                          <div >
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-200 rounded-lg ">
-                              <div class="ml-4 mt-2 ">
-                                <h3 class="text-sm font-medium leading-6 text-black font-bold ">Sub-Categories</h3>
-                              </div>
-                          </div>
-                          <ul class="ml-6 mt-4">
-                            <li class="flex flex-row gap-3">Mobile phones <p class="text-gray-600">| 2789</p></li>
-                            <li class="flex flex-row gap-3">Smart Watches <p class="text-gray-600">| 7900</p></li>
-                            <li class="flex flex-row gap-3">Accessories for mobile phones <p class="text-gray-600">| 5000</p></li>
-                          </ul>
-                            
-                        </li>
-                  
-                        <li class="shadow-xl mt-5 rounded-2xl p-4">
-                          <div >
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-200 rounded-lg">
-                              <div class="ml-4 mt-2">
-                                <h3 class="text-sm font-medium leading-6 text-black font-bold">Location</h3>
-                              </div>
-                          </div>
-                          <div class="flex flex-row flex-wrap justify-between sm:flex-nowrap">
-                            <a href="#"><p class="text-gray-600 pb-3 text-sm ml-6 mt-2">All Kenya </p></a>
-                          <div class="flex justify-end align-right flex-shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                            </svg>
-                            
-                          </div>
-                          </div>
-                          
-                            
-                        </li>
-              
-                        <li class="shadow-xl rounded-2xl p-4 mt-5">
-                          <div >
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-200 rounded-lg">
-                              <div class="ml-4 mt-2">
-                                <h3 class="text-sm font-medium leading-6 text-black font-bold">Price, Kshs</h3>
-                              </div>
-                          </div>
-                          <div class="gap-2 mt-3 flex flex-row">
-                            <div>
-                              <div class="mt-1">
-                                
-                              </div>
-                            </div>
-                            <button type="button" class="text-gray-500 block w-32 rounded-md border border-gray-500 bg-white px-4 items-center py-3 px-4 shadow-sm focus:ring-2 focus:ring-offset-2 focus:ring-pink-900">Min</button>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mt-4 w-6 h-6">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
-                            </svg>              
-                            <button type="button" class="text-gray-500 block w-32 rounded-md border border-gray-500 bg-white px-4 items-center py-3 px-4 shadow-sm focus:ring-2 focus:ring-offset-2 focus:ring-pink-900">Max</button>
-                          </div>
-                          
-              
-                          <ul class="ml-6 mt-4">
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3">Under 500 <p class="text-gray-600">| 2789 ads</p></li>
-                              </div>
-                            </div>
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3">500 - 2K <p class="text-gray-600">| 5000 ads</p></li>
-                              </div>
-                            </div>
-              
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3">2K - 5K <p class="text-gray-600">| 7900 ads</p></li>
-                              </div>
-                            </div>
-              
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3"> >5K  <p class="text-gray-600">| 3000 ads</p></li>
-                              </div>
-                            </div>
-                            
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap">
-                              <div class="ml-4 mt-2">
-                                <a href="#"><button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-pink-900 text-sm border border-pink-700 rounded-lg">clear</button></a>
-                              </div>
-                              <div class="ml-4 mt-4 flex-shrink-0">
-                                <a href="#"><button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-teal-600 text-sm border border-teal-500 rounded-lg">Apply</button></a>
-                              </div>
-                          </div>
-                            
-                            
-                            
-                          </ul>
-                            
-                        </li>
-                  
-                      </ul>
-                      
-                </div>
-                <!-- subcategory -->
-                </div>
+            <a href="#" class="text-gray-700 hover:bg-gray-50 group flex items-center rounded-md px-3 py-2 text-sm font-medium">
+              <svg class="text-gray-400 group-hover:text-gray-500 -ml-1 mr-3 h-6 w-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+              </svg>
+              <span class="truncate">Categories</span>
+            </a>
 
-                <div>
-                  <div class="category md:flex md:items-center md:justify-between p-3 flex justify-between">
-                    <div class="min-w-0 flex flex-col-1 md:flex-cols-2">
-                      <a href="#" class="flex-1 bg-white text-white flex-shrink-0 inline-flex items-center justify-center h-14 w-14">
-                        <img class="h-10 w-auto sm:h-10 rounded-full" src="images/myhustle/mercedes.webp" alt="">    
-                      </a>
-                      <p class="text-sm mt-4 ml-2 text-gray-700">Vehicles</p>
-                    </div>
-                    <div class="mt-4 flex md:mt-0 md:ml-4 p-4">
-                      <a href=""><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="gray" class="dropdown-toggle w-4 h-4" id="dropdownDefaultButton" data-dropdown-toggle="dropdown">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                      </svg></a>
-                    </div>
-                  </div>
-                  <!-- subcategory -->
-                <div class="bg-white dropdown-menu mt-6 ml-6 w-96 overscroll-contain z-10 hidden" id="dropdown">
-                        <ul>
-                          <li class="shadow-xl rounded-2xl p-4">
-                          <div >
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-200 rounded-lg ">
-                              <div class="ml-4 mt-2 ">
-                                <h3 class="text-sm font-medium leading-6 text-black font-bold ">Sub-Categories</h3>
-                              </div>
-                          </div>
-                          <ul class="ml-6 mt-4">
-                            <li class="flex flex-row gap-3">Mobile phones <p class="text-gray-600">| 2789</p></li>
-                            <li class="flex flex-row gap-3">Smart Watches <p class="text-gray-600">| 7900</p></li>
-                            <li class="flex flex-row gap-3">Accessories for mobile phones <p class="text-gray-600">| 5000</p></li>
-                          </ul>
-                            
-                        </li>
-                  
-                        <li class="shadow-xl mt-5 rounded-2xl p-4">
-                          <div >
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-200 rounded-lg">
-                              <div class="ml-4 mt-2">
-                                <h3 class="text-sm font-medium leading-6 text-black font-bold">Location</h3>
-                              </div>
-                          </div>
-                          <div class="flex flex-row flex-wrap justify-between sm:flex-nowrap">
-                            <a href="#"><p class="text-gray-600 pb-3 text-sm ml-6 mt-2">All Kenya </p></a>
-                          <div class="flex justify-end align-right flex-shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                            </svg>
-                            
-                          </div>
-                          </div>
-                          
-                            
-                        </li>
-              
-                        <li class="shadow-xl rounded-2xl p-4 mt-5">
-                          <div >
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-200 rounded-lg">
-                              <div class="ml-4 mt-2">
-                                <h3 class="text-sm font-medium leading-6 text-black font-bold">Price, Kshs</h3>
-                              </div>
-                          </div>
-                          <div class="gap-2 mt-3 flex flex-row">
-                            <div>
-                              <div class="mt-1">
-                                
-                              </div>
-                            </div>
-                            <button type="button" class="text-gray-500 block w-32 rounded-md border border-gray-500 bg-white px-4 items-center py-3 px-4 shadow-sm focus:ring-2 focus:ring-offset-2 focus:ring-pink-900">Min</button>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mt-4 w-6 h-6">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
-                            </svg>              
-                            <button type="button" class="text-gray-500 block w-32 rounded-md border border-gray-500 bg-white px-4 items-center py-3 px-4 shadow-sm focus:ring-2 focus:ring-offset-2 focus:ring-pink-900">Max</button>
-                          </div>
-                          
-              
-                          <ul class="ml-6 mt-4">
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3">Under 500 <p class="text-gray-600">| 2789 ads</p></li>
-                              </div>
-                            </div>
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3">500 - 2K <p class="text-gray-600">| 5000 ads</p></li>
-                              </div>
-                            </div>
-              
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3">2K - 5K <p class="text-gray-600">| 7900 ads</p></li>
-                              </div>
-                            </div>
-              
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3"> >5K  <p class="text-gray-600">| 3000 ads</p></li>
-                              </div>
-                            </div>
-                            
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap">
-                              <div class="ml-4 mt-2">
-                                <a href="#"><button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-pink-900 text-sm border border-pink-700 rounded-lg">clear</button></a>
-                              </div>
-                              <div class="ml-4 mt-4 flex-shrink-0">
-                                <a href="#"><button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-teal-600 text-sm border border-teal-500 rounded-lg">Apply</button></a>
-                              </div>
-                          </div>
-                            
-                            
-                            
-                          </ul>
-                            
-                        </li>
-                  
-                      </ul>
-                      
-                </div>
-                <!-- subcategory -->
-                </div>
-
-                <div>
-                  <div class="category md:flex md:items-center md:justify-between p-3 justify-between flex">
-                    <div class="min-w-0 flex flex-row">
-                      <a href="#" class="flex-1 bg-white text-white flex-shrink-0 inline-flex items-center justify-center h-14 w-14">
-                        <img class="h-10 w-auto sm:h-10 rounded-full" src="images/myhustle/clothesboth.webp" alt="">    
-                      </a>
-                      <p class="text-sm mt-4 ml-2 text-gray-700">Clothes</p>
-                    </div>
-                    <div class="mt-4 flex md:mt-0 md:ml-4 p-4">
-                      <a href=""><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="gray" class="dropdown-toggle w-4 h-4" id="dropdownDefaultButton" data-dropdown-toggle="dropdown">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                      </svg></a>
-                    </div>
-                  </div>
-                <!-- subcategory -->
-                <div class="bg-white dropdown-menu mt-6 ml-6 w-96 overscroll-contain z-10 hidden" id="dropdown">
-                        <ul>
-                          <li class="shadow-xl rounded-2xl p-4">
-                          <div >
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-200 rounded-lg ">
-                              <div class="ml-4 mt-2 ">
-                                <h3 class="text-sm font-medium leading-6 text-black font-bold ">Sub-Categories</h3>
-                              </div>
-                          </div>
-                          <ul class="ml-6 mt-4">
-                            <li class="flex flex-row gap-3">Mobile phones <p class="text-gray-600">| 2789</p></li>
-                            <li class="flex flex-row gap-3">Smart Watches <p class="text-gray-600">| 7900</p></li>
-                            <li class="flex flex-row gap-3">Accessories for mobile phones <p class="text-gray-600">| 5000</p></li>
-                          </ul>
-                            
-                        </li>
-                  
-                        <li class="shadow-xl mt-5 rounded-2xl p-4">
-                          <div >
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-200 rounded-lg">
-                              <div class="ml-4 mt-2">
-                                <h3 class="text-sm font-medium leading-6 text-black font-bold">Location</h3>
-                              </div>
-                          </div>
-                          <div class="flex flex-row flex-wrap justify-between sm:flex-nowrap">
-                            <a href="#"><p class="text-gray-600 pb-3 text-sm ml-6 mt-2">All Kenya </p></a>
-                          <div class="flex justify-end align-right flex-shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                            </svg>
-                            
-                          </div>
-                          </div>
-                          
-                            
-                        </li>
-              
-                        <li class="shadow-xl rounded-2xl p-4 mt-5">
-                          <div >
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-200 rounded-lg">
-                              <div class="ml-4 mt-2">
-                                <h3 class="text-sm font-medium leading-6 text-black font-bold">Price, Kshs</h3>
-                              </div>
-                          </div>
-                          <div class="gap-2 mt-3 flex flex-row">
-                            <div>
-                              <div class="mt-1">
-                                
-                              </div>
-                            </div>
-                            <button type="button" class="text-gray-500 block w-32 rounded-md border border-gray-500 bg-white px-4 items-center py-3 px-4 shadow-sm focus:ring-2 focus:ring-offset-2 focus:ring-pink-900">Min</button>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mt-4 w-6 h-6">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
-                            </svg>              
-                            <button type="button" class="text-gray-500 block w-32 rounded-md border border-gray-500 bg-white px-4 items-center py-3 px-4 shadow-sm focus:ring-2 focus:ring-offset-2 focus:ring-pink-900">Max</button>
-                          </div>
-                          
-              
-                          <ul class="ml-6 mt-4">
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3">Under 500 <p class="text-gray-600">| 2789 ads</p></li>
-                              </div>
-                            </div>
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3">500 - 2K <p class="text-gray-600">| 5000 ads</p></li>
-                              </div>
-                            </div>
-              
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3">2K - 5K <p class="text-gray-600">| 7900 ads</p></li>
-                              </div>
-                            </div>
-              
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3"> >5K  <p class="text-gray-600">| 3000 ads</p></li>
-                              </div>
-                            </div>
-                            
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap">
-                              <div class="ml-4 mt-2">
-                                <a href="#"><button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-pink-900 text-sm border border-pink-700 rounded-lg">clear</button></a>
-                              </div>
-                              <div class="ml-4 mt-4 flex-shrink-0">
-                                <a href="#"><button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-teal-600 text-sm border border-teal-500 rounded-lg">Apply</button></a>
-                              </div>
-                          </div>
-                            
-                            
-                            
-                          </ul>
-                            
-                        </li>
-                  
-                      </ul>
-                      
-                </div>
-                <!-- subcategory -->
-                </div>
-
-                <div>
-                  <div class="category md:flex md:items-center md:justify-between p-3 justify-between flex">
-                    <div class="min-w-0 flex flex-row">
-                      <a href="#" class="flex-1 bg-white text-white flex-shrink-0 inline-flex items-center justify-center h-14 w-14">
-                        <img class="h-10 w-auto sm:h-10 rounded-full" src="images/myhustle/gym.webp" alt="">    
-                      </a>
-                      <p class="text-sm mt-4 ml-2 text-gray-700">Sports & Outdoors</p>
-                    </div>
-                    <div class="mt-4 flex md:mt-0 md:ml-4 p-4">
-                      <a href=""><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="gray" class="dropdown-toggle w-4 h-4" id="dropdownDefaultButton" data-dropdown-toggle="dropdown">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                      </svg></a>
-                    </div>
-                  </div>
-                <!-- subcategory -->
-                <div class="bg-white dropdown-menu mt-6 ml-6 w-96 overscroll-contain z-10 hidden" id="dropdown">
-                        <ul>
-                          <li class="shadow-xl rounded-2xl p-4">
-                          <div >
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-200 rounded-lg ">
-                              <div class="ml-4 mt-2 ">
-                                <h3 class="text-sm font-medium leading-6 text-black font-bold ">Sub-Categories</h3>
-                              </div>
-                          </div>
-                          <ul class="ml-6 mt-4">
-                            <li class="flex flex-row gap-3">Mobile phones <p class="text-gray-600">| 2789</p></li>
-                            <li class="flex flex-row gap-3">Smart Watches <p class="text-gray-600">| 7900</p></li>
-                            <li class="flex flex-row gap-3">Accessories for mobile phones <p class="text-gray-600">| 5000</p></li>
-                          </ul>
-                            
-                        </li>
-                  
-                        <li class="shadow-xl mt-5 rounded-2xl p-4">
-                          <div >
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-200 rounded-lg">
-                              <div class="ml-4 mt-2">
-                                <h3 class="text-sm font-medium leading-6 text-black font-bold">Location</h3>
-                              </div>
-                          </div>
-                          <div class="flex flex-row flex-wrap justify-between sm:flex-nowrap">
-                            <a href="#"><p class="text-gray-600 pb-3 text-sm ml-6 mt-2">All Kenya </p></a>
-                          <div class="flex justify-end align-right flex-shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                            </svg>
-                            
-                          </div>
-                          </div>
-                          
-                            
-                        </li>
-              
-                        <li class="shadow-xl rounded-2xl p-4 mt-5">
-                          <div >
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-200 rounded-lg">
-                              <div class="ml-4 mt-2">
-                                <h3 class="text-sm font-medium leading-6 text-black font-bold">Price, Kshs</h3>
-                              </div>
-                          </div>
-                          <div class="gap-2 mt-3 flex flex-row">
-                            <div>
-                              <div class="mt-1">
-                                
-                              </div>
-                            </div>
-                            <button type="button" class="text-gray-500 block w-32 rounded-md border border-gray-500 bg-white px-4 items-center py-3 px-4 shadow-sm focus:ring-2 focus:ring-offset-2 focus:ring-pink-900">Min</button>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mt-4 w-6 h-6">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
-                            </svg>              
-                            <button type="button" class="text-gray-500 block w-32 rounded-md border border-gray-500 bg-white px-4 items-center py-3 px-4 shadow-sm focus:ring-2 focus:ring-offset-2 focus:ring-pink-900">Max</button>
-                          </div>
-                          
-              
-                          <ul class="ml-6 mt-4">
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3">Under 500 <p class="text-gray-600">| 2789 ads</p></li>
-                              </div>
-                            </div>
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3">500 - 2K <p class="text-gray-600">| 5000 ads</p></li>
-                              </div>
-                            </div>
-              
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3">2K - 5K <p class="text-gray-600">| 7900 ads</p></li>
-                              </div>
-                            </div>
-              
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3"> >5K  <p class="text-gray-600">| 3000 ads</p></li>
-                              </div>
-                            </div>
-                            
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap">
-                              <div class="ml-4 mt-2">
-                                <a href="#"><button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-pink-900 text-sm border border-pink-700 rounded-lg">clear</button></a>
-                              </div>
-                              <div class="ml-4 mt-4 flex-shrink-0">
-                                <a href="#"><button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-teal-600 text-sm border border-teal-500 rounded-lg">Apply</button></a>
-                              </div>
-                          </div>
-                            
-                            
-                            
-                          </ul>
-                            
-                        </li>
-                  
-                      </ul>
-                      
-                </div>
-                <!-- subcategory -->
-                </div>
-
-                <div>
-                  <div class="category md:flex md:items-center md:justify-between p-3 justify-between flex">
-                    <div class="min-w-0 flex flex-row">
-                      <a href="#" class="flex-1 bg-white text-white flex-shrink-0 inline-flex items-center justify-center h-14 w-14">
-                        <img class="h-10 w-auto sm:h-10 rounded-full" src="images/myhustle/furniture.jpg" alt="">    
-                      </a>
-                      <p class="text-sm mt-4 ml-2 text-gray-700">Furniture & Appliances</p>
-                    </div>
-                    <div class="mt-4 flex md:mt-0 md:ml-4 p-4">
-                      <a href=""><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="gray" class="dropdown-toggle w-4 h-4" id="dropdownDefaultButton" data-dropdown-toggle="dropdown">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                      </svg></a>
-                    </div>
-                  </div>
-                <!-- subcategory -->
-                <div class="bg-white dropdown-menu mt-6 ml-6 w-96 overscroll-contain z-10 hidden" id="dropdown">
-                        <ul>
-                          <li class="shadow-xl rounded-2xl p-4">
-                          <div >
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-200 rounded-lg ">
-                              <div class="ml-4 mt-2 ">
-                                <h3 class="text-sm font-medium leading-6 text-black font-bold ">Sub-Categories</h3>
-                              </div>
-                          </div>
-                          <ul class="ml-6 mt-4">
-                            <li class="flex flex-row gap-3">Mobile phones <p class="text-gray-600">| 2789</p></li>
-                            <li class="flex flex-row gap-3">Smart Watches <p class="text-gray-600">| 7900</p></li>
-                            <li class="flex flex-row gap-3">Accessories for mobile phones <p class="text-gray-600">| 5000</p></li>
-                          </ul>
-                            
-                        </li>
-                  
-                        <li class="shadow-xl mt-5 rounded-2xl p-4">
-                          <div >
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-200 rounded-lg">
-                              <div class="ml-4 mt-2">
-                                <h3 class="text-sm font-medium leading-6 text-black font-bold">Location</h3>
-                              </div>
-                          </div>
-                          <div class="flex flex-row flex-wrap justify-between sm:flex-nowrap">
-                            <a href="#"><p class="text-gray-600 pb-3 text-sm ml-6 mt-2">All Kenya </p></a>
-                          <div class="flex justify-end align-right flex-shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                            </svg>
-                            
-                          </div>
-                          </div>
-                          
-                            
-                        </li>
-              
-                        <li class="shadow-xl rounded-2xl p-4 mt-5">
-                          <div >
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-200 rounded-lg">
-                              <div class="ml-4 mt-2">
-                                <h3 class="text-sm font-medium leading-6 text-black font-bold">Price, Kshs</h3>
-                              </div>
-                          </div>
-                          <div class="gap-2 mt-3 flex flex-row">
-                            <div>
-                              <div class="mt-1">
-                                
-                              </div>
-                            </div>
-                            <button type="button" class="text-gray-500 block w-32 rounded-md border border-gray-500 bg-white px-4 items-center py-3 px-4 shadow-sm focus:ring-2 focus:ring-offset-2 focus:ring-pink-900">Min</button>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mt-4 w-6 h-6">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
-                            </svg>              
-                            <button type="button" class="text-gray-500 block w-32 rounded-md border border-gray-500 bg-white px-4 items-center py-3 px-4 shadow-sm focus:ring-2 focus:ring-offset-2 focus:ring-pink-900">Max</button>
-                          </div>
-                          
-              
-                          <ul class="ml-6 mt-4">
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3">Under 500 <p class="text-gray-600">| 2789 ads</p></li>
-                              </div>
-                            </div>
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3">500 - 2K <p class="text-gray-600">| 5000 ads</p></li>
-                              </div>
-                            </div>
-              
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3">2K - 5K <p class="text-gray-600">| 7900 ads</p></li>
-                              </div>
-                            </div>
-              
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3"> >5K  <p class="text-gray-600">| 3000 ads</p></li>
-                              </div>
-                            </div>
-                            
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap">
-                              <div class="ml-4 mt-2">
-                                <a href="#"><button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-pink-900 text-sm border border-pink-700 rounded-lg">clear</button></a>
-                              </div>
-                              <div class="ml-4 mt-4 flex-shrink-0">
-                                <a href="#"><button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-teal-600 text-sm border border-teal-500 rounded-lg">Apply</button></a>
-                              </div>
-                          </div>
-                            
-                            
-                            
-                          </ul>
-                            
-                        </li>
-                  
-                      </ul>
-                      
-                </div>
-                <!-- subcategory -->
-                </div>
-
-                <div>
-                  <div class="category md:flex md:items-center md:justify-between p-3 justify-between flex">
-                    <div class="min-w-0 flex flex-row">
-                      <a href="#" class="flex-1 bg-white text-white flex-shrink-0 inline-flex items-center justify-center h-14 w-14">
-                        <img class="h-10 w-auto sm:h-10 rounded-full" src="images/myhustle/babies.jpg" alt="">    
-                      </a>
-                      <p class="text-sm mt-4 ml-2 text-gray-700">Babies & Kids</p>
-                    </div>
-                    <div class="mt-4 flex md:mt-0 md:ml-4 p-4">
-                      <a href=""><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="gray" class="dropdown-toggle w-4 h-4" id="dropdownDefaultButton" data-dropdown-toggle="dropdown">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                      </svg></a>
-                    </div>
-                  </div>
-                <!-- subcategory -->
-                <div class="bg-white dropdown-menu mt-6 ml-6 w-96 overscroll-contain z-10 hidden" id="dropdown">
-                        <ul>
-                          <li class="shadow-xl rounded-2xl p-4">
-                          <div >
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-200 rounded-lg ">
-                              <div class="ml-4 mt-2 ">
-                                <h3 class="text-sm font-medium leading-6 text-black font-bold ">Sub-Categories</h3>
-                              </div>
-                          </div>
-                          <ul class="ml-6 mt-4">
-                            <li class="flex flex-row gap-3">Mobile phones <p class="text-gray-600">| 2789</p></li>
-                            <li class="flex flex-row gap-3">Smart Watches <p class="text-gray-600">| 7900</p></li>
-                            <li class="flex flex-row gap-3">Accessories for mobile phones <p class="text-gray-600">| 5000</p></li>
-                          </ul>
-                            
-                        </li>
-                  
-                        <li class="shadow-xl mt-5 rounded-2xl p-4">
-                          <div >
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-200 rounded-lg">
-                              <div class="ml-4 mt-2">
-                                <h3 class="text-sm font-medium leading-6 text-black font-bold">Location</h3>
-                              </div>
-                          </div>
-                          <div class="flex flex-row flex-wrap justify-between sm:flex-nowrap">
-                            <a href="#"><p class="text-gray-600 pb-3 text-sm ml-6 mt-2">All Kenya </p></a>
-                          <div class="flex justify-end align-right flex-shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                            </svg>
-                            
-                          </div>
-                          </div>
-                          
-                            
-                        </li>
-              
-                        <li class="shadow-xl rounded-2xl p-4 mt-5">
-                          <div >
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-200 rounded-lg">
-                              <div class="ml-4 mt-2">
-                                <h3 class="text-sm font-medium leading-6 text-black font-bold">Price, Kshs</h3>
-                              </div>
-                          </div>
-                          <div class="gap-2 mt-3 flex flex-row">
-                            <div>
-                              <div class="mt-1">
-                                
-                              </div>
-                            </div>
-                            <button type="button" class="text-gray-500 block w-32 rounded-md border border-gray-500 bg-white px-4 items-center py-3 px-4 shadow-sm focus:ring-2 focus:ring-offset-2 focus:ring-pink-900">Min</button>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mt-4 w-6 h-6">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
-                            </svg>              
-                            <button type="button" class="text-gray-500 block w-32 rounded-md border border-gray-500 bg-white px-4 items-center py-3 px-4 shadow-sm focus:ring-2 focus:ring-offset-2 focus:ring-pink-900">Max</button>
-                          </div>
-                          
-              
-                          <ul class="ml-6 mt-4">
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3">Under 500 <p class="text-gray-600">| 2789 ads</p></li>
-                              </div>
-                            </div>
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3">500 - 2K <p class="text-gray-600">| 5000 ads</p></li>
-                              </div>
-                            </div>
-              
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3">2K - 5K <p class="text-gray-600">| 7900 ads</p></li>
-                              </div>
-                            </div>
-              
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3"> >5K  <p class="text-gray-600">| 3000 ads</p></li>
-                              </div>
-                            </div>
-                            
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap">
-                              <div class="ml-4 mt-2">
-                                <a href="#"><button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-pink-900 text-sm border border-pink-700 rounded-lg">clear</button></a>
-                              </div>
-                              <div class="ml-4 mt-4 flex-shrink-0">
-                                <a href="#"><button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-teal-600 text-sm border border-teal-500 rounded-lg">Apply</button></a>
-                              </div>
-                          </div>
-                            
-                          </ul>
-                            
-                        </li>
-                  
-                      </ul>
-                      
-                </div>
-                <!-- subcategory -->
-                </div>
-
-                <div>
-                  <div class="category md:flex md:items-center md:justify-between p-3 justify-between flex">
-                    <div class="min-w-0 flex flex-row">
-                      <a href="#" class="flex-1 bg-white text-white flex-shrink-0 inline-flex items-center justify-center h-14 w-14">
-                        <img class="h-10 w-auto sm:h-10 rounded-full" src="images/myhustle/property.png" alt="">    
-                      </a>
-                      <p class="text-sm mt-4 ml-2 text-gray-700">Property</p>
-                    </div>
-                    <div class="mt-4 flex md:mt-0 md:ml-4 p-4">
-                      <a href=""><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="gray" class="dropdown-toggle w-4 h-4" id="dropdownDefaultButton" data-dropdown-toggle="dropdown">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                      </svg></a>
-                    </div>
-                  </div>
-                  <!-- subcategory -->
-                <div class="bg-white dropdown-menu mt-6 ml-6 w-96 overscroll-contain z-10 hidden" id="dropdown">
-                        <ul>
-                          <li class="shadow-xl rounded-2xl p-4">
-                          <div >
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-200 rounded-lg ">
-                              <div class="ml-4 mt-2 ">
-                                <h3 class="text-sm font-medium leading-6 text-black font-bold ">Sub-Categories</h3>
-                              </div>
-                          </div>
-                          <ul class="ml-6 mt-4">
-                            <li class="flex flex-row gap-3">Mobile phones <p class="text-gray-600">| 2789</p></li>
-                            <li class="flex flex-row gap-3">Smart Watches <p class="text-gray-600">| 7900</p></li>
-                            <li class="flex flex-row gap-3">Accessories for mobile phones <p class="text-gray-600">| 5000</p></li>
-                          </ul>
-                            
-                        </li>
-                  
-                        <li class="shadow-xl mt-5 rounded-2xl p-4">
-                          <div >
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-200 rounded-lg">
-                              <div class="ml-4 mt-2">
-                                <h3 class="text-sm font-medium leading-6 text-black font-bold">Location</h3>
-                              </div>
-                          </div>
-                          <div class="flex flex-row flex-wrap justify-between sm:flex-nowrap">
-                            <a href="#"><p class="text-gray-600 pb-3 text-sm ml-6 mt-2">All Kenya </p></a>
-                          <div class="flex justify-end align-right flex-shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                            </svg>
-                            
-                          </div>
-                          </div>
-                          
-                            
-                        </li>
-              
-                        <li class="shadow-xl rounded-2xl p-4 mt-5">
-                          <div >
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-200 rounded-lg">
-                              <div class="ml-4 mt-2">
-                                <h3 class="text-sm font-medium leading-6 text-black font-bold">Price, Kshs</h3>
-                              </div>
-                          </div>
-                          <div class="gap-2 mt-3 flex flex-row">
-                            <div>
-                              <div class="mt-1">
-                                
-                              </div>
-                            </div>
-                            <button type="button" class="text-gray-500 block w-32 rounded-md border border-gray-500 bg-white px-4 items-center py-3 px-4 shadow-sm focus:ring-2 focus:ring-offset-2 focus:ring-pink-900">Min</button>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mt-4 w-6 h-6">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
-                            </svg>              
-                            <button type="button" class="text-gray-500 block w-32 rounded-md border border-gray-500 bg-white px-4 items-center py-3 px-4 shadow-sm focus:ring-2 focus:ring-offset-2 focus:ring-pink-900">Max</button>
-                          </div>
-                          
-              
-                          <ul class="ml-6 mt-4">
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3">Under 500 <p class="text-gray-600">| 2789 ads</p></li>
-                              </div>
-                            </div>
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3">500 - 2K <p class="text-gray-600">| 5000 ads</p></li>
-                              </div>
-                            </div>
-              
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3">2K - 5K <p class="text-gray-600">| 7900 ads</p></li>
-                              </div>
-                            </div>
-              
-                            <div class="relative flex items-start">
-                              <div class="flex h-5 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                              </div>
-                            <div class="ml-3 text-sm">
-                              <li class="flex flex-row gap-3"> >5K  <p class="text-gray-600">| 3000 ads</p></li>
-                              </div>
-                            </div>
-                            
-                            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap">
-                              <div class="ml-4 mt-2">
-                                <a href="#"><button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-pink-900 text-sm border border-pink-700 rounded-lg">clear</button></a>
-                              </div>
-                              <div class="ml-4 mt-4 flex-shrink-0">
-                                <a href="#"><button type="button" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-teal-600 text-sm border border-teal-500 rounded-lg">Apply</button></a>
-                              </div>
-                          </div>
-                            
-                            
-                            
-                          </ul>
-                            
-                        </li>
-                  
-                      </ul>
-                      
-                </div>
-                <!-- subcategory -->
-                </div>
-              </nav>
-              
-        </div>
-
+            <a href="#" class="text-gray-700 hover:bg-gray-50 group flex items-center rounded-md px-3 py-2 text-sm font-medium">
+              <svg class="text-gray-400 group-hover:text-gray-500 -ml-1 mr-3 h-6 w-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+              </svg>
+              <span class="truncate">Trending</span>
+            </a>
           </div>
-          
-        </div>
-        <div class="ml-6 max-w-6xl shadow-2xl shadow-outline-blue rounded-2xl pb-6">
-            
-            <div class="bg-gray-100">
-                
-              <section aria-labelledby="features-heading" class="mx-auto max-w-7xl sm:px-2 lg:px-8">
-                <div class="border-b mt-4 p-4 border-gray-200 pb-5 sm:flex sm:items-center sm:justify-between">
-                    <h3 class="text-base font-semibold leading-6 text-gray-900">My hustle(s)</h3>
-                    <div class="mt-3 sm:mt-0 sm:ml-4">
-                      <a href="{{route('myhustle.create')}}" type="button" class="inline-flex items-center rounded-md border border-transparent bg-pink-900 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Post your hustle</a>
-                    </div>
-                  </div>
-                  
-                <div class="mx-auto max-w-2xl px-4 lg:max-w-none lg:px-0">
-                  <div class="max-w-3xl">
-                    
-                  </div>
-            
-                  <div class="mt-4">
-                    <div class="-mx-4 flex overflow-x-auto sm:mx-0">
-                      <div class="flex-auto border-b border-gray-200 px-4 sm:px-0">
-                        <div class="-mb-px flex space-x-10" aria-orientation="horizontal" role="tablist">
-                          <button id="features-tab-1" class="gap-2 flex flex-row border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap border-b-2 py-6 text-sm font-medium" aria-controls="features-panel-1" role="tab" type="button">Sort by:
-                            <a href=""><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="indigo" class="w-6 h-6">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M3 7.5L7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5" />
-                            </svg></a>  
-                            <p>Recommended</p>                        
-                          </button>
-            
-                          <a href="#"><button id="features-tab-3" class="gap-2 flex flex-row border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap border-b-2 py-6 text-sm font-medium" aria-controls="features-panel-3" role="tab" type="button">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="indigo" class="w-6 h-6">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>                          
-                            Anytime</button></a>
-            
-                          
-                        </div>
-                      </div>
-                    </div>
-            
-                    @forelse ($myhustles as $hustle)
-                    <div id="features-panel-1" class="space-y-16 pt-10 lg:pt-16 " aria-labelledby="features-tab-1" role="tabpanel" tabindex="0">
-                        <div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:gap-x-8">
-                          <div class="mt-6 lg:col-span-5 lg:mt-0">
-                            <h3 class="text-lg font-medium text-gray-900"> {{$hustle->title}} </h3>
-                            <p class="mt-2 text-sm text-gray-500 text-indigo-900"> {{$hustle->price}} </p>
-                            <p class="mt-2 text-sm text-gray-500">{{$hustle->desc}}</p>
-                            <p class="flex flex-row mt-5 gap-2 text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class=" w-5 h-5">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                            </svg> {{$hustle->location}} </p>
+          <div class="pt-10">
+            <p class="px-3 text-sm font-medium text-gray-500" id="communities-headline">Categories</p>
+            <div class="mt-3 space-y-2" aria-labelledby="communities-headline">
+             
 
-                            <div class="flex items-center space-x-4">
-                                <div class="flex-shrink-0">
-                                    <img class="h-10 w-10 rounded-full object-cover" src="{{ $hustle->user->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+             
 
-                                  {{-- <img class="h-8 w-8 rounded-full" src="{{$hustle->user->profile_photo_path}}" alt="{{$hustle->user->name}}"/> --}}
-                                </div>
-                                <div class="min-w-0 flex-1">
-                                  <p class="truncate text-sm font-medium text-gray-900"> {{$hustle->user->name}} </p>
-                                  
-                                  <p class="truncate text-sm text-gray-500"></p>
-                                  
-                                </div>
-                                {{-- <div>
-                                  <a href="#" class="inline-flex items-center rounded-full border border-gray-300 bg-white px-2.5 py-0.5 text-sm font-medium leading-5 text-gray-700 shadow-sm hover:bg-gray-50">Comment(s) </a>
-                                </div> --}}
-                              </div>
-                          </div>
-                          <div class="lg:col-span-7">
-                            <div class="aspect-w-2 aspect-h-1 overflow-hidden rounded-lg bg-gray-100 sm:aspect-w-5 sm:aspect-h-2">
-                              <img src="{{ asset('myhustleImages/' . $hustle->image) }}" alt="Maple organizer base with slots, supporting white polycarbonate trays of various sizes." class="w-full h-48 object-cover object-center">
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <hr>
-                      <div class="mt-2 border">
-                        <div class="-mt-px flex divide-x divide-gray-200">
-                          <div id="view-comments" class="flex w-0 flex-1">
-                            <div class="relative -mr-px inline-flex w-0 flex-1 items-center justify-center rounded-bl-lg border border-transparent py-4 text-sm font-medium text-gray-700 hover:text-gray-500">
-                              
-                              <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M20 2H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM4 4h16v10l-4-2.67L12 14l-4-2.67L4 14V4zm0 14v-4l4-2.67L12 14l4-2.67L20 10v4H4z"/>
-                              </svg>
-                            
-                              <span   class="ml-3">Comments</span>
-                            </div>
-                          </div>
-                          
-                          <div class="-ml-px flex w-0 flex-1">
-                            <a href="tel:{{$hustle->user->mobile_number}}" class="relative inline-flex w-0 flex-1 items-center justify-center rounded-br-lg border border-transparent py-4 text-sm font-medium text-gray-700 hover:text-gray-500">
-                              <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z" clip-rule="evenodd" />
-                              </svg>
-                              <span class="ml-3">Call</span>
-                            </a>
-                            <a href="#" class="py-4 w-0 flex-1 items-center justify-center text-sm font-medium text-gray-700 hover:text-gray-500">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp h-5 w-5 text-gray-400" viewBox="0 0 16 16">
-                                <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
-                              </svg>
-                            </a>
-                          </div>
+             @forelse ($categories as $category)
+              <a href="#" class="group flex items-center rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900">
+                <span class="truncate">{{$category->name}}</span>
+              </a>
+             @empty
+                 
+             @endforelse
 
-                          <div class="-ml-px flex w-0 flex-1">
-                            <a href="#" class="relative inline-flex w-0 flex-1 items-center justify-center rounded-br-lg border border-transparent py-4 text-sm font-medium text-gray-700 hover:text-gray-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-octagon h-5 w-5 text-gray-400" viewBox="0 0 16 16">
-                            <path d="M4.54.146A.5.5 0 0 1 4.893 0h6.214a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353L4.54.146zM5.1 1 1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1H5.1z"/>
-                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                          </svg>
-                              <span class="ml-3 hover:text-red-700">Cancel</span>
-                            </a>
-                          </div>
+             
 
-                        </div>
-                      </div>
+             
 
-                      {{-- comments --}}
-                      
-                      <section aria-labelledby="notes-title" id="comments-container">
-                        <div class="bg-white shadow sm:overflow-hidden sm:rounded-lg">
-                          <div class="divide-y divide-gray-200">
-                          
-                            <div class="px-4 py-6 sm:px-6">
-                              <ul role="list" class="space-y-8">
-                                @forelse ($hustle->comments as $comment)
-                                <li>
-                                  <div class="flex space-x-3">
-                                    <div class="flex-shrink-0">
-                                      <img class="h-10 w-10 rounded-full" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}">
-                                    </div>
-                                    <div>
-                                      <div class="text-sm">
-                                        <a href="#" class="font-medium text-gray-900"> {{$comment->user->name}} </a>
-                                      </div>
-                                      <div class="mt-1 text-sm text-gray-700">
-                                        <p> {{$comment->comment}} </p>
-                                      </div>
-                                      <div class="mt-2 space-x-2 text-sm">
-                                        <span class="font-medium text-gray-500">{{$comment->created_at->diffForHumans()}}</span>
-                                        <span class="font-medium text-gray-500">&middot;</span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </li>
-                                @empty
-                                    No comments
-                                @endforelse
-                                
               
-                                    </ul>
-                            </div>
-                          </div>
-                          <div class="bg-gray-50 px-4 py-6 sm:px-6">
-                            <div class="flex space-x-3">
-                              <div class="flex-shrink-0">
-                                <img class="h-10 w-10 rounded-full" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}">
-                              </div>
-                              <div class="min-w-0 flex-1">
-                                <form action=" {{route('comments.store',$hustle)}} " method="POST">
-                                  @csrf
-                                  <div>
-                                    <label for="comment" class="sr-only">About</label>
-                                    <textarea id="comment" name="comment" rows="3" class="block w-full rounded-md border-0 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-pink-600 sm:py-1.5 sm:text-sm sm:leading-6" placeholder="Add a note"></textarea>
-                                  </div>
-                                  <div class="mt-3 flex items-center justify-between">
-                                    <a href="#" class="group inline-flex items-start space-x-2 text-sm text-gray-500 hover:text-gray-900">
-                                      <svg class="h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM8.94 6.94a.75.75 0 11-1.061-1.061 3 3 0 112.871 5.026v.345a.75.75 0 01-1.5 0v-.5c0-.72.57-1.172 1.081-1.287A1.5 1.5 0 108.94 6.94zM10 15a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
-                                      </svg>
-                                      <span>Please be cautious.</span>
-                                    </a>
-                                    <button type="submit" class="inline-flex items-center justify-center rounded-md bg-pink-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-pink-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-700">Comment</button>
-                                  </div>
-                                </form>
-                              </div>
-                            </div>
-                          </div>
+
+             
+
+              
+            </div>
+          </div>
+        </nav>
+      </div>
+      <main class="lg:col-span-9 xl:col-span-6">
+        <div class="px-4 sm:px-0">
+          <div class="sm:hidden">
+            <label for="question-tabs" class="sr-only">Select a tab</label>
+            <select id="question-tabs" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-rose-500">
+              <option selected>Recent</option>
+
+              <option>Most Liked</option>
+
+              <option>Most Answers</option>
+            </select>
+          </div>
+          <div class="hidden sm:block">
+            <nav class="isolate flex divide-x divide-gray-200 rounded-lg shadow" aria-label="Tabs">
+              <!-- Current: "text-gray-900", Default: "text-gray-500 hover:text-gray-700" -->
+              <a href="#" aria-current="page" class="text-gray-900 rounded-l-lg group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-6 text-center text-sm font-medium hover:bg-gray-50 focus:z-10">
+                <span>Recent</span>
+                <span aria-hidden="true" class="bg-rose-500 absolute inset-x-0 bottom-0 h-0.5"></span>
+              </a>
+
+              <a href="#" class="text-gray-500 hover:text-gray-700 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-6 text-center text-sm font-medium hover:bg-gray-50 focus:z-10">
+                <span>Most Liked</span>
+                <span aria-hidden="true" class="bg-transparent absolute inset-x-0 bottom-0 h-0.5"></span>
+              </a>
+
+              <a href="#" class="text-gray-500 hover:text-gray-700 rounded-r-lg group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-6 text-center text-sm font-medium hover:bg-gray-50 focus:z-10">
+                <span>Most Comments</span>
+                <span aria-hidden="true" class="bg-transparent absolute inset-x-0 bottom-0 h-0.5"></span>
+              </a>
+            </nav>
+          </div>
+        </div>
+        <div class="mt-4">
+          <h1 class="sr-only">Recent hustles</h1>
+          <ul role="list" class="space-y-4">
+            @forelse ($myhustles as $hustle)
+            <li class="bg-white px-4 py-6 shadow sm:rounded-lg sm:p-6">
+              <article aria-labelledby="question-title-81614">
+                <div>
+                  <div class="flex space-x-3">
+                    <div class="flex-shrink-0">
+                      <img class="h-10 w-10 rounded-full" src="{{$hustle->user->profile_photo_url}}" alt="">
+                    </div>
+                    <div class="min-w-0 flex-1">
+                      <p class="text-sm font-medium text-gray-900">
+                        <a href="#" class="hover:underline"> {{$hustle->user->name}} </a>
+                      </p>
+                      <p class="text-sm text-gray-500">
+                        <a href="#" class="hover:underline">
+                          <time datetime="2020-12-09T11:43:00">{{$hustle->created_at->format('F j \a\t g:i A')}}</time>
+                        </a>
+                      </p>
+                    </div>
+                  
+                    <x-dropdown align="right" width="48">
+                      <x-slot name="trigger">
+                        <div>
+                          <button  type="button" class="-m-2 flex items-center rounded-full p-2 text-gray-400 hover:text-gray-600" id="options-menu-0-button" aria-expanded="false" aria-haspopup="true">
+                            <span class="sr-only">Open options</span>
+                            <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                              <path d="M10 3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM10 8.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM11.5 15.5a1.5 1.5 0 10-3 0 1.5 1.5 0 003 0z" />
+                            </svg>
+                          </button>
                         </div>
-                      </section>
-                    @empty
-                        <p>No hustle posted yet</p>
-                    @endforelse
-                  
-            
-                  
+                      </x-slot>
+
+                        <x-slot name="content">
+                          <!-- Report Hustle -->
+                          <div class="py-1" role="none">
+                            <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                      
+                            <a href="#" class="text-gray-700 flex px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="options-menu-0-item-2">
+                              <svg class="mr-3 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path d="M3.5 2.75a.75.75 0 00-1.5 0v14.5a.75.75 0 001.5 0v-4.392l1.657-.348a6.449 6.449 0 014.271.572 7.948 7.948 0 005.965.524l2.078-.64A.75.75 0 0018 12.25v-8.5a.75.75 0 00-.904-.734l-2.38.501a7.25 7.25 0 01-4.186-.363l-.502-.2a8.75 8.75 0 00-5.053-.439l-1.475.31V2.75z" />
+                              </svg>
+                              <span>Report Hustle</span>
+                            </a>
+                          </div>
+                      </x-slot>
+                    </x-dropdown>
+
+                  </div>
+                  <h2 id="question-title-81614" class="mt-4 text-base font-medium text-gray-900">{{$hustle->title}}</h2>
+                </div>
+                <div class="mt-2 space-y-4 text-sm text-gray-700">
+                  <p>{{$hustle->desc}}</p>
+                      <img src="{{ asset('myhustleImages/' . $hustle->image) }}" alt="Side profile of women&#039;s Basic Tee in black." class="hidden lg:block rounded-lg">
+                </div>
+                <div class="mt-6 flex justify-between space-x-8">
+                  <div class="flex space-x-6">
+                    <span class="inline-flex items-center text-sm">
+                      <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path d="M1 8.25a1.25 1.25 0 112.5 0v7.5a1.25 1.25 0 11-2.5 0v-7.5zM11 3V1.7c0-.268.14-.526.395-.607A2 2 0 0114 3c0 .995-.182 1.948-.514 2.826-.204.54.166 1.174.744 1.174h2.52c1.243 0 2.261 1.01 2.146 2.247a23.864 23.864 0 01-1.341 5.974C17.153 16.323 16.072 17 14.9 17h-3.192a3 3 0 01-1.341-.317l-2.734-1.366A3 3 0 006.292 15H5V8h.963c.685 0 1.258-.483 1.612-1.068a4.011 4.011 0 012.166-1.73c.432-.143.853-.386 1.011-.814.16-.432.248-.9.248-1.388z" />
+                        </svg>
+                        <span class="font-medium text-gray-900">29</span>
+                        <span class="sr-only">likes</span>
+                      </button>
+                    </span>
+                    <span class="inline-flex items-center text-sm">
+                      <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M10 2c-2.236 0-4.43.18-6.57.524C1.993 2.755 1 4.014 1 5.426v5.148c0 1.413.993 2.67 2.43 2.902.848.137 1.705.248 2.57.331v3.443a.75.75 0 001.28.53l3.58-3.579a.78.78 0 01.527-.224 41.202 41.202 0 005.183-.5c1.437-.232 2.43-1.49 2.43-2.903V5.426c0-1.413-.993-2.67-2.43-2.902A41.289 41.289 0 0010 2zm0 7a1 1 0 100-2 1 1 0 000 2zM8 8a1 1 0 11-2 0 1 1 0 012 0zm5 1a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="font-medium text-gray-900">11</span>
+                        <span class="sr-only">replies</span>
+                      </button>
+                    </span>
+                    <span class="inline-flex items-center text-sm">
+                      <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
+                          <path fill-rule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="font-medium text-gray-900">2.7k</span>
+                        <span class="sr-only">views</span>
+                      </button>
+                    </span>
+                    <span class="inline-flex items-center text-sm">
+                      <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                        
+                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 3.75v4.5m0-4.5h-4.5m4.5 0l-6 6m3 12c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 014.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 00-.38 1.21 12.035 12.035 0 007.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 011.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 01-2.25 2.25h-2.25z" />
+                        </svg>
+                        
+                        <span class="font-medium text-gray-900">Call</span>
+                        <span class="sr-only">views</span>
+                      </button>
+                    </span>
+                  </div>
+                  <div class="flex text-sm">
+                    <span class="inline-flex items-center text-sm">
+                      <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path d="M13 4.5a2.5 2.5 0 11.702 1.737L6.97 9.604a2.518 2.518 0 010 .792l6.733 3.367a2.5 2.5 0 11-.671 1.341l-6.733-3.367a2.5 2.5 0 110-3.475l6.733-3.366A2.52 2.52 0 0113 4.5z" />
+                        </svg>
+                        <span class="font-medium text-gray-900">Share</span>
+                      </button>
+                    </span>
                   </div>
                 </div>
-              </section>
+              </article>
+            </li>
+            @empty
+            <div class="rounded-md bg-blue-50 p-4">
+              <div class="flex">
+                <div class="flex-shrink-0">
+                  <svg class="h-5 w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <div class="ml-3 flex-1 md:flex md:justify-between">
+                  <p class="text-sm text-blue-700">No Hustle is Available yet. Want to create one?</p>
+                  <p class="mt-3 text-sm md:mt-0 md:ml-6">
+                    <a href="{{route('myhustle.create')}}" class="whitespace-nowrap font-medium text-blue-700 hover:text-blue-600">
+                      Post Hustle
+                      <span aria-hidden="true"> &rarr;</span>
+                    </a>
+                  </p>
+                </div>
+              </div>
             </div>
             
-          </div>
-    </div>
-      </div>
-      <script>
-        // Get all arrow and subcategory elements
-        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-        const dropdownMenus = document.querySelectorAll('.dropdown-menu');
-
-        // Loop through each arrow and add event listeners to show/hide subcategory
-        dropdownToggles.forEach((dropdownToggle, index) => {
-          const dropdownMenu = dropdownMenus[index];
+            @endforelse
           
-          dropdownToggle.addEventListener('mouseenter', () => {
-            dropdownMenu.classList.remove('hidden');
-          });
+          </ul>
+        </div>
+      </main>
+      <aside class="hidden xl:col-span-4 xl:block">
+        <div class="sticky top-4 space-y-4">
+          <section aria-labelledby="who-to-follow-heading">
+            <div class="rounded-lg bg-white shadow">
+              <div class="p-6">
+                <h2 id="who-to-follow-heading" class="text-base font-medium text-gray-900">Recent Jobs</h2>
+                <div class="mt-6 flow-root">
+                  <ul role="list" class="-my-4 divide-y divide-gray-200">
+                    @forelse ($jobs as $job)
+                    <li class="flex items-center space-x-3 py-4">
+                      <div class="flex-shrink-0">
+                        {{-- <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt=""> --}}
+                      </div>
+                      <div class="min-w-0 flex-1">
+                        <p class="text-sm font-medium text-gray-900">
+                          <a href="#"> {{$job->title}} </a>
+                        </p>
+                        <p class="text-sm text-gray-500">
+                          <a href="#"> {{$job->location}} </a>
+                        </p>
+                      </div>
+                      <div class="flex-shrink-0">
+                        <button type="button" class="inline-flex items-center gap-x-1.5 text-sm font-semibold leading-6 text-gray-900">
+                          <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          
+                          </svg>
 
-          dropdownToggle.addEventListener('mouseleave', (e) => {
-            if (!e.relatedTarget || !dropdownMenu.contains(e.relatedTarget)) {
-              dropdownMenu.classList.add('hidden');
-            }
-          });
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 text-gray-400">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                          </svg>
+                          
+                          View
+                        </button>
+                      </div>
+                    </li>
+                    @empty
+                        No Jobs Posted yet
+                    @endforelse
+                  
+                  </ul>
+                </div>
+                <div class="mt-6">
+                  <a href=" {{route('job.index')}} " class="block w-full rounded-md bg-white px-3 py-2 text-center text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0">View all</a>
+                </div>
+              </div>
+            </div>
+          </section>
+          {{-- <section aria-labelledby="trending-heading">
+            <div class="rounded-lg bg-white shadow">
+              <div class="p-6">
+                <h2 id="trending-heading" class="text-base font-medium text-gray-900">Trending</h2>
+                <div class="mt-6 flow-root">
+                  <ul role="list" class="-my-4 divide-y divide-gray-200">
+                    <li class="flex space-x-3 py-4">
+                      <div class="flex-shrink-0">
+                        <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Floyd Miles">
+                      </div>
+                      <div class="min-w-0 flex-1">
+                        <p class="text-sm text-gray-800">What books do you have on your bookshelf just to look smarter than you actually are?</p>
+                        <div class="mt-2 flex">
+                          <span class="inline-flex items-center text-sm">
+                            <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                              <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M10 2c-2.236 0-4.43.18-6.57.524C1.993 2.755 1 4.014 1 5.426v5.148c0 1.413.993 2.67 2.43 2.902.848.137 1.705.248 2.57.331v3.443a.75.75 0 001.28.53l3.58-3.579a.78.78 0 01.527-.224 41.202 41.202 0 005.183-.5c1.437-.232 2.43-1.49 2.43-2.903V5.426c0-1.413-.993-2.67-2.43-2.902A41.289 41.289 0 0010 2zm0 7a1 1 0 100-2 1 1 0 000 2zM8 8a1 1 0 11-2 0 1 1 0 012 0zm5 1a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+                              </svg>
+                              <span class="font-medium text-gray-900">291</span>
+                            </button>
+                          </span>
+                        </div>
+                      </div>
+                    </li>
 
-          dropdownMenu.addEventListener('mouseleave', (e) => {
-            if (!e.relatedTarget || !dropdownToggle.contains(e.relatedTarget)) {
-              dropdownMenu.classList.add('hidden');
-            }
-          });
-        });
-
-
-   
-      </script>
+                  </ul>
+                </div>
+                <div class="mt-6">
+                  <a href="#" class="block w-full rounded-md bg-white px-3 py-2 text-center text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0">View all</a>
+                </div>
+              </div>
+            </div>
+          </section> --}}
+        </div>
+      </aside>
 
 </x-app-layout>

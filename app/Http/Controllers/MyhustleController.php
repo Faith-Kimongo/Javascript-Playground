@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreMyhustleRequest;
 use App\Http\Requests\UpdateMyhustleRequest;
+use App\Models\Category;
+use App\Models\Job;
 use App\Models\Myhustle;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,8 +19,13 @@ class MyhustleController extends Controller
     public function index()
     {
         //index
+
+        // Recent Job
+        $jobs=Job::latest()->take(5)->get();
         return view('myhustle.index',[
-            'myhustles'=>Myhustle::all()
+            'myhustles'=>Myhustle::all(),
+            'jobs'=>$jobs,
+            'categories'=>Category::all()
         ]);
     }
 

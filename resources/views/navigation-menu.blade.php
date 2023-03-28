@@ -1,17 +1,31 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <div class="shadow-inner shadow-md">
-        <div class="relative bg-pink-900">
-            <div class="mx-auto max-w-7xl py-3 px-3 sm:px-6 lg:px-8">
-                <div class="pr-16 sm:px-16 sm:text-center">
-                    <p class="font-medium text-white">
-                        <span class="md:hidden">AJIRY does not charge participants for registration, application or
-                            reviews. For any assistance contact info@ajiry.co.ke</span>
-                        <span class="hidden md:inline">AJIRY does not charge participants for registration, application
-                            or reviews. For any assistance contact info@ajiry.co.ke</span>
-                    </p>
-                </div>
+        <div class="relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 py-2.5 px-6 sm:px-3.5 sm:before:flex-1">
+            <svg viewBox="0 0 577 310" aria-hidden="true" class="absolute top-1/2 left-[max(-7rem,calc(50%-52rem))] -z-10 w-[36.0625rem] -translate-y-1/2 transform-gpu blur-2xl">
+              <path id="558b8b01-4d09-4091-8be3-c5da192b7892" fill="url(#4b688345-001e-47fa-aa7a-d561812ecf15)" fill-opacity=".3" d="m142.787 168.697-75.331 62.132L.016 88.702l142.771 79.995 135.671-111.9c-16.495 64.083-23.088 173.257 82.496 97.291C492.935 59.13 494.936-54.366 549.339 30.385c43.523 67.8 24.892 159.548 10.136 196.946l-128.493-95.28-36.628 177.599-251.567-140.953Z" />
+              <defs>
+                <linearGradient id="4b688345-001e-47fa-aa7a-d561812ecf15" x1="614.778" x2="-42.453" y1="26.617" y2="96.115" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#9089FC" />
+                  <stop offset="1" stop-color="#FF80B5" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <svg viewBox="0 0 577 310" aria-hidden="true" class="absolute top-1/2 left-[max(45rem,calc(50%+8rem))] -z-10 w-[36.0625rem] -translate-y-1/2 transform-gpu blur-2xl">
+              <use href="#558b8b01-4d09-4091-8be3-c5da192b7892" />
+            </svg>
+            <p class="text-sm leading-6 text-gray-900">
+                AJIRY does not charge participants for registration <a href=" {{route('terms.show')}} " class="whitespace-nowrap font-semibold">Learn more&nbsp;<span aria-hidden="true">&rarr;</span></a>
+            </p>
+            <div class="flex flex-1 justify-end">
+              <button type="button" class="-m-3 p-3 focus-visible:outline-offset-[-4px]">
+                <span class="sr-only">Dismiss</span>
+                <svg class="h-5 w-5 text-gray-900" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                </svg>
+              </button>
             </div>
-        </div>
+          </div>
+          
         <!-- Primary Navigation Menu -->
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
@@ -33,7 +47,7 @@
                         <x-nav-link href="{{ route('job.index') }}" :active="request()->routeIs('job.index')">
                             {{ __('Find Jobs') }}
                         </x-nav-link>
-                    
+
                         <x-nav-link href="{{ route('job.create') }}" :active="request()->routeIs('job.create')">
                             {{ __('Post A Job') }}
                         </x-nav-link>
@@ -83,8 +97,6 @@
                                                         alt="{{ Auth::user()->name }}" />
                                                 </button>
                                             @endif
-
-
                                         </button>
                                     </span>
                                 @else
@@ -112,7 +124,7 @@
 
 
                                 {{-- Main profile --}}
-                              
+
                                 <x-dropdown-link href="{{ route('myjobs') }}">
                                     {{ __('My Jobs') }}
                                 </x-dropdown-link>
@@ -171,48 +183,48 @@
         <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
 
             @auth
-            <div class="pt-2 pb-3 space-y-1">
-                <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                    {{ __('Dashboard') }}
-                </x-responsive-nav-link>
-            </div>
-            <div class="pt-2 pb-3 space-y-1">
-                <x-responsive-nav-link href="{{ route('job.index') }}" :active="request()->routeIs('dashboard')">
-                    {{ __('Find jobs') }}
-                </x-responsive-nav-link>
-            </div>
+                <div class="pt-2 pb-3 space-y-1">
+                    <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                        {{ __('Dashboard') }}
+                    </x-responsive-nav-link>
+                </div>
+                <div class="pt-2 pb-3 space-y-1">
+                    <x-responsive-nav-link href="{{ route('job.index') }}" :active="request()->routeIs('dashboard')">
+                        {{ __('Find jobs') }}
+                    </x-responsive-nav-link>
+                </div>
 
-            <div class="pt-2 pb-3 space-y-1">
-                <x-responsive-nav-link href="{{ route('myhustle.index') }}" :active="request()->routeIs('dashboard')">
-                    {{ __('My hustles') }}
-                </x-responsive-nav-link>
-            </div>
+                <div class="pt-2 pb-3 space-y-1">
+                    <x-responsive-nav-link href="{{ route('myhustle.index') }}" :active="request()->routeIs('dashboard')">
+                        {{ __('My hustles') }}
+                    </x-responsive-nav-link>
+                </div>
             @endauth
 
             @guest
-            <div class="pt-2 pb-3 space-y-1">
-                <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                    {{ __('Home') }}
-                </x-responsive-nav-link>
-            </div>
+                <div class="pt-2 pb-3 space-y-1">
+                    <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                        {{ __('Home') }}
+                    </x-responsive-nav-link>
+                </div>
 
-             {{-- Login --}}
-             <div class="pt-2 pb-3 space-y-1">
-                <x-responsive-nav-link href="{{ route('login') }}" :active="request()->routeIs('login')">
-                    {{ __('Login') }}
-                </x-responsive-nav-link>
-            </div>
+                {{-- Login --}}
+                <div class="pt-2 pb-3 space-y-1">
+                    <x-responsive-nav-link href="{{ route('login') }}" :active="request()->routeIs('login')">
+                        {{ __('Login') }}
+                    </x-responsive-nav-link>
+                </div>
 
-            {{-- Register --}}
-            <div class="pt-2 pb-3 space-y-1">
-                <x-responsive-nav-link href="{{ route('login') }}" :active="request()->routeIs('login')">
-                    {{ __('Register') }}
-                </x-responsive-nav-link>
-            </div>
+                {{-- Register --}}
+                <div class="pt-2 pb-3 space-y-1">
+                    <x-responsive-nav-link href="{{ route('login') }}" :active="request()->routeIs('login')">
+                        {{ __('Register') }}
+                    </x-responsive-nav-link>
+                </div>
             @endguest
-           
 
-           
+
+
 
             <!-- Responsive Settings Options -->
             <div class="pt-4 pb-1 border-t border-gray-200">

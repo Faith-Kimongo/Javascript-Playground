@@ -28,7 +28,7 @@ use App\Models\Job;
 
 Route::get('/', function () {
     return view('welcome',[
-        'jobs'=>Job::all()
+        'jobs'=>Job::take(4)->get()
     ]);
 })->name('home');
 
