@@ -162,13 +162,13 @@
                       </button>
                     </span>
                     <span class="inline-flex items-center text-sm">
-                      <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                      <a href="{{route('myhustle.show',$hustle->id)}}" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                         <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                           <path fill-rule="evenodd" d="M10 2c-2.236 0-4.43.18-6.57.524C1.993 2.755 1 4.014 1 5.426v5.148c0 1.413.993 2.67 2.43 2.902.848.137 1.705.248 2.57.331v3.443a.75.75 0 001.28.53l3.58-3.579a.78.78 0 01.527-.224 41.202 41.202 0 005.183-.5c1.437-.232 2.43-1.49 2.43-2.903V5.426c0-1.413-.993-2.67-2.43-2.902A41.289 41.289 0 0010 2zm0 7a1 1 0 100-2 1 1 0 000 2zM8 8a1 1 0 11-2 0 1 1 0 012 0zm5 1a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
                         </svg>
                         <span class="font-medium text-gray-900">11</span>
-                        <span class="sr-only">replies</span>
-                      </button>
+                        <span class="sr-only">comments</span>
+                      </a>
                     </span>
                     <span class="inline-flex items-center text-sm">
                       <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
@@ -177,17 +177,6 @@
                           <path fill-rule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
                         </svg>
                         <span class="font-medium text-gray-900">2.7k</span>
-                        <span class="sr-only">views</span>
-                      </button>
-                    </span>
-                    <span class="inline-flex items-center text-sm">
-                      <button type="button" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
-                        
-                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 3.75v4.5m0-4.5h-4.5m4.5 0l-6 6m3 12c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 014.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 00-.38 1.21 12.035 12.035 0 007.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 011.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 01-2.25 2.25h-2.25z" />
-                        </svg>
-                        
-                        <span class="font-medium text-gray-900">Call</span>
                         <span class="sr-only">views</span>
                       </button>
                     </span>
@@ -266,18 +255,18 @@
                       </div>
                     </li>
                     @empty
-                        No Jobs Posted yet
+                        No Job Posted yet
                     @endforelse
-                  
+                   
                   </ul>
                 </div>
                 <div class="mt-6">
-                  <a href=" {{route('job.index')}} " class="block w-full rounded-md bg-white px-3 py-2 text-center text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0">View all</a>
+                  <a href="#" class="block w-full rounded-md bg-white px-3 py-2 text-center text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0">View all</a>
                 </div>
               </div>
             </div>
           </section>
-          {{-- <section aria-labelledby="trending-heading">
+          <section aria-labelledby="trending-heading">
             <div class="rounded-lg bg-white shadow">
               <div class="p-6">
                 <h2 id="trending-heading" class="text-base font-medium text-gray-900">Trending</h2>
@@ -309,7 +298,7 @@
                 </div>
               </div>
             </div>
-          </section> --}}
+          </section>
         </div>
       </aside>
 

@@ -19,7 +19,6 @@ class MyhustleController extends Controller
     public function index()
     {
         //index
-
         // Recent Job
         $jobs=Job::latest()->take(5)->get();
         return view('myhustle.index',[
@@ -39,7 +38,6 @@ class MyhustleController extends Controller
    
     public function store(StoreMyhustleRequest $request)
     {
-
 
         // Image
         $image = $request->file('image');
@@ -64,7 +62,15 @@ class MyhustleController extends Controller
   
     public function show(Myhustle $myhustle)
     {
-        //
+        //show myhustle
+        $jobs=Job::latest()->take(5)->get();
+
+        return view('myhustle.show',[
+            'categories'=>Category::all(),
+            'hustle'=>$myhustle,
+            'jobs'=>$jobs
+
+        ]);
     }
 
    
