@@ -97,8 +97,8 @@ Route::post('job/apply/{job}',[JobController::class,'applyStore'])->name('job.ap
 
 // Myhustle
 Route::resource('myhustle',MyhustleController::class);
-Route::post('/comments/{myhustle}', [CommentController::class,'store'])->name('comments.store');
-
+Route::post('/myhustle/comments/{myhustle}', [CommentController::class,'store'])->name('comments.store');
+Route::post('/myhustle/{myhustle}/like',[MyhustleController::class,'like'])->name('myhustle.like');
 
 // company///////////
 // company routes

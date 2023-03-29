@@ -101,7 +101,7 @@
                 <h3 class="text-base font-semibold leading-6 text-gray-900">Hustle Listings</h3>
               </div>
               <div class="ml-4 mt-2 flex-shrink-0">
-                <button type="button" class="relative inline-flex items-center rounded-md bg-pink-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Post My Hustle</button>
+                <a href="{{route('myhustle.create')}}" class="relative inline-flex items-center rounded-md bg-pink-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-pink-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Post My Hustle</a>
               </div>
             </div>
           </div>

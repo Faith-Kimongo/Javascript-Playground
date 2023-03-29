@@ -112,4 +112,19 @@ class User extends Authenticatable
     public function myhustles(){
         return $this->hasMany(Myhustle::class);
     }
+
+    public function likes(){
+        return $this->hasMany(Like::class);
+    }
+
+
+    // For hustle
+
+    public function scopeForHustle($query, Myhustle $myhustle)
+    {
+        return $query->where('myhustle_id', $myhustle->id);
+    }
+
+
+
 }

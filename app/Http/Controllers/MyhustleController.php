@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateMyhustleRequest;
 use App\Models\Category;
 use App\Models\Job;
 use App\Models\Myhustle;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class MyhustleController extends Controller
@@ -18,7 +19,7 @@ class MyhustleController extends Controller
    
     public function index()
     {
-        //index
+    
         // Recent Job
         $jobs=Job::latest()->take(5)->get();
         return view('myhustle.index',[
@@ -65,6 +66,9 @@ class MyhustleController extends Controller
         //show myhustle
         $jobs=Job::latest()->take(5)->get();
 
+        // Increment views
+        $myhustle->increment('views',1);
+
         return view('myhustle.show',[
             'categories'=>Category::all(),
             'hustle'=>$myhustle,
@@ -79,26 +83,34 @@ class MyhustleController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateMyhustleRequest  $request
-     * @param  \App\Models\Myhustle  $myhustle
-     * @return \Illuminate\Http\Response
-     */
+   
     public function update(UpdateMyhustleRequest $request, Myhustle $myhustle)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Myhustle  $myhustle
-     * @return \Illuminate\Http\Response
-     */
+
+    //Like
+
+    public function like(Request $request,Myhustle $myhustle){
+        // if (!$myhustle->likedBy($request->user())) {
+        //     $like = $myhustle->likes()->create([
+        //         'user_id' => $request->user()->id,
+        //     ]);
+        // }
+    
+        // return response()->json([
+        //     'message' => 'Post liked.',
+        // ]);
+    }
+
+   
     public function destroy(Myhustle $myhustle)
     {
-        //
+        //delete
+        $myhustle->delete();
+        return back()->with('success','Myhustle Deleted Successfully!');
     }
+
+
 }
