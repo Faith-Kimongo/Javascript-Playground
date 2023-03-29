@@ -38,26 +38,14 @@
             <p class="px-3 text-sm font-medium text-gray-500" id="communities-headline">Categories</p>
             <div class="mt-3 space-y-2" aria-labelledby="communities-headline">
              
-
-             
-
              @forelse ($categories as $category)
               <a href="#" class="group flex items-center rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900">
                 <span class="truncate">{{$category->name}}</span>
               </a>
              @empty
-                 
+                 No Categories
              @endforelse
 
-             
-
-             
-
-              
-
-             
-
-              
             </div>
           </div>
         </nav>
@@ -77,21 +65,32 @@
           <div class="hidden sm:block">
             <nav class="isolate flex divide-x divide-gray-200 rounded-lg shadow" aria-label="Tabs">
               <!-- Current: "text-gray-900", Default: "text-gray-500 hover:text-gray-700" -->
-              <a href="#" aria-current="page" class="text-gray-900 rounded-l-lg group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-6 text-center text-sm font-medium hover:bg-gray-50 focus:z-10">
+              <a href="" aria-current="page" class="text-gray-900 rounded-l-lg group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-6 text-center text-sm font-medium hover:bg-gray-50 focus:z-10">
                 <span>Recent</span>
                 <span aria-hidden="true" class="bg-rose-500 absolute inset-x-0 bottom-0 h-0.5"></span>
               </a>
 
-              <a href="#" class="text-gray-500 hover:text-gray-700 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-6 text-center text-sm font-medium hover:bg-gray-50 focus:z-10">
+              <a href="" class="text-gray-500 hover:text-gray-700 group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-6 text-center text-sm font-medium hover:bg-gray-50 focus:z-10">
                 <span>Most Liked</span>
                 <span aria-hidden="true" class="bg-transparent absolute inset-x-0 bottom-0 h-0.5"></span>
               </a>
 
-              <a href="#" class="text-gray-500 hover:text-gray-700 rounded-r-lg group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-6 text-center text-sm font-medium hover:bg-gray-50 focus:z-10">
+              <a href="" class="text-gray-500 hover:text-gray-700 rounded-r-lg group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-6 text-center text-sm font-medium hover:bg-gray-50 focus:z-10">
                 <span>Most Comments</span>
                 <span aria-hidden="true" class="bg-transparent absolute inset-x-0 bottom-0 h-0.5"></span>
               </a>
             </nav>
+          </div>
+        </div>
+
+        <div class="border-b border-gray-200 bg-white px-4 py-5 sm:px-6">
+          <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap">
+            <div class="ml-4 mt-2">
+              <h3 class="text-base font-semibold leading-6 text-gray-900">Hustle Listings</h3>
+            </div>
+            <div class="ml-4 mt-2 flex-shrink-0">
+              <button type="button" class="relative inline-flex items-center rounded-md bg-pink-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Post My Hustle</button>
+            </div>
           </div>
         </div>
         <div class="mt-4">

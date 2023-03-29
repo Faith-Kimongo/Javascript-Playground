@@ -46,7 +46,7 @@
                   <span class="truncate">{{$category->name}}</span>
                 </a>
                @empty
-                   
+                   No Categories 
                @endforelse
   
                
@@ -94,6 +94,18 @@
               </nav>
             </div>
           </div>
+
+          <div class="border-b border-gray-200 bg-white px-4 py-5 sm:px-6">
+            <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap">
+              <div class="ml-4 mt-2">
+                <h3 class="text-base font-semibold leading-6 text-gray-900">Hustle Listings</h3>
+              </div>
+              <div class="ml-4 mt-2 flex-shrink-0">
+                <button type="button" class="relative inline-flex items-center rounded-md bg-pink-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Post My Hustle</button>
+              </div>
+            </div>
+          </div>
+          
           <div class="mt-4">
             <h1 class="sr-only">Recent hustles</h1>
             <ul role="list" class="space-y-4">
@@ -161,11 +173,11 @@
                         </button>
                       </span>
                       <span class="inline-flex items-center text-sm">
-                        <a href="{{route('myhustle.show',$hustle->id)}}" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
+                        <a href="{{route('myhustle.show',$hustle->id)}}" class="inline-flex space-x-2 text-gray-400 hover:text-gray-500 text-pink-700">
                           <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fill-rule="evenodd" d="M10 2c-2.236 0-4.43.18-6.57.524C1.993 2.755 1 4.014 1 5.426v5.148c0 1.413.993 2.67 2.43 2.902.848.137 1.705.248 2.57.331v3.443a.75.75 0 001.28.53l3.58-3.579a.78.78 0 01.527-.224 41.202 41.202 0 005.183-.5c1.437-.232 2.43-1.49 2.43-2.903V5.426c0-1.413-.993-2.67-2.43-2.902A41.289 41.289 0 0010 2zm0 7a1 1 0 100-2 1 1 0 000 2zM8 8a1 1 0 11-2 0 1 1 0 012 0zm5 1a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
                           </svg>
-                          <span class="font-medium text-gray-900">11</span>
+                          <span class="font-medium text-gray-900"> {{$hustle->comments->count()}} </span>
                           <span class="sr-only">comments</span>
                         </a>
                       </span>
@@ -192,6 +204,74 @@
                     </div>
                   </div>
                 </article>
+                <section aria-labelledby="notes-title" id="comments-container">
+                    <div class="  sm:overflow-hidden sm:rounded-lg">
+                        <div class="mt-4">
+                        <div class="relative">
+                            <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                              <div class="w-full border-t border-gray-300"></div>
+                            </div>
+                            <div class="relative flex justify-center">
+                              <span class="bg-white px-2 text-sm text-gray-500">Comments ({{$hustle->comments()->count()}})</span>
+                            </div>
+                          </div>
+                        <div class="px-4 py-6 sm:px-6">
+                          <ul role="list" class="space-y-8">
+                            @forelse ($hustle->comments as $comment)
+                            <li>
+                              <div class="flex space-x-3">
+                                <div class="flex-shrink-0">
+                                  <img class="h-10 w-10 rounded-full" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}">
+                                </div>
+                                <div>
+                                  <div class="text-sm">
+                                    <a href="#" class="font-medium text-gray-900"> {{$comment->user->name}} </a>
+                                  </div>
+                                  <div class="mt-1 text-sm text-gray-700">
+                                    <p> {{$comment->comment}} </p>
+                                  </div>
+                                  <div class="mt-2 space-x-2 text-sm">
+                                    <span class="font-medium text-gray-500">{{$comment->created_at->diffForHumans()}}</span>
+                                    <span class="font-medium text-gray-500">&middot;</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            @empty
+                                No comments
+                            @endforelse
+                            
+          
+                                </ul>
+                        </div>
+                      </div>
+                      <div class="bg-gray-50 px-4 py-6 sm:px-6">
+                        <div class="flex space-x-3">
+                          <div class="flex-shrink-0">
+                            <img class="h-10 w-10 rounded-full" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}">
+                          </div>
+                          <div class="min-w-0 flex-1">
+                            <form action=" {{route('comments.store',$hustle)}} " method="POST">
+                              @csrf
+                              <div>
+                                <label for="comment" class="sr-only">About</label>
+                                <textarea id="comment" name="comment" rows="3" class="block w-full rounded-md border-0 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-pink-600 sm:py-1.5 sm:text-sm sm:leading-6" placeholder="Add a note"></textarea>
+                              </div>
+                              <div class="mt-3 flex items-center justify-between">
+                                <a href="#" class="group inline-flex items-start space-x-2 text-sm text-gray-500 hover:text-gray-900">
+                                  <svg class="h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM8.94 6.94a.75.75 0 11-1.061-1.061 3 3 0 112.871 5.026v.345a.75.75 0 01-1.5 0v-.5c0-.72.57-1.172 1.081-1.287A1.5 1.5 0 108.94 6.94zM10 15a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+                                  </svg>
+                                  <span>Please be comment ethicaly.</span>
+                                </a>
+                                <button type="submit" class="inline-flex items-center justify-center rounded-md bg-pink-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-pink-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-700">Comment</button>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
               </li>
              
             
